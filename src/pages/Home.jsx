@@ -113,13 +113,19 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-6 grid gap-6 md:grid-cols-3">
-            <a className="block bg-white border border-gray-200 rounded-xl p-5 hover:shadow" href="https://www.who.int/news/item/26-09-2022-ask-the-expert-10-questions-on-safe-abortion-care" target="_blank" rel="noreferrer">
-              <h4 className="font-semibold text-slate-900">How to safe abortion care ?</h4>
-              <p className="text-sm text-slate-700 mt-2">Accessing safe abortion services is crucial for preventing complications.</p>
+            <a className="block bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow" href="https://www.who.int/news/item/26-09-2022-ask-the-expert-10-questions-on-safe-abortion-care" target="_blank" rel="noreferrer">
+              <img src="/assets/gallery/slider1.jpg" alt="Safe abortion care" className="w-full h-40 object-cover" />
+              <div className="p-5">
+                <h4 className="font-semibold text-slate-900">How to safe abortion care ?</h4>
+                <p className="text-sm text-slate-700 mt-2">Accessing safe abortion services is crucial for preventing complications.</p>
+              </div>
             </a>
-            <a className="block bg-white border border-gray-200 rounded-xl p-5 hover:shadow" href="https://www.cancer.org/cancer/types/breast-cancer/about/what-is-breast-cancer.html" target="_blank" rel="noreferrer">
-              <h4 className="font-semibold text-slate-900">What is Breast Cancer?</h4>
-              <p className="text-sm text-slate-700 mt-2">Breast cancers can start from different parts of the breast.</p>
+            <a className="block bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow" href="https://www.cancer.org/cancer/types/breast-cancer/about/what-is-breast-cancer.html" target="_blank" rel="noreferrer">
+              <img src="/assets/gallery/slider2.jpg" alt="Breast Cancer" className="w-full h-40 object-cover" />
+              <div className="p-5">
+                <h4 className="font-semibold text-slate-900">What is Breast Cancer?</h4>
+                <p className="text-sm text-slate-700 mt-2">Breast cancers can start from different parts of the breast.</p>
+              </div>
             </a>
             <div className="space-y-3">
               <a className="block text-pink-700 font-medium" href="https://www.who.int/europe/news/item/11-09-2021-who-recommends-dna-testing-as-a-first-choice-screening-method-for-cervical-cancer-prevention" target="_blank" rel="noreferrer">Importance of HPV DNA Test</a>
