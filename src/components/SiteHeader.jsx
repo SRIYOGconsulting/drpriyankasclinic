@@ -8,6 +8,11 @@ export default function SiteHeader() {
           <div className="flex items-center gap-4">
             <a href="tel:+9779819090115" className="hover:underline">+977-9819090115</a>
             <a href="https://drpriyankasclinic.com/cdn-cgi/l/email-protection" className="hover:underline">Email</a>
+            <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook" className="text-white hover:text-pink-300">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
+                <path d="M22 12.06C22 6.48 17.52 2 11.94 2S2 6.48 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.9h2.54V9.41c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.45h-1.25c-1.23 0-1.61.77-1.61 1.56v1.86h2.74l-.44 2.9h-2.3V22c4.78-.76 8.44-4.92 8.44-9.94Z"/>
+              </svg>
+            </a>
           </div>
           <a href="/contact" className="bg-pink-600 hover:bg-pink-700 text-white px-4 py-1 rounded">Book Appointment</a>
         </div>
