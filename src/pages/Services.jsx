@@ -75,6 +75,33 @@ export default function Services() {
     ],
   }
 
+  const sec4 = {
+    small: 'Premium Care',
+    title: 'Personalized healthcare with emotional support',
+    items: [
+      { 
+        title: 'Personalized Care Plan', 
+        img: '/assets/services/Infertility-Diagnosis-Treatment.jpg', 
+        desc: 'Tailored healthcare plans designed specifically for your unique needs and health goals.'
+      },
+      { 
+        title: '24/7 Doctor Support', 
+        img: '/assets/services/Prenatal-Antenatal-Postnatal-Care-Counseling.jpg', 
+        desc: 'Round-the-clock access to healthcare professionals for your peace of mind.'
+      },
+      { 
+        title: 'Emotional Counseling', 
+        img: '/assets/services/Family-Planning-Counseling.jpg', 
+        desc: 'Professional support for emotional well-being during your healthcare journey.'
+      },
+      { 
+        title: 'Wellness Programs', 
+        img: '/assets/services/Genetic-Screening.jpg', 
+        desc: 'Comprehensive programs focused on maintaining and improving overall health.'
+      },
+    ],
+  }
+
   return (
     <div>
       {/* Breadcrumb hero */}
@@ -109,6 +136,7 @@ export default function Services() {
       <Section {...sec1} />
       <Section {...sec2} />
       <Section {...sec3} />
+      <Section {...sec4} />
     </div>
   )
 }

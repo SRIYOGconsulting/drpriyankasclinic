@@ -1,8 +1,35 @@
 import { Link, NavLink } from 'react-router-dom'
+import { useState, useEffect } from 'react';
 
 export default function SiteHeader() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isMenuOpen && !event.target.closest('.mobile-menu') && !event.target.closest('.menu-button')) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    // Handle scroll
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isMenuOpen]);
+
   return (
-    <header className="w-full border-b border-gray-200">
+    <header className={`w-full border-b border-gray-200 bg-white fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'shadow-md' : ''}`}>
+      {/* Top bar - visible on medium screens and up */}
       <div className="bg-slate-900 text-white text-sm hidden md:block">
         <div className="max-w-6xl mx-auto px-4 py-2 flex items-center justify-between">
           <div className="flex items-center gap-4">
@@ -14,20 +41,109 @@ export default function SiteHeader() {
               </svg>
             </a>
           </div>
-          <a href="/contact" className="bg-pink-600 hover:bg-pink-700 text-white px-4 py-1 rounded">Book Appointment</a>
+          <a href="/contact" className="bg-pink-600 hover:bg-pink-700 text-white px-4 py-1 rounded transition-colors">Book Appointment</a>
         </div>
       </div>
-      <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+
+      {/* Main header */}
+      <div className="max-w-6xl mx-auto px-4 py-3 md:py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3">
           <img src="/assets/logo/dr-priyankas-clinic-logo.png" alt="Dr. Priyanka's Clinic Logo" className="h-10 w-auto" />
         </Link>
-        <nav className="flex items-center gap-6 text-slate-700">
-          <NavLink to="/" end className={({isActive})=>isActive? 'text-pink-600' : 'hover:text-pink-600'}>Home</NavLink>
-          <NavLink to="/about" className={({isActive})=>isActive? 'text-pink-600' : 'hover:text-pink-600'}>About</NavLink>
-          <NavLink to="/services" className={({isActive})=>isActive? 'text-pink-600' : 'hover:text-pink-600'}>Services</NavLink>
-          <NavLink to="/gallery" className={({isActive})=>isActive? 'text-pink-600' : 'hover:text-pink-600'}>Gallery</NavLink>
-          <NavLink to="/contact" className={({isActive})=>isActive? 'text-pink-600' : 'hover:text-pink-600'}>Contact</NavLink>
+
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center gap-6 text-slate-700">
+          <NavLink to="/" end className={({isActive}) => isActive ? 'text-pink-600 font-medium' : 'hover:text-pink-600 transition-colors'}>
+            Home
+          </NavLink>
+          <NavLink to="/about" className={({isActive}) => isActive ? 'text-pink-600 font-medium' : 'hover:text-pink-600 transition-colors'}>
+            About
+          </NavLink>
+          <NavLink to="/services" className={({isActive}) => isActive ? 'text-pink-600 font-medium' : 'hover:text-pink-600 transition-colors'}>
+            Services
+          </NavLink>
+          <NavLink to="/gallery" className={({isActive}) => isActive ? 'text-pink-600 font-medium' : 'hover:text-pink-600 transition-colors'}>
+            Gallery
+          </NavLink>
+          <NavLink to="/contact" className={({isActive}) => isActive ? 'text-pink-600 font-medium' : 'hover:text-pink-600 transition-colors'}>
+            Contact
+          </NavLink>
         </nav>
+
+        {/* Mobile menu button */}
+        <button 
+          className="md:hidden p-2 text-gray-700 hover:text-pink-600 focus:outline-none menu-button"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          {isMenuOpen ? (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          ) : (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          )}
+        </button>
+      </div>
+
+      {/* Mobile menu */}
+      <div 
+        className={`md:hidden mobile-menu bg-white border-t border-gray-200 transition-all duration-300 ease-in-out overflow-hidden ${isMenuOpen ? 'max-h-96 py-4' : 'max-h-0'}`}
+      >
+        <div className="px-4 pt-2 pb-3 space-y-1">
+          <NavLink 
+            to="/" 
+            end 
+            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-pink-600"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Home
+          </NavLink>
+          <NavLink 
+            to="/about" 
+            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-pink-600"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            About
+          </NavLink>
+          <NavLink 
+            to="/services" 
+            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-pink-600"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Services
+          </NavLink>
+          <NavLink 
+            to="/gallery" 
+            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-pink-600"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Gallery
+          </NavLink>
+          <NavLink 
+            to="/contact" 
+            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-pink-600"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Contact
+          </NavLink>
+          <div className="pt-4 border-t border-gray-200 mt-2">
+            <a 
+              href="tel:+9779819090115" 
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-pink-600"
+            >
+              Call: +977-9819090115
+            </a>
+            <a 
+              href="/contact" 
+              className="mt-2 w-full flex justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-pink-600 hover:bg-pink-700"
+            >
+              Book Appointment
+            </a>
+          </div>
+        </div>
       </div>
     </header>
   )

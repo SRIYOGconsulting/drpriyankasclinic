@@ -13,9 +13,12 @@ export default function Home() {
             <p className="uppercase tracking-wide text-sm text-pink-600">Welcome to Dr. Priyanka’s Clinic</p>
             <h1 className="text-3xl md:text-5xl font-bold text-slate-900 mt-2">Your Health - Our Priority</h1>
             <p className="mt-4 text-slate-700">Established on April 25, 2023, our clinic is committed to providing comprehensive healthcare services tailored specifically for women.</p>
-            <div className="mt-6 flex gap-3">
-              <a href="/contact" className="bg-pink-600 hover:bg-pink-700 text-white px-5 py-2 rounded">Book Appointment</a>
-              <a href="/services" className="text-pink-700 font-medium">Our Services →</a>
+            <div className="mt-6 flex items-center gap-4">
+              <a href="/contact" className="bg-pink-600 hover:bg-pink-700 text-white px-5 py-2.5 rounded-full text-sm font-medium whitespace-nowrap">Book Appointment</a>
+              <a href="/services" className="text-pink-700 hover:text-pink-800 font-medium flex items-center gap-1 group">
+                Our Services
+                <span className="group-hover:translate-x-1 transition-transform">→</span>
+              </a>
             </div>
           </div>
           <div className="hidden md:block">
