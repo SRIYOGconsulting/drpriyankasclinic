@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import SiteHeader from './components/SiteHeader'
 import SiteFooter from './components/SiteFooter'
 import ScrollToTop from './components/ScrollToTop'
+import WhatsAppButton from './components/WhatsAppButton'
 import Home from './pages/Home'
 import About from './pages/About'
 import Services from './pages/Services'
@@ -23,6 +24,7 @@ function App() {
         </Routes>
       </main>
       <SiteFooter />
+      <WhatsAppButton />
     </div>
   )
 }

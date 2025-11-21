@@ -68,71 +68,87 @@ export default function SiteHeader() {
 
       {/* Main navigation */}
       <div className="bg-white">
-        <div className="container mx-auto px-4 py-3 flex items-center justify-between">
+        <div className="container mx-auto px-4 py-2 flex items-center justify-between">
           <Link to="/" className="flex items-center">
             <img 
               src="/assets/logo/dr-priyankas-clinic-logo.png" 
               alt="Dr. Priyanka's Clinic Logo" 
-              className="h-12 w-auto"
+              className="h-16 w-auto"
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-1">
+          <nav className="hidden md:flex items-center space-x-2">
             <NavLink 
               to="/" 
               end 
-              className={({isActive}) => `px-4 py-2 text-sm font-medium transition-colors ${isActive ? 'text-pink-600' : 'text-gray-700 hover:text-pink-600'}`}
+              className={({isActive}) => `px-5 py-3 text-base font-medium transition-colors ${isActive ? 'text-pink-600' : 'text-gray-800 hover:text-pink-600'}`}
             >
               Home
             </NavLink>
             <NavLink 
               to="/about" 
-              className={({isActive}) => `px-4 py-2 text-sm font-medium transition-colors ${isActive ? 'text-pink-600' : 'text-gray-700 hover:text-pink-600'}`}
+              className={({isActive}) => `px-5 py-3 text-base font-medium transition-colors ${isActive ? 'text-pink-600' : 'text-gray-800 hover:text-pink-600'}`}
             >
               About
             </NavLink>
             <NavLink 
               to="/services" 
-              className={({isActive}) => `px-4 py-2 text-sm font-medium transition-colors ${isActive ? 'text-pink-600' : 'text-gray-700 hover:text-pink-600'}`}
+              className={({isActive}) => `px-5 py-3 text-base font-medium transition-colors ${isActive ? 'text-pink-600' : 'text-gray-800 hover:text-pink-600'}`}
             >
               Services
             </NavLink>
             <NavLink 
               to="/gallery" 
-              className={({isActive}) => `px-4 py-2 text-sm font-medium transition-colors ${isActive ? 'text-pink-600' : 'text-gray-700 hover:text-pink-600'}`}
+              className={({isActive}) => `px-5 py-3 text-base font-medium transition-colors ${isActive ? 'text-pink-600' : 'text-gray-800 hover:text-pink-600'}`}
             >
               Gallery
             </NavLink>
             <NavLink 
               to="/contact" 
-              className={({isActive}) => `px-4 py-2 text-sm font-medium transition-colors ${isActive ? 'text-pink-600' : 'text-gray-700 hover:text-pink-600'}`}
+              className={({isActive}) => `px-5 py-3 text-base font-medium transition-colors ${isActive ? 'text-pink-600' : 'text-gray-800 hover:text-pink-600'}`}
             >
               Contact
             </NavLink>
             <div className="ml-4">
               <a 
-                href="/contact" 
-                className="bg-pink-600 hover:bg-pink-700 text-white px-5 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap"
+                href="/appointment" 
+                className="relative inline-flex items-center justify-center px-6 py-3 overflow-hidden text-base font-medium text-white transition-all duration-300 bg-gradient-to-r from-pink-500 to-pink-600 rounded-full group hover:from-pink-600 hover:to-pink-700 hover:shadow-lg hover:shadow-pink-200 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2"
               >
-                Book Appointment
+                <span className="relative">
+                  <svg 
+                    className="w-5 h-5 mr-2 -ml-1" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24" 
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      strokeWidth="2" 
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    ></path>
+                  </svg>
+                </span>
+                <span>Book an Appointment</span>
               </a>
             </div>
           </nav>
 
           {/* Mobile menu button */}
           <button 
-            className="md:hidden p-2 text-gray-700 hover:text-pink-600 focus:outline-none menu-button"
+            className="md:hidden p-3 -mr-2 text-gray-700 hover:text-pink-600 focus:outline-none menu-button transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
             {isMenuOpen ? (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
               </svg>
             ) : (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             )}
           </button>
@@ -141,49 +157,62 @@ export default function SiteHeader() {
 
       {/* Mobile menu */}
       <div 
-        className={`md:hidden mobile-menu bg-white border-t border-gray-200 transition-all duration-300 ease-in-out overflow-hidden ${isMenuOpen ? 'max-h-96 py-2' : 'max-h-0'}`}
+        className={`md:hidden mobile-menu bg-white border-t border-gray-200 transition-all duration-300 ease-in-out overflow-hidden ${isMenuOpen ? 'max-h-screen py-4' : 'max-h-0'}`}
       >
-        <div className="px-4 py-2 space-y-1">
+        <div className="px-5 py-2 space-y-1">
           <NavLink 
             to="/" 
             end 
-            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-pink-600"
+            className="block px-4 py-3 rounded-lg text-lg font-medium text-gray-800 hover:bg-pink-50 hover:text-pink-600 transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
             Home
           </NavLink>
           <NavLink 
             to="/about" 
-            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-pink-600"
+            className="block px-4 py-3 rounded-lg text-lg font-medium text-gray-800 hover:bg-pink-50 hover:text-pink-600 transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
             About
           </NavLink>
-          <NavLink 
-            to="/services" 
-            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-pink-600"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Services
-          </NavLink>
+          <div className="space-y-1">
+            <NavLink 
+              to="/services" 
+              className="block px-4 py-3 rounded-lg text-lg font-medium text-gray-800 hover:bg-pink-50 hover:text-pink-600 transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <div className="flex items-center justify-between">
+                <span>Services</span>
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </div>
+            </NavLink>
+            <div className="ml-4 space-y-1">
+              <a href="/services#gynecology" className="block px-4 py-2 text-base text-gray-700 hover:bg-pink-50 rounded-lg">Gynecology Services</a>
+              <a href="/services#obstetrics" className="block px-4 py-2 text-base text-gray-700 hover:bg-pink-50 rounded-lg">Obstetrics Care</a>
+              <a href="/services#family-planning" className="block px-4 py-2 text-base text-gray-700 hover:bg-pink-50 rounded-lg">Family Planning</a>
+              <a href="/services#infertility" className="block px-4 py-2 text-base text-gray-700 hover:bg-pink-50 rounded-lg">Infertility Treatment</a>
+            </div>
+          </div>
           <NavLink 
             to="/gallery" 
-            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-pink-600"
+            className="block px-4 py-3 rounded-lg text-lg font-medium text-gray-800 hover:bg-pink-50 hover:text-pink-600 transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
             Gallery
           </NavLink>
           <NavLink 
             to="/contact" 
-            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-pink-600"
+            className="block px-4 py-3 rounded-lg text-lg font-medium text-gray-800 hover:bg-pink-50 hover:text-pink-600 transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
             Contact
           </NavLink>
-          <div className="pt-2">
+          <div className="pt-3">
             <a 
               href="/contact" 
-              className="block w-full text-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-pink-600 hover:bg-pink-700"
+              className="block w-full text-center px-6 py-3 border-2 border-pink-600 rounded-full text-lg font-semibold text-pink-600 hover:bg-pink-600 hover:text-white transition-all duration-200"
             >
               Book Appointment
             </a>

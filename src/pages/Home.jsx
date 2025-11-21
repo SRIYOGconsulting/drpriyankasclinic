@@ -12,13 +12,37 @@ export default function Home() {
           <div>
             <p className="uppercase tracking-wide text-sm text-pink-600">Welcome to Dr. Priyanka’s Clinic</p>
             <h1 className="text-3xl md:text-5xl font-bold text-slate-900 mt-2">Your Health - Our Priority</h1>
-            <p className="mt-4 text-slate-700">Established on April 25, 2023, our clinic is committed to providing comprehensive healthcare services tailored specifically for women.</p>
-            <div className="mt-6 flex items-center gap-4">
-              <a href="/contact" className="bg-pink-600 hover:bg-pink-700 text-white px-5 py-2.5 rounded-full text-sm font-medium whitespace-nowrap">Book Appointment</a>
-              <a href="/services" className="text-pink-700 hover:text-pink-800 font-medium flex items-center gap-1 group">
-                Our Services
-                <span className="group-hover:translate-x-1 transition-transform">→</span>
-              </a>
+            <p className="mt-4 text-slate-700">Welcome to Dr. Priyanka's Clinic, a dedicated Obstetrics and Gynecology facility located in the heart of Birtamode, Jhapa, Nepal. Established on April 25, 2023, our clinic is committed to providing comprehensive healthcare services tailored specifically for women. Our experienced team understands the unique health needs of women at every stage of life, offering compassionate care in a welcoming environment.</p>
+
+            <p className="mt-4 text-slate-700">At Dr. Priyanka's Clinic, we offer a wide range of Gynecological Services, including cancer prevention, screening, and diagnosis. Our services encompass HPV vaccination, HPV DNA testing, PAP smears, and colposcopy, along with advanced diagnostic tests like CA 125, CEA, CA 19-9 blood tests, breast ultrasound, transvaginal sonography (TVS), and cervical and endometrial biopsies.</p>
+            <div className="mt-6 flex flex-wrap items-center gap-4">
+              <div className="flex items-center gap-3">
+                <img 
+                  src="/assets/home/drpriyanka.png" 
+                  alt="Dr. Priyanka Katwal - Gynecologist" 
+                  className="h-16 w-16 rounded-full border-2 border-pink-200 object-cover"
+                />
+                <div>
+                  <div className="font-semibold text-slate-900">Dr. Priyanka Katwal</div>
+                  <div className="text-slate-600 text-sm">Gynecologist & Obstetrician</div>
+                </div>
+              </div>
+              
+              <div className="flex flex-wrap items-center gap-3">
+                <a 
+                  href="/contact" 
+                  className="bg-pink-600 hover:bg-pink-700 text-white px-5 py-2.5 rounded-full text-sm font-medium whitespace-nowrap transition-colors"
+                >
+                  Book Appointment
+                </a>
+                <a 
+                  href="/services" 
+                  className="text-pink-700 hover:text-pink-800 font-medium flex items-center gap-1 group transition-colors"
+                >
+                  Our Services
+                  <span className="group-hover:translate-x-1 transition-transform">→</span>
+                </a>
+              </div>
             </div>
           </div>
           <div className="hidden md:block">
@@ -27,13 +51,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Specialized Gynecology */}
-      <section className="py-16">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-slate-900">Specialized Gynecology</h2>
-          <p className="mt-4 text-slate-700">Welcome to Dr. Priyanka's Clinic, a dedicated Obstetrics and Gynecology facility located in the heart of Birtamode, Jhapa, Nepal. We offer HPV vaccination, HPV DNA testing, PAP smears, colposcopy, CA 125/CEA/CA 19-9 blood tests, breast ultrasound, TVS, and cervical & endometrial biopsies.</p>
-        </div>
-      </section>
+     
 
       {/* Services grid */}
       <section className="py-16 bg-slate-50">
@@ -78,25 +96,40 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats / Safe Abortion */}
-      <section className="py-16 bg-pink-700 text-white">
-        <div className="max-w-6xl mx-auto px-4 grid gap-6 md:grid-cols-3 items-start">
-          <div className="bg-white/0 border border-white/20 rounded-xl p-6 shadow-sm">
-            <h3 className="text-2xl font-bold text-slate-900">Safe Abortion Practices</h3>
-            <p className="mt-2 text-white/90">Safe procedures with care and privacy.
-            </p>
-            <a href="/contact" className="inline-block mt-4 bg-white text-pink-700 hover:bg-gray-100 px-4 py-2 rounded">Book an Appointment</a>
-          </div>
-          <div className="bg-white/0 border border-white/20 rounded-xl p-6 text-center shadow-sm">
-            <div className="text-4xl font-bold text-white">100+</div>
-            <div className="text-white/90">Safe Abortions</div>
-          </div>
-          <div className="bg-white/0 border border-white/20 rounded-xl p-6 text-center shadow-sm">
-            <div className="text-4xl font-bold text-white">100+</div>
-            <div className="text-white/90">Safe Parents</div>
-          </div>
-        </div>
-      </section>
+      {/* Safe Abortion Practices */}
+<section className="py-16 bg-gradient-to-b from-pink-50 to-amber-50">
+  <div className="max-w-6xl mx-auto px-4">
+    <div className="grid md:grid-cols-3 gap-6">
+      {/* Main Info Card */}
+      <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-pink-100 shadow-lg">
+        <h3 className="text-2xl font-bold mb-3 text-slate-800">Safe Abortion Practices</h3>
+        <p className="text-slate-600 mb-4">Safe procedures with care and privacy.</p>
+        <a 
+          href="/contact" 
+          className="inline-flex items-center justify-center bg-pink-600 hover:bg-pink-700 text-white font-medium px-5 py-2.5 rounded-lg transition-colors duration-200"
+        >
+          Book an Appointment
+          <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </a>
+      </div>
+
+      {/* Stats Cards */}
+      <div className="bg-white/60 backdrop-blur-sm rounded-xl p-6 border border-pink-100 text-center">
+        <div className="text-4xl font-bold mb-1 text-pink-600">100+</div>
+        <div className="text-slate-700 font-medium">Safe Abortions</div>
+        <p className="text-slate-600 text-sm mt-2">Safe abortion practices refer to medical procedures and guidelines designed to terminate a pregnancy in a way that minimizes risks and ensures the health and well-being of the individual.</p>
+      </div>
+
+      <div className="bg-white/60 backdrop-blur-sm rounded-xl p-6 border border-pink-100 text-center">
+        <div className="text-4xl font-bold mb-1 text-pink-600">100+</div>
+        <div className="text-slate-700 font-medium">Safe Parents</div>
+        <p className="text-slate-600 text-sm mt-2">Safe abortion can be performed through medication or surgical methods, depending on the gestational age and the specific circumstances of the patient.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Latest Updates */}
       <section className="py-16 bg-white">

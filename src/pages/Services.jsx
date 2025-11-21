@@ -55,6 +55,7 @@ export default function Services() {
     small: 'Obstetrics services',
     title: 'The Care of Women during Pregnancy and Childbirth',
     items: [
+  
       { title: 'Prenatal, Antenatal and Postnatal Care and Counseling', img: '/assets/services/Prenatal-Antenatal-Postnatal-Care-Counseling.jpg', desc: 'Care and counseling focusing on the well-being of mother and baby during pregnancy, childbirth, and after delivery.' },
       { title: 'Safe Abortion Practices', img: '/assets/services/Safe-Abortion-Practices.jpg', desc: 'Medical procedures and guidelines designed to minimize risks and ensure health and well-being.' },
       { title: 'Family Planning and Counseling', img: '/assets/services/Family-Planning-Counseling.jpg', desc: 'Knowledge and resources for reproductive health and family size decisions.' },

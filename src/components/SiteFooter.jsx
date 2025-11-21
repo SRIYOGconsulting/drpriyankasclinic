@@ -1,67 +1,122 @@
 export default function SiteFooter() {
   return (
     <footer className="mt-16 relative overflow-hidden bg-gradient-to-b from-pink-50 to-amber-50">
-      {/* Decorative elements */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-pink-300 rounded-full -mt-32 -mr-32"></div>
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-amber-200 rounded-full -mb-40 -ml-40"></div>
-      </div>
-      <div className="max-w-6xl mx-auto px-4 py-16 grid gap-8 md:grid-cols-3 text-sm text-slate-700 relative z-10">
+      {/* Main Footer Content */}
+      <div className="max-w-6xl mx-auto px-4 py-12 grid gap-8 md:grid-cols-4 text-sm text-slate-700">
+        {/* Column 1: About */}
         <div>
-          <div className="flex items-center gap-3 mb-4">
-            <img src="/assets/logo/dr-priyankas-clinic-logo.png" alt="Clinic Logo" className="h-10 w-auto" />
-          </div>
-          <div className="flex items-center gap-3 mb-4">
-            <div className="text-slate-900 font-semibold">Emergency number</div>
-            <a href="tel:+9779819090115" className="text-pink-700 font-medium">981 9090 115</a>
-          </div>
-          <p className="text-slate-700 mb-3">Our clinic also features state-of-the-art Surgical Facilities, ensuring personalized healthcare with emotional support.</p>
-          <ul className="space-y-1">
-            <li><a className="hover:text-pink-600" href="https://drpriyankasclinic.com/cdn-cgi/l/email-protection">Email</a></li>
-            <li><a className="hover:text-pink-600" href="/">drpriyankasclinic.com</a></li>
-            <li>Birtamode, Jhapa, Nepal</li>
-          </ul>
-          <div className="mt-5 flex items-center gap-4">
-            <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook" className="text-slate-600 hover:text-pink-600 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-8 w-8">
+          <h3 className="font-semibold text-slate-900 mb-4 text-lg">About Us</h3>
+          <p className="text-slate-600 mb-4">
+            Dr. Priyanka's Clinic is a leading healthcare provider in Birtamode, Jhapa, Nepal, offering comprehensive gynecological and obstetric care.
+          </p>
+          <div className="flex items-center gap-3 mt-4 flex-wrap">
+            {/* Facebook */}
+            <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook" className="text-pink-600 hover:text-pink-700 transition-colors p-2 hover:bg-pink-100 rounded-full">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
                 <path d="M22 12.06C22 6.48 17.52 2 11.94 2S2 6.48 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.9h2.54V9.41c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.45h-1.25c-1.23 0-1.61.77-1.61 1.56v1.86h2.74l-.44 2.9h-2.3V22c4.78-.76 8.44-4.92 8.44-9.94Z"/>
               </svg>
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram" className="text-slate-600 hover:text-pink-600 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-8 w-8">
-                <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5a5.5 5.5 0 1 1 0 11.001A5.5 5.5 0 0 1 12 7.5Zm0 2a3.5 3.5 0 1 0 0 7.001 3.5 3.5 0 0 0 0-7.001Zm5-2.25a1 1 0 1 1 0 2.001 1 1 0 0 1 0-2.001Z"/>
+            
+            {/* Instagram */}
+            <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram" className="text-pink-600 hover:text-pink-700 transition-colors p-2 hover:bg-pink-100 rounded-full">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
+                <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11Zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm5.5-1a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/>
               </svg>
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noreferrer" aria-label="Twitter" className="text-slate-600 hover:text-pink-600 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-8 w-8">
-                <path d="M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.19 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.5 8.5 0 0 0 2.087-2.166z"/>
+            
+            {/* Messenger */}
+            <a href="https://m.me/" target="_blank" rel="noreferrer" aria-label="Messenger" className="text-pink-600 hover:text-pink-700 transition-colors p-2 hover:bg-pink-100 rounded-full">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
+                <path d="M12 2C6.36 2 2 6.13 2 11.7c0 2.91 1.19 5.44 3.14 7.17.16.13.26.35.3.57l.26 1.85c.05.37.4.62.77.53l2.16-.5c.22-.05.45-.15.65-.3 1.18-.8 2.61-1.28 4.15-1.28h.01c5.64 0 10.24-4.13 10.24-9.2C22 6.13 17.64 2 12 2zm6.44 7.06l-3.1 4.83c-.2.3-.57.39-.87.2l-2.6-1.5c-.3-.17-.7-.17-1 0l-3.85 2.51c-.25.16-.57.1-.75-.15l-1.24-1.9c-.2-.3-.15-.7.1-.95l6.15-6.33c.2-.2.5-.2.7 0l6.15 6.33c.3.3.3.75 0 1.06z"/>
+              </svg>
+            </a>
+            
+            {/* TikTok */}
+            <a href="https://tiktok.com" target="_blank" rel="noreferrer" aria-label="TikTok" className="text-pink-600 hover:text-pink-700 transition-colors p-2 hover:bg-pink-100 rounded-full">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
+                <path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-5.238 0c0-1.24.96-2.25 2.16-2.6V9.66c-3.68.46-6.47 3.69-6.47 7.41 0 4.09 3.24 7.42 7.23 7.42 4.02 0 7.23-3.36 7.23-7.42V8.41c1.17.6 2.21 1.1 3.5 1.1.36 0 .7 0 1.02-.05V7.05c-.6.21-1.27.33-1.96.33-2.31 0-4.28-1.48-4.28-3.56V5.82z"/>
+              </svg>
+            </a>
+            
+            {/* Twitter */}
+            <a href="https://twitter.com" target="_blank" rel="noreferrer" aria-label="Twitter" className="text-pink-600 hover:text-pink-700 transition-colors p-2 hover:bg-pink-100 rounded-full">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
+                <path d="M22.46 6.01c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
               </svg>
             </a>
           </div>
         </div>
+
+        {/* Column 2: Quick Links */}
         <div>
-          <h3 className="font-semibold text-slate-900 mb-3">Health Blogs</h3>
-          <ul className="space-y-1">
-            <li><a className="hover:text-pink-600" href="https://www.mayoclinic.org" target="_blank" rel="noreferrer">Mayo Clinic</a></li>
-            <li><a className="hover:text-pink-600" href="https://www.health.harvard.edu/blog" target="_blank" rel="noreferrer">Harvard Health Blog</a></li>
-            <li><a className="hover:text-pink-600" href="https://nutritionfacts.org/blog/" target="_blank" rel="noreferrer">Nutrition Facts</a></li>
-            <li><a className="hover:text-pink-600" href="https://www.dietdoctor.com" target="_blank" rel="noreferrer">Diet Doctor</a></li>
-            <li><a className="hover:text-pink-600" href="https://stralayoga.com/blog/" target="_blank" rel="noreferrer">Strala Yoga</a></li>
+          <h3 className="font-semibold text-slate-900 mb-4 text-lg">Quick Links</h3>
+          <ul className="space-y-2">
+            <li><a href="/" className="hover:text-pink-600 transition-colors">Home</a></li>
+            <li><a href="/about" className="hover:text-pink-600 transition-colors">About Us</a></li>
+            <li><a href="/services" className="hover:text-pink-600 transition-colors">Services</a></li>
+            <li><a href="/gallery" className="hover:text-pink-600 transition-colors">Gallery</a></li>
+            <li><a href="/contact" className="hover:text-pink-600 transition-colors">Contact Us</a></li>
           </ul>
         </div>
+
+        {/* Column 3: Services */}
         <div>
-          <h3 className="font-semibold text-slate-900 mb-3">Browse More</h3>
-          <ul className="space-y-1">
-            <li><a className="hover:text-pink-600" href="https://www.cancer.org" target="_blank" rel="noreferrer">American Cancer Society</a></li>
-            <li><a className="hover:text-pink-600" href="https://www.webmd.com/default.htm" target="_blank" rel="noreferrer">Web MD</a></li>
-            <li><a className="hover:text-pink-600" href="https://mohp.gov.np/en/" target="_blank" rel="noreferrer">Ministry of Health, Nepal</a></li>
-            <li><a className="hover:text-pink-600" href="http://dohs.gov.np" target="_blank" rel="noreferrer">Department Of Health Services</a></li>
-            <li><a className="hover:text-pink-600" href="https://heoc.mohp.gov.np" target="_blank" rel="noreferrer">Health Emergency Operation Center</a></li>
-            <li><a className="hover:text-pink-600" href="https://nhrc.gov.np" target="_blank" rel="noreferrer">Nepal Health Research Council</a></li>
+          <h3 className="font-semibold text-slate-900 mb-4 text-lg">Book an Appointment</h3>
+          <p className="text-slate-600">
+            We offer comprehensive gynecological and obstetric care, including family planning, ultrasound, and fertility treatments.
+          </p>
+          <a href="/services" className="inline-block mt-3 text-pink-600 hover:text-pink-700 font-medium">
+            View All Services →
+          </a>
+        </div>
+
+        {/* Column 4: Contact */}
+        <div>
+          <h3 className="font-semibold text-slate-900 mb-4 text-lg">Contact Us</h3>
+          <ul className="space-y-2">
+            <li className="flex items-start gap-2">
+              <svg className="w-5 h-5 text-pink-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span>Birtamode-8, Jhapa, Nepal</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <svg className="w-5 h-5 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              <a href="tel:+9779819090115" className="hover:text-pink-600 transition-colors">+977 981 9090 115</a>
+            </li>
+            <li className="flex items-center gap-2">
+              <svg className="w-5 h-5 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              <a href="mailto:info@drpriyankasclinic.com" className="hover:text-pink-600 transition-colors">info@drpriyankasclinic.com</a>
+            </li>
           </ul>
         </div>
       </div>
-      <div className="relative z-10 text-center text-xs text-slate-600 py-6 border-t border-pink-100 bg-white/30 backdrop-blur-sm">Copyright Dr. Priyanka's Clinic. Birtamode, Jhapa, Nepal</div>
+
+      {/* Copyright Section */}
+      <div className="bg-white/80 border-t border-pink-100 py-4">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-between items-center text-xs text-slate-600">
+            <div className="mb-2 md:mb-0">
+              &copy; {new Date().getFullYear()} Dr. Priyanka's Clinic. Birtamode, Jhapa, Nepal | All Rights Reserved | Built With: BroadPress
+
+            </div>
+            <div className="flex items-center">
+             
+             
+              <a href="/terms" className="hover:text-pink-600 transition-colors">Terms of Service</a>
+              <span className="mx-2">|</span>
+              <a href="/privacy" className="hover:text-pink-600 transition-colors">Privacy Policy</a>
+              <span className="mx-2">|</span>
+              <a href="/disclaimer" className="hover:text-pink-600 transition-colors">Disclaimer</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
   )
 }
