@@ -135,43 +135,142 @@ export default function Home() {
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           {/* Section title with decorations + blog button */}
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between">
-            <div className="mb-10 md:mb-0 text-left relative">
-              <img src="/assets/section/section-back-icon.png" alt="section-back" className="absolute -top-10 opacity-10 w-20 h-20" />
-              <h5 className="text-pink-600 mb-2">Blog</h5>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
+            <div className="mb-6 md:mb-0">
+              <h5 className="text-pink-600 text-sm font-medium mb-2">BLOG</h5>
               <h1 className="text-3xl md:text-4xl font-bold text-slate-900">Latest Updates</h1>
-              <div className="mt-3">
-                <img src="/assets/shape/section-title-line.png" alt="section-line" className="h-2 w-auto" />
-              </div>
+              <div className="w-12 h-1 bg-pink-500 mt-3"></div>
             </div>
-            <div className="pb-2">
-              <a href="https://drpriyankasclinic.com/blog.htm" className="inline-flex items-center bg-pink-600 hover:bg-pink-700 text-white px-5 py-3 rounded-full"><span className="mr-2 text-lg">+</span>our blog</a>
-            </div>
-          </div>
-          <div className="mt-6 grid gap-6 md:grid-cols-3">
-            <a className="block bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow" href="https://www.who.int/news/item/26-09-2022-ask-the-expert-10-questions-on-safe-abortion-care" target="_blank" rel="noreferrer">
-              <img src="/assets/services/image.png" alt="Safe abortion care" className="w-full h-40 object-cover" />
-              <div className="p-5">
-                <h4 className="font-semibold text-slate-900">How to safe abortion care ?</h4>
-                <p className="text-sm text-slate-700 mt-2">Accessing safe abortion services is crucial for preventing complications.</p>
-              </div>
-            </a>
-            <a className="block bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow" href="https://www.cancer.org/cancer/types/breast-cancer/about/what-is-breast-cancer.html" target="_blank" rel="noreferrer">
-              <img src="/assets/services/image copy.png" alt="Breast Cancer" className="w-full h-40 object-cover" />
-              <div className="p-5">
-                <h4 className="font-semibold text-slate-900">What is Breast Cancer?</h4>
-                <p className="text-sm text-slate-700 mt-2">Breast cancers can start from different parts of the breast.</p>
-              </div>
-            </a>
-            <div className="space-y-3">
-              <a className="block text-pink-700 font-medium" href="https://www.who.int/europe/news/item/11-09-2021-who-recommends-dna-testing-as-a-first-choice-screening-method-for-cervical-cancer-prevention" target="_blank" rel="noreferrer">Importance of HPV DNA Test</a>
-              <a className="block text-pink-700 font-medium" href="https://www.cdc.gov/hpv/vaccines/reasons-to-get.html" target="_blank" rel="noreferrer">Why every female needs HPV Vaccination ?</a>
-              <a className="block text-pink-700 font-medium" href="https://www.who.int/news-room/fact-sheets/detail/abortion" target="_blank" rel="noreferrer">Is abortion safe and legal ?</a>
+            <div>
+              <a 
+                href="https://drpriyankasclinic.com/blog.htm" 
+                className="inline-flex items-center bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-full text-sm font-medium transition-colors"
+              >
+                Our Blog
+              </a>
             </div>
           </div>
-          <div className="mt-10">
-            <a href="/contact" className="bg-slate-900 text-white px-4 py-2 rounded">Make a Call</a>
-            <p className="text-xs text-slate-500 mt-2">Emergency number <a className="underline" href="tel:+9779819090115">981 9090 115</a></p>
+          
+          {/* Blog Posts Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Blog Post 1 */}
+            <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <div className="relative h-48 overflow-hidden">
+                <img 
+                  src="/assets/services/image.png" 
+                  alt="Safe abortion care" 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-lg font-semibold text-slate-900 mb-2">How to safe abortion care ?</h3>
+                <p className="text-sm text-slate-600 mb-4">Accessing safe abortion services is crucial for preventing complications and ensuring women's health.</p>
+                <a 
+                  href="https://www.who.int/news/item/26-09-2022-ask-the-expert-10-questions-on-safe-abortion-care" 
+                  target="_blank" 
+                  rel="noreferrer"
+                  className="text-pink-600 hover:text-pink-700 text-sm font-medium inline-flex items-center"
+                >
+                  Read More
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            {/* Blog Post 2 */}
+            <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <div className="relative h-48 overflow-hidden">
+                <img 
+                  src="/assets/services/image copy.png" 
+                  alt="Breast Cancer" 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-lg font-semibold text-slate-900 mb-2">What is Breast Cancer?</h3>
+                <p className="text-sm text-slate-600 mb-4">Breast cancers can start from different parts of the breast and understanding them is key to prevention.</p>
+                <a 
+                  href="https://www.cancer.org/cancer/types/breast-cancer/about/what-is-breast-cancer.html" 
+                  target="_blank" 
+                  rel="noreferrer"
+                  className="text-pink-600 hover:text-pink-700 text-sm font-medium inline-flex items-center"
+                >
+                  Read More
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            {/* Quick Links */}
+            <div className="bg-slate-50 rounded-lg p-6">
+              <h3 className="text-lg font-semibold text-slate-900 mb-4">Quick Links</h3>
+              <div className="space-y-4">
+                <a 
+                  href="https://www.who.int/europe/news/item/11-09-2021-who-recommends-dna-testing-as-a-first-choice-screening-method-for-cervical-cancer-prevention" 
+                  target="_blank" 
+                  rel="noreferrer"
+                  className="block group"
+                >
+                  <div className="flex items-center p-3 rounded-lg hover:bg-white hover:shadow-sm transition-all">
+                    <div className="bg-pink-100 p-2 rounded-full mr-3">
+                      <svg className="w-5 h-5 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                      </svg>
+                    </div>
+                    <span className="text-slate-700 group-hover:text-pink-600">Importance of HPV DNA Test</span>
+                  </div>
+                </a>
+                
+                <a 
+                  href="https://www.cdc.gov/hpv/vaccines/reasons-to-get.html" 
+                  target="_blank" 
+                  rel="noreferrer"
+                  className="block group"
+                >
+                  <div className="flex items-center p-3 rounded-lg hover:bg-white hover:shadow-sm transition-all">
+                    <div className="bg-pink-100 p-2 rounded-full mr-3">
+                      <svg className="w-5 h-5 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                      </svg>
+                    </div>
+                    <span className="text-slate-700 group-hover:text-pink-600">Why every female needs HPV Vaccination ?</span>
+                  </div>
+                </a>
+                
+                <a 
+                  href="https://www.who.int/news-room/fact-sheets/detail/abortion" 
+                  target="_blank" 
+                  rel="noreferrer"
+                  className="block group"
+                >
+                  <div className="flex items-center p-3 rounded-lg hover:bg-white hover:shadow-sm transition-all">
+                    <div className="bg-pink-100 p-2 rounded-full mr-3">
+                      <svg className="w-5 h-5 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                      </svg>
+                    </div>
+                    <span className="text-slate-700 group-hover:text-pink-600">Is abortion safe and legal ?</span>
+                  </div>
+                </a>
+              </div>
+              
+              <div className="mt-8 pt-6 border-t border-gray-200">
+                <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+                  <h4 className="font-medium text-slate-900 mb-2">Emergency Contact</h4>
+                  <a 
+                    href="tel:+9779819090115" 
+                    className="inline-block bg-slate-900 hover:bg-slate-800 text-white px-4 py-2 rounded text-sm font-medium transition-colors"
+                  >
+                    Make a Call
+                  </a>
+                  <p className="text-xs text-slate-500 mt-2">Emergency number <a href="tel:+9779819090115" className="text-pink-600 hover:underline">981 9090 115</a></p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
