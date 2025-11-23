@@ -1,4 +1,21 @@
-const Section = ({ small, title, items }) => (
+const ServiceItem = ({ service: s }) => (
+  <div className="service-box-3 text-center flex flex-col h-full">
+    <div className="service-thumb">
+      <img src={s.img} alt={s.title} className="w-full h-48 object-cover rounded-t-xl" />
+    </div>
+    <div className="px-6 pb-6 -mt-4 flex-1 flex">
+      <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5 flex flex-col w-full">
+        <h3 className="text-xl font-semibold text-slate-900">{s.title}</h3>
+        <p className="text-sm text-slate-700 mt-2">{s.desc}</p>
+        <div className="mt-auto pt-4">
+          <a href="/contact" className="inline-flex justify-center items-center w-full px-4 py-3 rounded-full border border-pink-600 text-pink-700 hover:bg-pink-50 text-sm font-medium">Book an Appointment</a>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+const Section = ({ small, title, items, isCustomGrid = false, customLayout = false }) => (
   <section className="py-16 bg-slate-50">
     <div className="max-w-6xl mx-auto px-4">
       <div className="grid md:grid-cols-3 gap-8 items-end mb-10">
@@ -12,24 +29,60 @@ const Section = ({ small, title, items }) => (
           <a href="/contact" className="inline-flex items-center bg-pink-600 hover:bg-pink-700 text-white px-5 py-3 rounded-full"><span className="mr-2 text-lg">+</span>Book an Appointment</a>
         </div>
       </div>
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {items.map((s)=> (
-          <div key={s.title} className="service-box-3 text-center flex flex-col h-full">
-            <div className="service-thumb">
-              <img src={s.img} alt={s.title} className="w-full h-48 object-cover rounded-t-xl" />
-            </div>
-            <div className="px-6 pb-6 -mt-4 flex-1 flex">
-              <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5 flex flex-col w-full">
-                <h3 className="text-xl font-semibold text-slate-900">{s.title}</h3>
-                <p className="text-sm text-slate-700 mt-2">{s.desc}</p>
-                <div className="mt-auto pt-4">
-                  <a href="/contact" className="inline-flex justify-center items-center w-full px-4 py-3 rounded-full border border-pink-600 text-pink-700 hover:bg-pink-50 text-sm font-medium">Book an Appointment</a>
+      {isCustomGrid ? (
+        <div className="space-y-8">
+          {customLayout ? (
+            // Custom layout for Premium Care section (3-1)
+            <>
+              <div className="grid gap-6 sm:grid-cols-3">
+                {/* First three services */}
+                {items.slice(0, 3).map((s) => (
+                  <div key={s.title} className="col-span-1">
+                    <ServiceItem service={s} />
+                  </div>
+                ))}
+                
+                {/* Fourth service spans all columns on small screens, single column on larger screens */}
+                <div className="col-span-3 sm:col-span-1 sm:col-start-2">
+                  <ServiceItem service={items[3]} />
                 </div>
               </div>
-            </div>
-          </div>
-        ))}
-      </div>
+            </>
+          ) : (
+            // Standard 2-3-3 layout for other sections
+            <>
+              {/* First row with 2 services centered */}
+              <div className="grid grid-cols-6 gap-6">
+                <div className="col-span-6 sm:col-start-2 sm:col-span-2">
+                  <ServiceItem service={items[0]} />
+                </div>
+                <div className="col-span-6 sm:col-span-2">
+                  <ServiceItem service={items[1]} />
+                </div>
+              </div>
+              
+              {/* Next two rows with 3 services each */}
+              <div className="grid gap-6 sm:grid-cols-3">
+                {items.slice(2, 5).map((s) => (
+                  <ServiceItem key={s.title} service={s} />
+                ))}
+              </div>
+              
+              <div className="grid gap-6 sm:grid-cols-3">
+                {items.slice(5).map((s) => (
+                  <ServiceItem key={s.title} service={s} />
+                ))}
+              </div>
+            </>
+          )}
+        </div>
+      ) : (
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {items.map((s) => (
+            <ServiceItem key={s.title} service={s} />
+          ))}
+        </div>
+      )}
     </div>
   </section>
 )
@@ -101,6 +154,7 @@ export default function Services() {
         desc: 'Comprehensive programs focused on maintaining and improving overall health.'
       },
     ],
+    customLayout: true, // Flag to identify custom layout for this section
   }
 
   return (
@@ -135,9 +189,9 @@ export default function Services() {
 
       {/* Sections matching source */}
       <Section {...sec1} />
-      <Section {...sec2} />
+      <Section {...sec2} isCustomGrid={true} />
       <Section {...sec3} />
-      <Section {...sec4} />
+      <Section {...sec4} isCustomGrid={true} customLayout={true} />
     </div>
   )
 }
