@@ -85,7 +85,7 @@ export default function Home() {
                     <h3 className="text-xl font-semibold text-slate-900">{s.title}</h3>
                     <p className="text-sm text-slate-700 mt-2">{s.desc}</p>
                     <div className="mt-auto pt-4">
-                      <a href="/contact" className="inline-flex justify-center items-center w-full px-4 py-3 rounded-full border border-pink-600 text-pink-700 hover:bg-pink-50 text-sm font-medium">Book an Appointment</a>
+                      <a href="https://www.facebook.com/Doctor.Priyankas.Clinic" target="_blank" rel="noopener noreferrer" className="inline-flex justify-center items-center w-full px-4 py-3 rounded-full border border-pink-600 text-pink-700 hover:bg-pink-50 text-sm font-medium">Book an Appointment</a>
                     </div>
                   </div>
                 </div>
@@ -105,7 +105,9 @@ export default function Home() {
         <h3 className="text-2xl font-bold mb-3 text-slate-800">Safe Abortion Practices</h3>
         <p className="text-slate-600 mb-4">Safe procedures with care and privacy.</p>
         <a 
-          href="/contact" 
+          href="https://www.facebook.com/Doctor.Priyankas.Clinic" 
+          target="_blank" 
+          rel="noopener noreferrer"
           className="inline-flex items-center justify-center bg-pink-600 hover:bg-pink-700 text-white font-medium px-5 py-2.5 rounded-lg transition-colors duration-200"
         >
           Book an Appointment

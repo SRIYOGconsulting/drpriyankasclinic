@@ -8,7 +8,7 @@ const ServiceItem = ({ service: s }) => (
         <h3 className="text-xl font-semibold text-slate-900">{s.title}</h3>
         <p className="text-sm text-slate-700 mt-2">{s.desc}</p>
         <div className="mt-auto pt-4">
-          <a href="/contact" className="inline-flex justify-center items-center w-full px-4 py-3 rounded-full border border-pink-600 text-pink-700 hover:bg-pink-50 text-sm font-medium">Book an Appointment</a>
+          <a href="https://www.facebook.com/Doctor.Priyankas.Clinic" target="_blank" rel="noopener noreferrer" className="inline-flex justify-center items-center w-full px-4 py-3 rounded-full border border-pink-600 text-pink-700 hover:bg-pink-50 text-sm font-medium">Book an Appointment</a>
         </div>
       </div>
     </div>
@@ -26,7 +26,7 @@ const Section = ({ small, title, items, isCustomGrid = false, customLayout = fal
           <div className="mt-3"><img src="/assets/shape/section-title-line.png" className="h-2" alt="line" /></div>
         </div>
         <div className="hidden md:flex justify-end pb-2">
-          <a href="/contact" className="inline-flex items-center bg-pink-600 hover:bg-pink-700 text-white px-5 py-3 rounded-full"><span className="mr-2 text-lg">+</span>Book an Appointment</a>
+          <a href="https://www.facebook.com/Doctor.Priyankas.Clinic" target="_blank" rel="noopener noreferrer" className="inline-flex items-center bg-pink-600 hover:bg-pink-700 text-white px-5 py-3 rounded-full"><span className="mr-2 text-lg">+</span>Book an Appointment</a>
         </div>
       </div>
       {isCustomGrid ? (

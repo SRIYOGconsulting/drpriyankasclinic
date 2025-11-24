@@ -2,10 +2,17 @@ export default function SiteFooter() {
   return (
     <footer className="mt-16 relative overflow-hidden bg-gradient-to-b from-pink-50 to-amber-50">
       {/* Main Footer Content */}
-      <div className="max-w-6xl mx-auto px-4 py-12 grid gap-8 md:grid-cols-4 text-sm text-slate-700">
-        {/* Column 1: About */}
-        <div>
-          <h3 className="font-semibold text-slate-900 mb-4 text-lg">About Us</h3>
+      <div className="max-w-6xl mx-auto px-4 py-12 grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 text-sm text-slate-700">
+        {/* Column 1: About with Logo */}
+        <div className="lg:col-span-2">
+          <div className="flex flex-col items-start mb-4">
+            <img 
+              src="/assets/logo/dr-priyankas-clinic-logo.png" 
+              alt="Dr. Priyanka's Clinic Logo" 
+              className="h-16 w-auto mb-2"
+            />
+            <p className="text-pink-600 font-medium text-lg">Welcome to Dr. Priyanka's Clinic</p>
+          </div>
           <p className="text-slate-600 mb-4">
             Dr. Priyanka's Clinic is a leading healthcare provider in Birtamode, Jhapa, Nepal, offering comprehensive gynecological and obstetric care.
           </p>
@@ -48,7 +55,7 @@ export default function SiteFooter() {
         </div>
 
         {/* Column 2: Quick Links */}
-        <div>
+        <div className="lg:col-span-1">
           <h3 className="font-semibold text-slate-900 mb-4 text-lg">Quick Links</h3>
           <ul className="space-y-2">
             <li><a href="/" className="hover:text-pink-600 transition-colors">Home</a></li>
@@ -59,21 +66,35 @@ export default function SiteFooter() {
           </ul>
         </div>
 
-        {/* Column 3: Services */}
-        <div>
-          <h3 className="font-semibold text-slate-900 mb-4 text-lg">Book an Appointment</h3>
-          <p className="text-slate-600">
-            We offer comprehensive gynecological and obstetric care, including family planning, ultrasound, and fertility treatments.
-          </p>
-          <a href="/services" className="inline-block mt-3 text-pink-600 hover:text-pink-700 font-medium">
-            View All Services →
-          </a>
+        {/* Column 3: Browse More */}
+        <div className="lg:col-span-1">
+          <h3 className="font-semibold text-slate-900 mb-4 text-lg">Browse More</h3>
+          <div className="grid grid-cols-1 gap-y-2 text-sm">
+            <a href="https://www.cancer.org/" target="_blank" rel="noopener noreferrer" className="hover:text-pink-600 transition-colors block">
+              American Cancer Society
+            </a>
+            <a href="https://www.webmd.com/" target="_blank" rel="noopener noreferrer" className="hover:text-pink-600 transition-colors block">
+              Web MD
+            </a>
+            <a href="https://mohp.gov.np/" target="_blank" rel="noopener noreferrer" className="hover:text-pink-600 transition-colors block">
+              Ministry of Health, Nepal
+            </a>
+            <a href="https://dohs.gov.np/" target="_blank" rel="noopener noreferrer" className="hover:text-pink-600 transition-colors block">
+              Department Of Health Services
+            </a>
+            <a href="http://heoc.mohp.gov.np/" target="_blank" rel="noopener noreferrer" className="hover:text-pink-600 transition-colors block">
+              Health Emergency Operation Center
+            </a>
+            <a href="https://nhrc.gov.np/" target="_blank" rel="noopener noreferrer" className="hover:text-pink-600 transition-colors block">
+              Nepal Health Research Council
+            </a>
+          </div>
         </div>
 
-        {/* Column 4: Contact */}
-        <div>
+        {/* Column 4: Contact & Book Appointment */}
+        <div className="lg:col-span-1">
           <h3 className="font-semibold text-slate-900 mb-4 text-lg">Contact Us</h3>
-          <ul className="space-y-2">
+          <ul className="space-y-2 mb-6">
             <li className="flex items-start gap-2">
               <svg className="w-5 h-5 text-pink-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -94,6 +115,17 @@ export default function SiteFooter() {
               <a href="mailto:info@drpriyankasclinic.com" className="hover:text-pink-600 transition-colors">info@drpriyankasclinic.com</a>
             </li>
           </ul>
+          
+          {/* Book Appointment Section */}
+          <div>
+            <h3 className="font-semibold text-slate-900 mb-3 text-lg whitespace-nowrap">Book an Appointment</h3>
+            <p className="text-slate-600 mb-3">
+              We offer comprehensive gynecological and obstetric care, including family planning, ultrasound, and fertility treatments.
+            </p>
+            <a href="/services" className="inline-block text-pink-600 hover:text-pink-700 font-medium">
+              View All Services →
+            </a>
+          </div>
         </div>
       </div>
 

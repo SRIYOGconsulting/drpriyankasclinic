@@ -87,8 +87,10 @@ export default function ContactPage() {
         <div className="mt-12 text-center">
           <h3 className="text-2xl font-semibold text-slate-900 mb-4">Ready to Schedule an Appointment?</h3>
           <p className="text-slate-600 mb-6">Contact us today to book your consultation or ask any questions.</p>
-          <a 
-            href="/appointment" 
+          <a
+            href="https://www.facebook.com/Doctor.Priyankas.Clinic"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block bg-pink-600 hover:bg-pink-700 text-white font-medium px-6 py-3 rounded-full transition-colors duration-200"
           >
             Book an Appointment
