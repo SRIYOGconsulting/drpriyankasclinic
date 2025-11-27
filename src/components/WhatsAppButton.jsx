@@ -24,7 +24,7 @@ const WhatsAppButton = () => {
 
   return (
     <div 
-      className="fixed bottom-8 right-8 z-50 animate-bounce"
+      className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50 animate-bounce"
       onClick={handleClick}
       style={{
         cursor: 'pointer',
@@ -38,8 +38,8 @@ const WhatsAppButton = () => {
         boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3)',
         transition: 'transform 0.3s ease',
       }}
-      onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
-      onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+      onMouseEnter={(e) => e.currentTarget.style.transform = 'translateX(-50%) scale(1.1)'}
+      onMouseLeave={(e) => e.currentTarget.style.transform = 'translateX(-50%) scale(1)'}
     >
       <FaWhatsapp className="text-white" size={32} />
     </div>

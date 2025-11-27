@@ -1,8 +1,10 @@
 import { Link, NavLink } from 'react-router-dom'
 import { useState, useEffect } from 'react';
+import AppointmentModal from './AppointmentForm';
 
 export default function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isAppointmentModalOpen, setIsAppointmentModalOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   // Close mobile menu when clicking outside
@@ -112,10 +114,8 @@ export default function SiteHeader() {
               Contact
             </NavLink>
             <div className="ml-4">
-              <a 
-                href="https://www.facebook.com/Doctor.Priyankas.Clinic" 
-                target="_blank" 
-                rel="noopener noreferrer"
+              <button 
+                onClick={() => setIsAppointmentModalOpen(true)}
                 className="relative inline-flex items-center justify-center px-6 py-3 overflow-hidden text-base font-medium text-white transition-all duration-300 bg-gradient-to-r from-pink-500 to-pink-600 rounded-full group hover:from-pink-600 hover:to-pink-700 hover:shadow-lg hover:shadow-pink-200 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2"
               >
                 <span className="relative">
@@ -135,23 +135,24 @@ export default function SiteHeader() {
                   </svg>
                 </span>
                 <span>Book an Appointment</span>
-              </a>
+              </button>
             </div>
           </nav>
 
           {/* Mobile menu button and appointment CTA */}
           <div className="flex items-center space-x-2">
-            <a 
-              href="https://www.facebook.com/Doctor.Priyankas.Clinic" 
-              target="_blank" 
-              rel="noopener noreferrer"
+            <button 
+              onClick={() => {
+                setIsAppointmentModalOpen(true);
+                setIsMenuOpen(false);
+              }}
               className="md:hidden inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-pink-500 rounded-full hover:bg-pink-600 transition-colors whitespace-nowrap"
             >
               <svg className="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
               </svg>
               Appointment
-            </a>
+            </button>
             <button 
               className="md:hidden p-2 text-gray-700 hover:text-pink-600 focus:outline-none menu-button transition-colors"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -184,22 +185,18 @@ export default function SiteHeader() {
       <div 
         className={`md:hidden mobile-menu fixed top-0 left-0 h-full w-4/5 max-w-xs bg-white shadow-2xl border-r border-pink-100 z-50 transform transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}
       >
-        <div className="pt-24 pb-6 h-full overflow-y-auto flex flex-col">
-          {/* Mobile appointment CTA */}
-          <div className="px-5 mb-4">
-            <a 
-              href="https://www.facebook.com/Doctor.Priyankas.Clinic" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="w-full flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-gradient-to-r from-pink-500 to-pink-600 rounded-full hover:from-pink-600 hover:to-pink-700 transition-colors"
-            >
-              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-              </svg>
-              Book an Appointment
-            </a>
+        <div className="pt-20 pb-6 h-full overflow-y-auto flex flex-col">
+          {/* Logo */}
+          <div className="px-5 py-4 border-b border-gray-100 bg-pink-50 flex justify-center">
+            <img 
+              src="/assets/logo/dr-priyankas-clinic-logo.png" 
+              alt="Dr. Priyanka's Clinic Logo" 
+              className="h-20 w-auto"
+            />
           </div>
-          <div className="px-5 py-2 space-y-1 flex-1">
+          
+          {/* Navigation Links */}
+          <div className="px-5 py-4 space-y-1 flex-1">
           <NavLink 
             to="/" 
             end 
@@ -244,14 +241,36 @@ export default function SiteHeader() {
           </NavLink>
           <NavLink 
             to="/contact" 
-            className="block px-4 py-3 rounded-lg text-lg font-medium text-gray-800 hover:bg-pink-50 hover:text-pink-600 transition-colors mb-4"
+            className="block px-4 py-3 rounded-lg text-lg font-medium text-gray-800 hover:bg-pink-50 hover:text-pink-600 transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
             Contact
           </NavLink>
+          
+          {/* Mobile appointment CTA - Moved to bottom */}
+          <div className="px-4 py-3 mt-2">
+            <button 
+              onClick={() => {
+                setIsAppointmentModalOpen(true);
+                setIsMenuOpen(false);
+              }}
+              className="w-full flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-gradient-to-r from-pink-500 to-pink-600 rounded-full hover:from-pink-600 hover:to-pink-700 transition-colors"
+            >
+              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              </svg>
+              Book an Appointment
+            </button>
+          </div>
         </div>
         </div>
       </div>
+      
+      {/* Appointment Modal */}
+      <AppointmentModal 
+        isOpen={isAppointmentModalOpen} 
+        onClose={() => setIsAppointmentModalOpen(false)} 
+      />
     </header>
   )
 }

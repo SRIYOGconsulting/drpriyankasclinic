@@ -35,10 +35,10 @@ export default function HeroSlider() {
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${i === index ? 'opacity-100' : 'opacity-0'}`}
           />
         ))}
-        {/* Dark overlay gradient */}
+       
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         
-        {/* Content */}
+    
         <div className="absolute inset-0 flex items-end md:items-center">
           <div className="max-w-6xl w-full mx-auto px-4 py-12 md:py-0">
             <div className="max-w-2xl text-white">
@@ -79,7 +79,7 @@ export default function HeroSlider() {
             </div>
           </div>
         </div>
-        {/* Navigation Dots */}
+       
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3">
           {slides.map((_, i) => (
             <button 

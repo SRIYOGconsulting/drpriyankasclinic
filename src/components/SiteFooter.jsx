@@ -2,7 +2,7 @@ export default function SiteFooter() {
   return (
     <footer className="mt-16 relative overflow-hidden bg-gradient-to-b from-pink-50 to-amber-50">
       {/* Main Footer Content */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12 grid gap-8 grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 text-sm text-slate-700">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10 sm:py-14 grid gap-10 grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 text-base text-slate-700">
         {/* Column 1: About with Logo */}
         <div className="col-span-2 lg:col-span-2 text-center sm:text-left">
           <div className="flex flex-col items-center sm:items-start mb-6">
@@ -12,12 +12,12 @@ export default function SiteFooter() {
               className="h-24 w-auto mb-4"
             />
             <h2 className="text-2xl font-bold text-slate-900">Dr. Priyanka's Clinic</h2>
-            <p className="text-pink-600 font-medium">Gynecology & Obstetrics Care</p>
+            <p className="text-pink-600 font-medium">Gynecology </p>
           </div>
-          <p className="text-slate-600 mb-4">
+          <p className="text-slate-700 mb-6 text-[15px] leading-relaxed">
             Dr. Priyanka's Clinic is a leading healthcare provider in Birtamode, Jhapa, Nepal, offering comprehensive gynecological and obstetric care.
           </p>
-          <div className="flex items-center justify-center gap-4 mt-6 flex-wrap">
+          <div className="flex items-center justify-center gap-5 mt-8 flex-wrap">
             <style jsx global>{`
               @media (max-width: 640px) {
                 .social-icon {
@@ -51,17 +51,17 @@ export default function SiteFooter() {
               </svg>
             </a>
             
-            {/* Messenger */}
-            <a href="https://m.me/" target="_blank" rel="noreferrer" aria-label="Messenger" className="social-icon text-pink-600 hover:text-white hover:bg-pink-600 transition-all duration-300">
+            {/* YouTube */}
+            <a href="https://youtube.com" target="_blank" rel="noreferrer" aria-label="YouTube" className="social-icon text-pink-600 hover:text-white hover:bg-pink-600 transition-all duration-300">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
-                <path d="M12 2C6.36 2 2 6.13 2 11.7c0 2.91 1.19 5.44 3.14 7.17.16.13.26.35.3.57l.26 1.85c.05.37.4.62.77.53l2.16-.5c.22-.05.45-.15.65-.3 1.18-.8 2.61-1.28 4.15-1.28h.01c5.64 0 10.24-4.13 10.24-9.2C22 6.13 17.64 2 12 2zm6.44 7.06l-3.1 4.83c-.2.3-.57.39-.87.2l-2.6-1.5c-.3-.17-.7-.17-1 0l-3.85 2.51c-.25.16-.57.1-.75-.15l-1.24-1.9c-.2-.3-.15-.7.1-.95l6.15-6.33c.2-.2.5-.2.7 0l6.15 6.33c.3.3.3.75 0 1.06z"/>
+                <path d="M23.5 7.2c0-.2 0-.4-.1-.6-.1-.2-.2-.4-.4-.5-.2-.2-.4-.3-.6-.4-.2 0-.4-.1-.6-.1-2.7-.2-5.4-.3-8.1-.3-2.7 0-5.4.1-8.1.3-.2 0-.4.1-.6.1-.2.1-.4.3-.6.4-.2.2-.3.4-.4.6 0 .2-.1.4-.1.6v9.6c0 .2 0 .4.1.6.1.2.2.4.4.5.2.2.4.3.6.4.2 0 .4.1.6.1 2.7.2 5.4.3 8.1.3 2.7 0 5.4-.1 8.1-.3.2 0 .4-.1.6-.1.2-.1.4-.3.6-.4.2-.2.3-.4.4-.6 0-.2.1-.4.1-.6V7.2zm-13 7.7V8.2l6.8 3.4-6.8 3.3z"/>
               </svg>
             </a>
             
-            {/* TikTok */}
-            <a href="https://tiktok.com" target="_blank" rel="noreferrer" aria-label="TikTok" className="social-icon text-pink-600 hover:text-white hover:bg-pink-600 transition-all duration-300">
+            {/* LinkedIn */}
+            <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="social-icon text-pink-600 hover:text-white hover:bg-pink-600 transition-all duration-300">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
-                <path d="M16.6 5.82s.51.5 0 0A4.278 4.278 0 0 1 15.54 3h-3.09v12.4a2.592 2.592 0 0 1-5.238 0c0-1.24.96-2.25 2.16-2.6V9.66c-3.68.46-6.47 3.69-6.47 7.41 0 4.09 3.24 7.42 7.23 7.42 4.02 0 7.23-3.36 7.23-7.42V8.41c1.17.6 2.21 1.1 3.5 1.1.36 0 .7 0 1.02-.05V7.05c-.6.21-1.27.33-1.96.33-2.31 0-4.28-1.48-4.28-3.56V5.82z"/>
+                <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3v9zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.86-1.38-1.86-.88 0-1.87.61-1.87 3.26V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.65.94 3.65 4.2V19z"/>
               </svg>
             </a>
             
@@ -76,8 +76,8 @@ export default function SiteFooter() {
 
         {/* Column 2: Quick Links */}
         <div className="lg:col-span-1 pl-2 sm:pl-0">
-          <h3 className="font-semibold text-slate-900 mb-3 text-lg text-left">Quick Links</h3>
-          <ul className="space-y-2 pl-1">
+          <h3 className="font-bold text-slate-900 mb-3 text-xl text-left">Quick Links</h3>
+          <ul className="space-y-3 pl-1 text-[15px]">
             <li><a href="/" className="hover:text-pink-600 transition-colors">Home</a></li>
             <li><a href="/about" className="hover:text-pink-600 transition-colors">About Us</a></li>
             <li><a href="/services" className="hover:text-pink-600 transition-colors">Services</a></li>
@@ -88,8 +88,8 @@ export default function SiteFooter() {
 
         {/* Column 3: Browse More */}
         <div className="lg:col-span-1 pl-2 sm:pl-0">
-          <h3 className="font-semibold text-slate-900 mb-3 text-lg text-left">Browse More</h3>
-          <div className="grid grid-cols-1 gap-y-2 text-sm pl-1">
+          <h3 className="font-bold text-slate-900 mb-3 text-xl text-left">Browse More</h3>
+          <div className="grid grid-cols-1 gap-y-3 pl-1 text-[15px]">
             <a href="https://www.cancer.org/" target="_blank" rel="noopener noreferrer" className="hover:text-pink-600 transition-colors block">
               American Cancer Society
             </a>
@@ -113,32 +113,32 @@ export default function SiteFooter() {
 
         {/* Column 4: Contact & Book Appointment */}
         <div className="col-span-2 lg:col-span-1 text-left">
-          <h3 className="font-semibold text-slate-900 mb-3 text-lg">Contact Us</h3>
-          <ul className="space-y-3 mb-6 w-full">
+          <h3 className="font-bold text-slate-900 mb-3 text-xl">Contact Us</h3>
+          <ul className="space-y-4 mb-8 w-full text-[15px]">
             <li className="flex items-center gap-3 text-left">
-              <svg className="w-5 h-5 text-pink-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="h-6 w-6 text-pink-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
-              <span className="text-sm">Birtamode-8, Jhapa, Nepal</span>
+              <span>Birtamode-8, Jhapa, Nepal</span>
             </li>
             <li className="flex items-center gap-3 text-left">
-              <svg className="w-5 h-5 text-pink-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="h-6 w-6 text-pink-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
-              <a href="tel:+9779819090115" className="hover:text-pink-600 transition-colors text-sm">+977 981 9090 115</a>
+              <a href="tel:+9779819090115" className="hover:text-pink-600 transition-colors">+977 981 9090 115</a>
             </li>
             <li className="flex items-center gap-3 text-left">
-              <svg className="w-5 h-5 text-pink-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="h-6 w-6 text-pink-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
-              <a href="mailto:info@drpriyankasclinic.com" className="hover:text-pink-600 transition-colors text-sm">info@drpriyankasclinic.com</a>
+              <a href="mailto:info@drpriyankasclinic.com" className="hover:text-pink-600 transition-colors">info@drpriyankasclinic.com</a>
             </li>
           </ul>
           {/* Book Appointment Section */}
           <div className="mt-6">
-            <h3 className="font-semibold text-slate-900 mb-3 text-lg">Book an Appointment</h3>
-            <p className="text-slate-600 mb-3">
+            <h3 className="font-bold text-slate-900 mb-3 text-xl">Book an Appointment</h3>
+            <p className="text-slate-700 mb-4 text-[15px] leading-relaxed">
               We offer comprehensive gynecological and obstetric care, including family planning, ultrasound, and fertility treatments.
             </p>
             <a href="/services" className="inline-block text-pink-600 hover:text-pink-700 font-medium">
@@ -151,23 +151,23 @@ export default function SiteFooter() {
       {/* Copyright Section */}
       <div className="bg-white/80 border-t border-pink-200 py-4">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="flex flex-col space-y-3">
-            <div className="flex flex-col md:flex-row justify-between items-center text-sm md:text-xs text-slate-600 space-y-2 md:space-y-0">
-              <div className="text-center md:text-left mb-2 md:mb-0 font-medium">
-                &copy; {new Date().getFullYear()} Dr. Priyanka's Clinic. Birtamode, Jhapa, Nepal
-                
+          <div className="flex flex-col space-y-3 w-full">
+            <div className="flex flex-col md:flex-row justify-between items-center text-sm md:text-xs text-slate-700 space-y-2 md:space-y-0 w-full">
+              <div className="text-center md:text-left mb-2 md:mb-0">
+                <div className="font-medium text-slate-800">&copy; {new Date().getFullYear()} Dr. Priyanka's Clinic.</div>
+                <div className="text-slate-600">Birtamode, Jhapa, Nepal</div>
               </div>
-              <div className="flex flex-wrap justify-center items-center gap-2 font-medium">
-                <a href="/terms" className="hover:text-pink-600 transition-colors whitespace-nowrap">Terms of Service</a>
-                <span className="hidden sm:inline">|</span>
-                <a href="/privacy" className="hover:text-pink-600 transition-colors whitespace-nowrap">Privacy Policy</a>
-                <span className="hidden sm:inline">|</span>
-                <a href="/disclaimer" className="hover:text-pink-600 transition-colors whitespace-nowrap">Disclaimer</a>
-                <span className="hidden sm:inline">|</span>
-                <div className="text-center text-xs text-slate-500">
-              Built with: <a href="https://broadpress.org/" target="_blank" rel="noopener noreferrer" className="font-medium text-pink-600 hover:underline">Broadpress</a>
+              <div className="flex flex-wrap justify-center items-center gap-2">
+                <a href="/terms" className="text-slate-700 hover:text-pink-600 transition-colors whitespace-nowrap text-sm">Terms of Service</a>
+                <span className="text-slate-400">|</span>
+                <a href="/privacy" className="text-slate-700 hover:text-pink-600 transition-colors whitespace-nowrap text-sm">Privacy Policy</a>
+                <span className="text-slate-400">|</span>
+                <a href="/disclaimer" className="text-slate-700 hover:text-pink-600 transition-colors whitespace-nowrap text-sm">Disclaimer</a>
+              </div>
             </div>
-              </div>
+            <div className="w-full text-center text-sm text-slate-600 pt-2 border-t border-slate-200">
+              <span className="text-slate-700">Built with: </span>
+              <a href="https://broadpress.org/" target="_blank" rel="noopener noreferrer" className="font-medium text-pink-600 hover:underline">BROADPRESS</a>
             </div>
             
           </div>
