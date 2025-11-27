@@ -16,28 +16,29 @@ export default function Home() {
 
             <p className="mt-4 text-slate-700">At Dr. Priyanka's Clinic, we offer a wide range of Gynecological Services, including cancer prevention, screening, and diagnosis. Our services encompass HPV vaccination, HPV DNA testing, PAP smears, and colposcopy, along with advanced diagnostic tests like CA 125, CEA, CA 19-9 blood tests, breast ultrasound, transvaginal sonography (TVS), and cervical and endometrial biopsies.</p>
             <div className="mt-6 flex flex-wrap items-center gap-4">
-              <div className="flex items-center gap-3">
+              <div className="flex flex-col items-center text-center w-full mt-6">
                 <img 
                   src="/assets/home/drpriyanka.png" 
                   alt="Dr. Priyanka Katwal - Gynecologist" 
-                  className="h-16 w-16 rounded-full border-2 border-pink-200 object-cover"
+                  className="h-32 w-32 rounded-full border-4 border-pink-200 object-cover shadow-md mx-auto"
                 />
-                <div>
-                  <div className="font-semibold text-slate-900">Dr. Priyanka Katwal</div>
-                  <div className="text-slate-600 text-sm">Gynecologist & Obstetrician</div>
+                <div className="mt-4">
+                  <h2 className="text-2xl font-bold text-slate-900">Dr. Priyanka Katwal</h2>
+                  <p className="text-pink-600 font-medium">Gynecologist</p>
+                  
                 </div>
               </div>
               
-              <div className="flex flex-wrap items-center gap-3">
+              <div className="flex flex-col sm:flex-row justify-center w-full mt-5 gap-3 max-w-md mx-auto">
                 <a 
                   href="/contact" 
-                  className="bg-pink-600 hover:bg-pink-700 text-white px-5 py-2.5 rounded-full text-sm font-medium whitespace-nowrap transition-colors"
+                  className="bg-pink-600 hover:bg-pink-700 text-white px-8 py-3 rounded-full text-base font-medium whitespace-nowrap transition-colors shadow-md hover:shadow-lg transform hover:-translate-y-0.5 text-center w-full"
                 >
-                  Book Appointment
+                Book an Appointment
                 </a>
                 <a 
                   href="/services" 
-                  className="text-pink-700 hover:text-pink-800 font-medium flex items-center gap-1 group transition-colors"
+                  className="text-pink-700 hover:text-white border border-pink-200 hover:bg-pink-600 font-medium flex items-center justify-center gap-1 group transition-all rounded-full px-8 py-3 w-full text-center"
                 >
                   Our Services
                   <span className="group-hover:translate-x-1 transition-transform">→</span>
@@ -57,17 +58,41 @@ export default function Home() {
       <section className="py-16 bg-slate-50">
         <div className="max-w-6xl mx-auto px-4">
           {/* Section title with decorations */}
-          <div className="mb-12 text-center relative">
+          <div className="mb-12 text-center">
             <div className="relative inline-block">
-              <img src="/assets/section/section-back-icon.png" alt="section-back" className="absolute -top-10 left-1/2 -translate-x-1/2 opacity-10 w-20 h-20" />
-              <h5 className="text-pink-600 mb-2">Departments</h5>
-              <h1 className="text-3xl md:text-4xl font-bold text-slate-900">Gynaecology Services</h1>
-              <div className="mt-3 flex items-center justify-center">
-                <img src="/assets/shape/section-title-line.png" alt="section-line" className="h-2 w-auto" />
-              </div>
+              <h5 className="text-pink-600 text-lg font-medium mb-2">Our Services</h5>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Comprehensive Women's Health Care</h2>
+              <div className="w-20 h-1 bg-gradient-to-r from-pink-500 to-amber-400 mx-auto rounded-full"></div>
             </div>
           </div>
-          <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-6 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 px-4 sm:px-0">
+            {/* Single column on mobile, full width */}
+            <style jsx global>{`
+              @media (max-width: 640px) {
+                .service-card {
+                  width: 100%;
+                  max-width: 100%;
+                  margin: 0 auto 1.5rem;
+                  height: 70vh;
+                  max-height: 75vh;
+                  min-height: 65vh;
+                  display: flex;
+                  flex-direction: column;
+                }
+                .service-card .service-thumb {
+                  flex: 0 0 65%;
+                  height: 65%;
+                }
+                .service-card .service-thumb img {
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+                .service-card .service-body {
+                  flex: 1;
+                }
+              }
+            `}</style>
             {[
               {title:'HPV Vaccination', img:'/assets/services/HPV-vaccination.jpg', desc:'The HPV (Human Papillomavirus) vaccination is a vital preventive measure against certain types of HPV.'},
               {title:'HPV DNA Test', img:'/assets/services/HPV-DNA-Test.jpg', desc:'A screening used to detect high-risk types of HPV that can lead to cervical cancer.'},
@@ -76,11 +101,11 @@ export default function Home() {
               {title:'Breast USG', img:'/assets/services/Breast-USG.jpg', desc:'Non-invasive imaging technique to examine breast tissue for abnormalities.'},
               {title:'Endometrial Biopsy', img:'/assets/services/Cervical-Endometrial-Biopsy.jpg', desc:'Diagnostic procedures to examine cervix and uterine lining tissues.'},
             ].map((s)=> (
-              <div key={s.title} className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden text-center flex flex-col h-full">
+              <div key={s.title} className="service-card bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden text-center flex flex-col h-full w-full">
                 <div className="service-thumb">
                   <img src={s.img} alt={s.title} className="w-full h-48 object-cover" />
                 </div>
-                <div className="px-6 pb-6 -mt-4 flex-1 flex">
+                <div className="service-body px-6 pb-6 -mt-4 flex-1 flex">
                   <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5 flex flex-col w-full">
                     <h3 className="text-xl font-semibold text-slate-900">{s.title}</h3>
                     <p className="text-sm text-slate-700 mt-2">{s.desc}</p>
@@ -99,22 +124,26 @@ export default function Home() {
       {/* Safe Abortion Practices */}
 <section className="py-16 bg-gradient-to-b from-pink-50 to-amber-50">
   <div className="max-w-6xl mx-auto px-4">
-    <div className="grid md:grid-cols-3 gap-6">
+    <div className="text-center">
+      <h2 className="text-3xl font-bold text-slate-900 mb-2">Safe Abortion Practices</h2>
+      <div className="w-20 h-1 bg-pink-500 mx-auto mb-6"></div>
+      <a 
+        href="https://www.facebook.com/Doctor.Priyankas.Clinic" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="inline-flex items-center justify-center bg-pink-600 hover:bg-pink-700 text-white font-medium px-5 py-2.5 rounded-lg transition-colors duration-200"
+      >
+        Book an Appointment
+        <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+        </svg>
+      </a>
+    </div>
+    <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mt-8">
       {/* Main Info Card */}
       <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 border border-pink-100 shadow-lg">
         <h3 className="text-2xl font-bold mb-3 text-slate-800">Safe Abortion Practices</h3>
         <p className="text-slate-600 mb-4">Safe procedures with care and privacy.</p>
-        <a 
-          href="https://www.facebook.com/Doctor.Priyankas.Clinic" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="inline-flex items-center justify-center bg-pink-600 hover:bg-pink-700 text-white font-medium px-5 py-2.5 rounded-lg transition-colors duration-200"
-        >
-          Book an Appointment
-          <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-          </svg>
-        </a>
       </div>
 
       {/* Stats Cards */}
@@ -136,14 +165,13 @@ export default function Home() {
       {/* Latest Updates */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4">
-          {/* Section title with decorations + blog button */}
-          <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
-            <div className="mb-6 md:mb-0">
-              <h5 className="text-pink-600 text-sm font-medium mb-2">BLOG</h5>
-              <h1 className="text-3xl md:text-4xl font-bold text-slate-900">Latest Updates</h1>
-              <div className="w-12 h-1 bg-pink-500 mt-3"></div>
-            </div>
-            <div>
+          {/* Section title with decorations */}
+          <div className="text-center mb-12">
+            <h5 className="text-pink-600 text-sm font-medium mb-2">BLOG</h5>
+            <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">Latest Updates</h1>
+            <div className="w-12 h-1 bg-pink-500 mx-auto"></div>
+            
+            <div className="mt-8">
               <a 
                 href="https://drpriyankasclinic.com/blog.htm" 
                 className="inline-flex items-center bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-full text-sm font-medium transition-colors"
@@ -261,15 +289,20 @@ export default function Home() {
               </div>
               
               <div className="mt-8 pt-6 border-t border-gray-200">
-                <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
-                  <h4 className="font-medium text-slate-900 mb-2">Emergency Contact</h4>
-                  <a 
-                    href="tel:+9779819090115" 
-                    className="inline-block bg-slate-900 hover:bg-slate-800 text-white px-4 py-2 rounded text-sm font-medium transition-colors"
-                  >
-                    Make a Call
-                  </a>
-                  <p className="text-xs text-slate-500 mt-2">Emergency number <a href="tel:+9779819090115" className="text-pink-600 hover:underline">981 9090 115</a></p>
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center">
+                  <h4 className="text-xl font-semibold text-slate-900 mb-4">Emergency Contact</h4>
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a 
+                      href="tel:+9779819090115" 
+                      className="inline-flex items-center justify-center bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full text-base font-medium transition-colors whitespace-nowrap w-full sm:w-auto"
+                    >
+                      <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                      </svg>
+                      Call Now: +977 981-9090115
+                    </a>
+                  </div>
+                  <p className="text-sm text-slate-600 mt-3">24/7 Emergency Services Available</p>
                 </div>
               </div>
             </div>

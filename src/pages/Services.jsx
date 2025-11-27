@@ -1,14 +1,26 @@
 const ServiceItem = ({ service: s }) => (
-  <div className="service-box-3 text-center flex flex-col h-full">
-    <div className="service-thumb">
-      <img src={s.img} alt={s.title} className="w-full h-48 object-cover rounded-t-xl" />
-    </div>
-    <div className="px-6 pb-6 -mt-4 flex-1 flex">
-      <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5 flex flex-col w-full">
-        <h3 className="text-xl font-semibold text-slate-900">{s.title}</h3>
-        <p className="text-sm text-slate-700 mt-2">{s.desc}</p>
-        <div className="mt-auto pt-4">
-          <a href="https://www.facebook.com/Doctor.Priyankas.Clinic" target="_blank" rel="noopener noreferrer" className="inline-flex justify-center items-center w-full px-4 py-3 rounded-full border border-pink-600 text-pink-700 hover:bg-pink-50 text-sm font-medium">Book an Appointment</a>
+  <div className="w-full h-full">
+    <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden h-full flex flex-col">
+      <div className="service-thumb">
+        <img 
+          src={s.img} 
+          alt={s.title} 
+          className="w-full h-48 sm:h-56 md:h-48 lg:h-52 object-cover" 
+          loading="lazy"
+        />
+      </div>
+      <div className="p-5 flex-1 flex flex-col">
+        <h3 className="text-lg sm:text-xl font-semibold text-slate-900 mb-2">{s.title}</h3>
+        <p className="text-sm text-slate-600 flex-1">{s.desc}</p>
+        <div className="mt-4 pt-3 border-t border-gray-100">
+          <a 
+            href="https://www.facebook.com/Doctor.Priyankas.Clinic" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="block w-full text-center px-4 py-2.5 rounded-full border-2 border-pink-600 text-pink-600 hover:bg-pink-50 text-sm font-medium transition-colors"
+          >
+            Book an Appointment
+          </a>
         </div>
       </div>
     </div>
@@ -16,73 +28,82 @@ const ServiceItem = ({ service: s }) => (
 );
 
 const Section = ({ small, title, items, isCustomGrid = false, customLayout = false }) => (
-  <section className="py-16 bg-slate-50">
-    <div className="max-w-6xl mx-auto px-4">
-      <div className="grid md:grid-cols-3 gap-8 items-end mb-10">
+  <section className="py-12 sm:py-16 bg-slate-50">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="grid md:grid-cols-3 gap-6 md:gap-8 items-end mb-8 md:mb-10">
         <div className="md:col-span-2 relative">
-          <img src="/assets/section/section-back-icon.png" alt="section-back" className="absolute -top-10 opacity-10 w-20 h-20 md:left-0" />
-          <h5 className="text-pink-600 mb-2">{small}</h5>
-          <h3 className="text-2xl md:text-3xl font-bold text-slate-900">{title}</h3>
-          <div className="mt-3"><img src="/assets/shape/section-title-line.png" className="h-2" alt="line" /></div>
+          <img 
+            src="/assets/section/section-back-icon.png" 
+            alt="" 
+            className="hidden md:block absolute -top-10 opacity-10 w-16 h-16 md:w-20 md:h-20 left-0" 
+            aria-hidden="true"
+          />
+          {small && <h5 className="text-pink-600 text-sm sm:text-base font-medium mb-2">{small}</h5>}
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 leading-tight">{title}</h2>
+          <div className="mt-3">
+            <img 
+              src="/assets/shape/section-title-line.png" 
+              alt="" 
+              className="h-1.5 sm:h-2 w-auto" 
+              aria-hidden="true"
+            />
+          </div>
         </div>
         <div className="hidden md:flex justify-end pb-2">
-          <a href="https://www.facebook.com/Doctor.Priyankas.Clinic" target="_blank" rel="noopener noreferrer" className="inline-flex items-center bg-pink-600 hover:bg-pink-700 text-white px-5 py-3 rounded-full"><span className="mr-2 text-lg">+</span>Book an Appointment</a>
+          <a 
+            href="https://www.facebook.com/Doctor.Priyankas.Clinic" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="inline-flex items-center bg-pink-600 hover:bg-pink-700 text-white px-5 py-2.5 sm:py-3 rounded-full transition-colors"
+          >
+            <span className="mr-2 text-lg">+</span>Book an Appointment
+          </a>
         </div>
       </div>
-      {isCustomGrid ? (
-        <div className="space-y-8">
-          {customLayout ? (
-            // Custom layout for Premium Care section (3-1)
-            <>
-              <div className="grid gap-6 sm:grid-cols-3">
-                {/* First three services */}
-                {items.slice(0, 3).map((s) => (
-                  <div key={s.title} className="col-span-1">
+      <div className="mt-8 md:mt-10">
+        {isCustomGrid ? (
+          <div className="space-y-8">
+            {customLayout ? (
+              // Custom layout for specific sections (3-1)
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {items.map((s, index) => (
+                  <div 
+                    key={s.title} 
+                    className={`${index >= 3 ? 'sm:col-span-2 lg:col-span-1 lg:col-start-2' : ''}`}
+                  >
                     <ServiceItem service={s} />
                   </div>
                 ))}
-                
-                {/* Fourth service spans all columns on small screens, single column on larger screens */}
-                <div className="col-span-3 sm:col-span-1 sm:col-start-2">
-                  <ServiceItem service={items[3]} />
-                </div>
               </div>
-            </>
-          ) : (
-            // Standard 2-3-3 layout for other sections
-            <>
-              {/* First row with 2 services centered */}
-              <div className="grid grid-cols-6 gap-6">
-                <div className="col-span-6 sm:col-start-2 sm:col-span-2">
-                  <ServiceItem service={items[0]} />
-                </div>
-                <div className="col-span-6 sm:col-span-2">
-                  <ServiceItem service={items[1]} />
-                </div>
-              </div>
-              
-              {/* Next two rows with 3 services each */}
-              <div className="grid gap-6 sm:grid-cols-3">
-                {items.slice(2, 5).map((s) => (
+            ) : (
+              // Standard responsive grid
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {items.map((s) => (
                   <ServiceItem key={s.title} service={s} />
                 ))}
               </div>
-              
-              <div className="grid gap-6 sm:grid-cols-3">
-                {items.slice(5).map((s) => (
-                  <ServiceItem key={s.title} service={s} />
-                ))}
-              </div>
-            </>
-          )}
+            )}
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {items.map((s) => (
+              <ServiceItem key={s.title} service={s} />
+            ))}
+          </div>
+        )}
+        
+        {/* Mobile book appointment button */}
+        <div className="mt-8 md:hidden text-center">
+          <a 
+            href="https://www.facebook.com/Doctor.Priyankas.Clinic" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="inline-flex items-center bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-full transition-colors"
+          >
+            <span className="mr-2 text-lg">+</span>Book an Appointment
+          </a>
         </div>
-      ) : (
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {items.map((s) => (
-            <ServiceItem key={s.title} service={s} />
-          ))}
-        </div>
-      )}
+      </div>
     </div>
   </section>
 )
@@ -153,8 +174,7 @@ export default function Services() {
         img: '/assets/services/Genetic-Screening.jpg', 
         desc: 'Comprehensive programs focused on maintaining and improving overall health.'
       },
-    ],
-    customLayout: true, // Flag to identify custom layout for this section
+    ]
   }
 
   return (
