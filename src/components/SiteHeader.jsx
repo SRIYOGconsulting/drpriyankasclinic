@@ -71,12 +71,12 @@ export default function SiteHeader() {
 
       {/* Main navigation */}
 <div className="bg-white border-b border-gray-100">
-        <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-          <Link to="/" className="flex items-center ml-2 md:ml-0">
+        <div className="container mx-auto px-3 sm:px-4 py-2 sm:py-3 flex items-center justify-between">
+          <Link to="/" className="flex items-center ml-1 sm:ml-2 md:ml-0">
             <img 
               src="/assets/logo/dr-priyankas-clinic-logo.png" 
               alt="Dr. Priyanka's Clinic Logo" 
-              className="h-14 w-auto"
+              className="h-14 sm:h-16 w-auto"  // Increased from h-10 sm:h-12 to h-14 sm:h-16
             />
           </Link>
 

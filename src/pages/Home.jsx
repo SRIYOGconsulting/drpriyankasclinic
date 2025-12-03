@@ -1,6 +1,23 @@
-import HeroSlider from '../components/HeroSlider'
+import { useEffect } from 'react';
+import HeroSlider from '../components/HeroSlider';
+import OptimizedImage from '../components/OptimizedImage';
 
 export default function Home() {
+  // Smooth scroll for anchor links
+  useEffect(() => {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  }, []);
   return (
     <div>
       {/* Hero Slider */}
@@ -17,10 +34,13 @@ export default function Home() {
             <p className="mt-4 text-slate-700">At Dr. Priyanka's Clinic, we offer a wide range of Gynecological Services, including cancer prevention, screening, and diagnosis. Our services encompass HPV vaccination, HPV DNA testing, PAP smears, and colposcopy, along with advanced diagnostic tests like CA 125, CEA, CA 19-9 blood tests, breast ultrasound, transvaginal sonography (TVS), and cervical and endometrial biopsies.</p>
             <div className="mt-6 flex flex-wrap items-center gap-4">
               <div className="flex flex-col items-center text-center w-full mt-6">
-                <img 
-                  src="/assets/home/drpriyanka.png" 
-                  alt="Dr. Priyanka Katwal - Gynecologist" 
-                  className="h-32 w-32 rounded-full border-4 border-pink-200 object-cover shadow-md mx-auto"
+                <OptimizedImage
+                  src="/assets/home/drpriyanka.png"
+                  alt="Dr. Priyanka Katwal - Gynecologist"
+                  width={128}
+                  height={128}
+                  className="h-32 w-32 rounded-full border-4 border-pink-200 object-cover shadow-md mx-auto hover:scale-105 transition-transform duration-300"
+                  containerClassName="mx-auto"
                 />
                 <div className="mt-4">
                   <h2 className="text-2xl font-bold text-slate-900">Dr. Priyanka Katwal</h2>
@@ -32,9 +52,10 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row justify-center w-full mt-5 gap-3 max-w-md mx-auto">
                 <a 
                   href="/contact" 
-                  className="bg-pink-600 hover:bg-pink-700 text-white px-8 py-3 rounded-full text-base font-medium whitespace-nowrap transition-colors shadow-md hover:shadow-lg transform hover:-translate-y-0.5 text-center w-full"
+                  aria-label="Book an appointment with Dr. Priyanka"
+                  className="bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-full text-sm sm:text-base font-medium whitespace-nowrap transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 text-center w-full focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2"
                 >
-                Book an Appointment
+                  Book an Appointment
                 </a>
                 <a 
                   href="/services" 
@@ -47,7 +68,14 @@ export default function Home() {
             </div>
           </div>
           <div className="hidden md:block">
-            <img src="/assets/home/specialized.jpg" alt="Specialized Gynecology" className="rounded-xl shadow-sm border border-pink-100 w-full h-auto" />
+            <OptimizedImage
+              src="/assets/home/specialized.jpg"
+              alt="Specialized Gynecology Services"
+              width={600}
+              height={400}
+              className="rounded-xl shadow-sm border border-pink-100 w-full h-auto hover:scale-[1.02] transition-transform duration-500"
+              containerClassName="w-full h-full"
+            />
           </div>
         </div>
       </section>
@@ -103,14 +131,29 @@ export default function Home() {
             ].map((s)=> (
               <div key={s.title} className="service-card bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden text-center flex flex-col h-full w-full">
                 <div className="service-thumb">
-                  <img src={s.img} alt={s.title} className="w-full h-48 object-cover" />
+                  <OptimizedImage
+                    src={s.img}
+                    alt={s.title}
+                    width={400}
+                    height={192}
+                    className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+                    containerClassName="w-full h-48"
+                  />
                 </div>
                 <div className="service-body px-6 pb-6 -mt-4 flex-1 flex">
-                  <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5 flex flex-col w-full">
+                  <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5 flex flex-col w-full h-full">
                     <h3 className="text-xl font-semibold text-slate-900">{s.title}</h3>
-                    <p className="text-sm text-slate-700 mt-2">{s.desc}</p>
-                    <div className="mt-auto pt-4">
-                      <a href="https://www.facebook.com/Doctor.Priyankas.Clinic" target="_blank" rel="noopener noreferrer" className="inline-flex justify-center items-center w-full px-4 py-3 rounded-full border border-pink-600 text-pink-700 hover:bg-pink-50 text-sm font-medium">Book an Appointment</a>
+                    <p className="text-sm text-slate-700 mt-2 mb-2">{s.desc}</p>
+                    <div className="mt-auto">
+                      <a 
+                        href="https://www.facebook.com/Doctor.Priyankas.Clinic" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        aria-label={`Book appointment for ${s.title}`}
+                        className="inline-flex justify-center items-center w-full px-3 py-2 rounded-full border border-pink-600 text-pink-700 hover:bg-pink-50 hover:text-pink-800 text-xs sm:text-sm font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2"
+                      >
+                        Book Appointment
+                      </a>
                     </div>
                   </div>
                 </div>
