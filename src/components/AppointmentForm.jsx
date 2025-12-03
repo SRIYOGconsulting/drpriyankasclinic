@@ -289,8 +289,17 @@ export default function AppointmentModal({ isOpen, onClose }) {
                   </div>
                 </div>
 
+                {/* Important Information */}
+                <div className="mt-6 p-4 bg-blue-50 border-l-4 border-blue-400 rounded-r">
+                  <h4 className="text-sm font-semibold text-blue-800 mb-2">Important Information</h4>
+                  <ul className="text-sm text-blue-700 space-y-1 list-disc pl-5">
+                    <li>Please arrive 15 minutes before your scheduled appointment.</li>
+                    <li>Bring any previous medical records or test results related to your condition.</li>
+                  </ul>
+                </div>
+
                 {/* Form Actions */}
-                <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end sm:gap-4 pt-4">
+                <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end sm:gap-4 pt-6">
                   <button
                     type="button"
                     onClick={onClose}

@@ -185,18 +185,18 @@ export default function SiteHeader() {
       <div 
         className={`md:hidden mobile-menu fixed top-0 left-0 h-full w-4/5 max-w-xs bg-white shadow-2xl border-r border-pink-100 z-50 transform transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}
       >
-        <div className="pt-20 pb-6 h-full overflow-y-auto flex flex-col">
+        <div className="pt-6 pb-6 h-full overflow-y-auto flex flex-col">
           {/* Logo */}
-          <div className="px-5 py-4 border-b border-gray-100 bg-pink-50 flex justify-center">
+          <div className="px-4 pt-2 pb-3 border-b border-gray-100 bg-pink-50 flex justify-center">
             <img 
               src="/assets/logo/dr-priyankas-clinic-logo.png" 
               alt="Dr. Priyanka's Clinic Logo" 
-              className="h-20 w-auto"
+              className="h-16 w-auto"
             />
           </div>
           
           {/* Navigation Links */}
-          <div className="px-5 py-4 space-y-1 flex-1">
+          <div className="px-4 py-3 space-y-2 flex-1">
           <NavLink 
             to="/" 
             end 

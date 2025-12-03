@@ -9,6 +9,7 @@ import About from './pages/About'
 import Services from './pages/Services'
 import Gallery from './pages/Gallery'
 import ContactPage from './pages/ContactPage'
+import FAQ from './pages/faq'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/faq" element={<FAQ />} />
         </Routes>
       </main>
       <SiteFooter />
