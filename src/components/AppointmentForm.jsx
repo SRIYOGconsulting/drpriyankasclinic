@@ -1,13 +1,89 @@
 import { useState, useEffect, useRef } from 'react';
 import { FaUser, FaEnvelope, FaPhone, FaCalendarAlt, FaClock, FaNotesMedical, FaUserMd, FaTimes } from 'react-icons/fa';
+import { FiChevronDown } from 'react-icons/fi';
+import { AnimatePresence, motion } from 'framer-motion';
 
 export default function AppointmentModal({ isOpen, onClose }) {
   const modalRef = useRef(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [expandedFaq, setExpandedFaq] = useState(null);
+
+  const faqs = [
+    {
+      question: "How do I book an appointment?",
+      answer: `To book an appointment, please fill out the form with your full name, contact details, preferred date and time, and select the service you require. 
+      
+      Once you submit the form, our team will review your request and contact you within 24 hours to confirm your appointment. You'll receive a confirmation message with all the details via email and SMS.`
+    },
+    {
+      question: "What information do I need to provide?",
+      answer: `For a smooth booking process, please have the following information ready:
+      • Full legal name (as it appears on your ID)
+      • Active phone number and email address
+      • Preferred appointment date and time
+      • Reason for your visit or specific service needed
+      • Insurance details (if applicable)
+      • Any relevant medical history or symptoms
+      
+      All information provided is kept confidential and secure.`
+    },
+    {
+      question: "Can I reschedule or cancel my appointment?",
+      answer: `Yes, you can reschedule or cancel your appointment by:
+      
+      • Calling our clinic at +977 981 9090 115 during working hours
+      • Emailing us at info@drpriyankasclinic.com with your booking details
+      
+      Please provide at least 24 hours' notice for cancellations or rescheduling to avoid any cancellation fees. For same-day cancellations, a nominal fee may apply.`
+    },
+    {
+      question: "What should I bring to my first appointment?",
+      answer: `For your first appointment, please bring:
+      
+      • A valid government-issued photo ID
+      • Health insurance card (if applicable)
+      • List of current medications and dosages
+      • Previous medical records or test results
+      • Any relevant imaging studies (X-rays, MRIs, etc.)
+      • A list of questions or concerns you'd like to discuss
+      • Payment method for any applicable co-pays
+      
+      Arriving prepared helps us provide you with the best possible care.`
+    },
+    {
+      question: "How early should I arrive for my appointment?",
+      answer: `We recommend arriving 15 minutes before your scheduled appointment time to:
+      
+      • Complete any necessary paperwork
+      • Update your medical history if needed
+      • Settle any payments or insurance matters
+      • Relax before your consultation
+      
+      New patients should plan for an additional 10-15 minutes for registration. If you're running late, please call us at +977 981 9090 115 to inform our staff.`
+    },
+    {
+      question: "What payment methods do you accept?",
+      answer: `We accept various payment methods for your convenience:
+      
+      • Cash (NPR)
+      • Credit/Debit cards (Visa, MasterCard)
+      • Mobile payment (eSewa, Khalti)
+      • Bank transfers (details available upon request)
+      • Major health insurance plans (please verify coverage in advance)
+      
+      Payment is due at the time of service unless other arrangements have been made.`
+    }
+  ];
+
+  const [activeFaqIndex, setActiveFaqIndex] = useState(null);
+
+  const toggleFaq = (index) => {
+    setActiveFaqIndex(activeFaqIndex === index ? null : index);
+  };
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
-    phone: '',
+    phone: '+977 ',  // Pre-fill with Nepal country code
     appointmentDate: '',
     appointmentTime: '',
     service: '',
@@ -175,17 +251,23 @@ export default function AppointmentModal({ isOpen, onClose }) {
                     </label>
                     <div className="relative">
                       <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                        <FaPhone className="h-5 w-5 text-gray-400" />
+                        <span className="text-gray-500">+977</span>
                       </div>
                       <input
                         type="tel"
                         id="phone"
                         name="phone"
+                        className="block w-full pl-16 pr-3 py-2.5 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
+                        placeholder="98XXXXXXXX"
+                        value={formData.phone.replace(/^\+977\s?/, '')}
+                        onChange={(e) => {
+                          // Allow only numbers and limit to 10 digits
+                          const value = e.target.value.replace(/\D/g, '').slice(0, 10);
+                          setFormData({...formData, phone: `+977 ${value}`});
+                        }}
                         required
-                        className="block w-full pl-10 pr-3 py-2.5 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-pink-500 focus:border-pink-500"
-                        placeholder=""
-                        value={formData.phone}
-                        onChange={handleChange}
+                        pattern="[0-9]{10}"
+                        title="Please enter a valid 10-digit Nepali phone number"
                       />
                     </div>
                   </div>
@@ -298,6 +380,62 @@ export default function AppointmentModal({ isOpen, onClose }) {
                   </ul>
                 </div>
 
+                {/* FAQ Section */}
+                <div className="mt-8">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-4">Frequently Asked Questions</h3>
+                  <div className="space-y-4">
+                    {faqs.map((faq, index) => (
+                      <motion.div 
+                        key={index}
+                        className="border border-gray-200 rounded-lg overflow-hidden shadow-sm"
+                        initial={false}
+                        animate={{ 
+                          borderColor: activeFaqIndex === index ? '#DB2777' : '#E5E7EB',
+                          boxShadow: activeFaqIndex === index ? '0 4px 6px -1px rgba(219, 39, 119, 0.1), 0 2px 4px -1px rgba(219, 39, 119, 0.06)' : '0 1px 2px 0 rgba(0, 0, 0, 0.05)'
+                        }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <motion.button
+                          className={`w-full px-6 py-4 text-left flex justify-between items-center ${activeFaqIndex === index ? 'bg-pink-50' : 'bg-white hover:bg-gray-50'}`}
+                          onClick={() => toggleFaq(index)}
+                          aria-expanded={activeFaqIndex === index}
+                        >
+                          <span className="font-medium text-gray-900">{faq.question}</span>
+                          <motion.span
+                            animate={{ rotate: activeFaqIndex === index ? 180 : 0 }}
+                            transition={{ duration: 0.3 }}
+                          >
+                            <FiChevronDown className="h-5 w-5 text-gray-500" />
+                          </motion.span>
+                        </motion.button>
+                        <AnimatePresence>
+                          {activeFaqIndex === index && (
+                            <motion.div
+                              initial="collapsed"
+                              animate="open"
+                              exit="collapsed"
+                              variants={{
+                                open: { opacity: 1, height: 'auto' },
+                                collapsed: { opacity: 0, height: 0 }
+                              }}
+                              transition={{ duration: 0.3, ease: 'easeInOut' }}
+                              className="overflow-hidden"
+                            >
+                              <div className="px-6 pb-4 pt-2 text-gray-600">
+                                {faq.answer.split('\n\n').map((paragraph, i) => (
+                                  <p key={i} className="mb-3 last:mb-0">
+                                    {paragraph}
+                                  </p>
+                                ))}
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+
                 {/* Form Actions */}
                 <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-end sm:gap-4 pt-6">
                   <button
@@ -318,7 +456,7 @@ export default function AppointmentModal({ isOpen, onClose }) {
                           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                           <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                         </svg>
-                        Booking...
+                        Processing...
                       </>
                     ) : 'Book Appointment'}
                   </button>

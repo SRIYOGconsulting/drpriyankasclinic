@@ -1,6 +1,7 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
+import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 
 const ServiceItem = ({ service: s, index }) => {
   const [ref, inView] = useInView({
@@ -146,15 +147,29 @@ const Section = ({ small, title, items, isCustomGrid = false, customLayout = fal
           {isCustomGrid ? (
             <div className="space-y-8">
               {customLayout ? (
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {items.map((s, index) => (
-                    <div 
-                      key={s.title} 
-                      className={`${index >= 3 ? 'sm:col-span-2 lg:col-span-1 lg:col-start-2' : ''}`}
-                    >
-                      <ServiceItem service={s} index={index} />
+                <div className="space-y-6">
+                  {/* First row - 2 centered items */}
+                  <div className="flex justify-center">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6" style={{ maxWidth: 'calc(66.666667% + 1.5rem)' }}>
+                      {items.slice(0, 2).map((s, index) => (
+                        <ServiceItem key={s.title} service={s} index={index} />
+                      ))}
                     </div>
-                  ))}
+                  </div>
+                  
+                  {/* Second row - 3 items */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {items.slice(2, 5).map((s, index) => (
+                      <ServiceItem key={s.title} service={s} index={index + 2} />
+                    ))}
+                  </div>
+                  
+                  {/* Third row - 3 items */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {items.slice(5).map((s, index) => (
+                      <ServiceItem key={s.title} service={s} index={index + 5} />
+                    ))}
+                  </div>
                 </div>
               ) : (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -370,9 +385,102 @@ export default function Services() {
 
       {/* Service Sections with Animations */}
       <Section {...sec1} />
-      <Section {...sec2} />
-      <Section {...sec3} customLayout />
+      <Section {...sec2} customLayout isCustomGrid />
+      <Section {...sec3} customLayout isCustomGrid />
       <Section {...sec4} />
+      <FAQSection />
     </div>
   );
 }
+
+const FAQSection = () => {
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const faqs = [
+    {
+      question: "What services do you offer?",
+      answer: "We offer a comprehensive range of gynecological and obstetric services including cancer prevention, prenatal and postnatal care, family planning, infertility treatment, and more. Our services are designed to provide complete women's healthcare under one roof."
+    },
+    {
+      question: "How do I book an appointment?",
+      answer: "You can book an appointment by calling our clinic directly, using our online booking system, or by visiting us in person. We recommend booking in advance to secure your preferred time slot, especially for routine check-ups and screenings."
+    },
+    {
+      question: "Do you accept insurance?",
+      answer: "Yes, we accept most major insurance plans. Please contact our office with your insurance information to verify coverage before your appointment. Our staff will be happy to assist you with any insurance-related questions."
+    },
+    {
+      question: "What should I bring to my first appointment?",
+      answer: "For your first visit, please bring your insurance card, photo ID, list of current medications, and any relevant medical records or test results from previous providers. If you're coming for a specific concern, please have details about your symptoms and medical history ready."
+    },
+    {
+      question: "How early should I arrive for my appointment?",
+      answer: "We recommend arriving 15 minutes before your scheduled appointment time to complete any necessary paperwork and ensure a smooth check-in process. This helps us stay on schedule and provide the best possible care to all our patients."
+    }
+  ];
+
+  const toggleAccordion = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
+  return (
+    <section className="py-16 bg-slate-50">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="text-center mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-4">
+            Frequently Asked Questions
+          </h2>
+          <div className="w-24 h-1 bg-pink-600 mx-auto"></div>
+        </div>
+
+        <div className="max-w-3xl mx-auto space-y-4">
+          {faqs.map((faq, index) => (
+            <motion.div 
+              key={index}
+              className="border border-gray-200 rounded-lg overflow-hidden shadow-sm"
+              initial={false}
+              animate={{ 
+                borderColor: activeIndex === index ? '#DB2777' : '#E5E7EB',
+                boxShadow: activeIndex === index ? '0 4px 6px -1px rgba(219, 39, 119, 0.1), 0 2px 4px -1px rgba(219, 39, 119, 0.06)' : '0 1px 2px 0 rgba(0, 0, 0, 0.05)'
+              }}
+              transition={{ duration: 0.2 }}
+            >
+              <motion.button
+                className={`w-full px-6 py-4 text-left flex justify-between items-center ${activeIndex === index ? 'bg-pink-50' : 'bg-white hover:bg-gray-50'}`}
+                onClick={() => toggleAccordion(index)}
+                aria-expanded={activeIndex === index}
+                aria-controls={`faq-panel-${index}`}
+              >
+                <span className="font-medium text-slate-800">{faq.question}</span>
+                {activeIndex === index ? 
+                  <FiChevronUp className="w-5 h-5 text-pink-600" /> : 
+                  <FiChevronDown className="w-5 h-5 text-gray-400" />
+                }
+              </motion.button>
+              <AnimatePresence>
+                {activeIndex === index && (
+                  <motion.div
+                    id={`faq-panel-${index}`}
+                    initial="collapsed"
+                    animate="open"
+                    exit="collapsed"
+                    variants={{
+                      open: { opacity: 1, height: 'auto' },
+                      collapsed: { opacity: 0, height: 0 }
+                    }}
+                    transition={{ duration: 0.3, ease: 'easeInOut' }}
+                    className="overflow-hidden"
+                  >
+                    <div className="px-6 pb-6 pt-2 text-slate-600">
+                      {faq.answer}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};

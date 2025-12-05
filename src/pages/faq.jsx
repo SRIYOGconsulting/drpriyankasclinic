@@ -89,7 +89,7 @@ const FAQ = () => {
           <p className="text-gray-600 mb-4">Contact our support team for more information</p>
           <a
             href="/contact"
-            className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+            className="inline-flex items-center px-6 py-3 border-2 border-pink-600 text-base font-medium rounded-full text-pink-600 hover:bg-pink-50 hover:border-pink-700 hover:text-pink-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500 transition-colors duration-200"
           >
             Contact Us
           </a>
