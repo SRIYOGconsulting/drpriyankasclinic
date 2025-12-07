@@ -1,10 +1,8 @@
 import { Link, NavLink } from 'react-router-dom'
 import { useState, useEffect } from 'react';
-import AppointmentModal from './AppointmentForm';
 
 export default function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isAppointmentModalOpen, setIsAppointmentModalOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   // Close mobile menu when clicking outside
@@ -114,8 +112,8 @@ export default function SiteHeader() {
               Contact
             </NavLink>
             <div className="ml-4">
-              <button 
-                onClick={() => setIsAppointmentModalOpen(true)}
+              <Link 
+                to="/book-appointment"
                 className="relative inline-flex items-center justify-center px-6 py-3 overflow-hidden text-base font-medium text-white transition-all duration-300 bg-gradient-to-r from-pink-500 to-pink-600 rounded-full group hover:from-pink-600 hover:to-pink-700 hover:shadow-lg hover:shadow-pink-200 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2"
               >
                 <span className="relative">
@@ -135,24 +133,22 @@ export default function SiteHeader() {
                   </svg>
                 </span>
                 <span>Book an Appointment</span>
-              </button>
+              </Link>
             </div>
           </nav>
 
           {/* Mobile menu button and appointment CTA */}
           <div className="flex items-center space-x-2">
-            <button 
-              onClick={() => {
-                setIsAppointmentModalOpen(true);
-                setIsMenuOpen(false);
-              }}
+            <Link 
+              to="/book-appointment"
               className="md:hidden inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-pink-500 rounded-full hover:bg-pink-600 transition-colors whitespace-nowrap"
+              onClick={() => setIsMenuOpen(false)}
             >
               <svg className="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
               </svg>
               Appointment
-            </button>
+            </Link>
             <button 
               className="md:hidden p-2 text-gray-700 hover:text-pink-600 focus:outline-none menu-button transition-colors"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -249,28 +245,21 @@ export default function SiteHeader() {
           
           {/* Mobile appointment CTA - Moved to bottom */}
           <div className="px-4 py-3 mt-2">
-            <button 
-              onClick={() => {
-                setIsAppointmentModalOpen(true);
-                setIsMenuOpen(false);
-              }}
+            <Link 
+              to="/book-appointment"
               className="w-full flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-gradient-to-r from-pink-500 to-pink-600 rounded-full hover:from-pink-600 hover:to-pink-700 transition-colors"
+              onClick={() => setIsMenuOpen(false)}
             >
               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
               </svg>
               Book an Appointment
-            </button>
+            </Link>
           </div>
         </div>
         </div>
       </div>
       
-      {/* Appointment Modal */}
-      <AppointmentModal 
-        isOpen={isAppointmentModalOpen} 
-        onClose={() => setIsAppointmentModalOpen(false)} 
-      />
     </header>
   )
 }

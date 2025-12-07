@@ -4,12 +4,14 @@ import SiteFooter from './components/SiteFooter';
 import ScrollToTop from './components/ScrollToTop';
 import WhatsAppButton from './components/WhatsAppButton';
 import BackToTop from './components/BackToTop';
-import Home from './pages/Home'
-import About from './pages/About'
-import Services from './pages/Services'
-import Gallery from './pages/Gallery'
-import ContactPage from './pages/ContactPage'
-import FAQ from './pages/faq'
+import Home from './pages/Home';
+import About from './pages/About';
+import Services from './pages/Services';
+import Gallery from './pages/Gallery';
+import ContactPage from './pages/ContactPage';
+import FAQ from './pages/faq';
+import AppointmentPage from './pages/AppointmentPage';
+import SitemapPage from './pages/SitemapPage';
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/faq" element={<FAQ />} />
+          <Route path="/book-appointment" element={<AppointmentPage />} />
+          <Route path="/sitemap" element={<SitemapPage />} />
         </Routes>
       </main>
       <SiteFooter />
