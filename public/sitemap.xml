@@ -3,7 +3,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://drpriyankasclinic.com/</loc>
-    <lastmod>2025-12-05</lastmod>
+    <lastmod>2025-12-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -11,7 +11,7 @@
   <!-- About Page -->
   <url>
     <loc>https://drpriyankasclinic.com/about</loc>
-    <lastmod>2025-12-05</lastmod>
+    <lastmod>2025-12-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -19,7 +19,7 @@
   <!-- Services Page -->
   <url>
     <loc>https://drpriyankasclinic.com/services</loc>
-    <lastmod>2025-12-05</lastmod>
+    <lastmod>2025-12-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -27,7 +27,7 @@
   <!-- Gallery Page -->
   <url>
     <loc>https://drpriyankasclinic.com/gallery</loc>
-    <lastmod>2025-12-05</lastmod>
+    <lastmod>2025-12-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -35,7 +35,7 @@
   <!-- Contact Page -->
   <url>
     <loc>https://drpriyankasclinic.com/contact</loc>
-    <lastmod>2025-12-05</lastmod>
+    <lastmod>2025-12-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -43,16 +43,24 @@
   <!-- Appointment Page -->
   <url>
     <loc>https://drpriyankasclinic.com/book-appointment</loc>
-    <lastmod>2025-12-05</lastmod>
+    <lastmod>2025-12-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Blog Page -->
+  <!-- FAQ Page -->
   <url>
-    <loc>https://drpriyankasclinic.com/blog</loc>
-    <lastmod>2025-12-05</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://drpriyankasclinic.com/faq</loc>
+    <lastmod>2025-12-07</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+
+  <!-- Sitemap Page -->
+  <url>
+    <loc>https://drpriyankasclinic.com/sitemap</loc>
+    <lastmod>2025-12-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>
