@@ -16,17 +16,17 @@ export default function About() {
           </div>
           <p className="text-slate-700">Welcome to Dr. Priyanka's Clinic, a dedicated Obstetrics and Gynecology facility located in the heart of Birtamode, Jhapa, Nepal. Established on April 25, 2023, our clinic is committed to providing comprehensive healthcare services tailored specifically for women.</p>
           <p className="text-slate-700 mt-3">At Dr. Priyanka's Clinic, we offer a wide range of Gynecological Services, including cancer prevention, screening, and diagnosis. Our services encompass HPV vaccination, HPV DNA testing, PAP smears, and colposcopy, along with advanced diagnostic tests like CA 125, CEA, CA 19-9 blood tests, breast ultrasound, transvaginal sonography (TVS), and cervical and endometrial biopsies.</p>
-          <div className="flex flex-col items-center mt-8">
-  <img 
-    src="/assets/home/drpriyanka.png" 
-    alt="Dr Priyanka" 
-    className="h-32 w-32 md:h-40 md:w-40 rounded-full border-4 border-pink-100 shadow-lg" 
-  />
-  <div className="text-center mt-4">
-    <div className="font-semibold text-xl text-slate-900">Dr. Priyanka Katwal</div>
-    <div className="text-pink-600 font-medium">Gynecologist</div>
-  </div>
-</div>
+          <div className="flex flex-col items-start mt-8">
+            <img 
+              src="/assets/home/drpriyanka.png" 
+              alt="Dr. Priyanka Katwal" 
+              className="h-32 w-32 md:h-40 md:w-40 rounded-full border-4 border-pink-100 shadow-lg" 
+            />
+            <div className="mt-4">
+              <div className="font-semibold text-xl text-slate-900">Dr. Priyanka Katwal</div>
+              <div className="text-pink-600 font-medium">Gynecologist</div>
+            </div>
+          </div>
         </div>
       </div>
 

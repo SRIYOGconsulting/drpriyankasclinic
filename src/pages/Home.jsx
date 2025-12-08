@@ -33,19 +33,20 @@ export default function Home() {
 
             <p className="mt-4 text-slate-700">At Dr. Priyanka's Clinic, we offer a wide range of Gynecological Services, including cancer prevention, screening, and diagnosis. Our services encompass HPV vaccination, HPV DNA testing, PAP smears, and colposcopy, along with advanced diagnostic tests like CA 125, CEA, CA 19-9 blood tests, breast ultrasound, transvaginal sonography (TVS), and cervical and endometrial biopsies.</p>
             <div className="mt-6 flex flex-wrap items-center gap-4">
-              <div className="flex flex-col items-center text-center w-full mt-6">
-                <OptimizedImage
-                  src="/assets/home/drpriyanka.png"
-                  alt="Dr. Priyanka Katwal - Gynecologist"
-                  width={128}
-                  height={128}
-                  className="h-32 w-32 rounded-full border-4 border-pink-200 object-cover shadow-md mx-auto hover:scale-105 transition-transform duration-300"
-                  containerClassName="mx-auto"
-                />
-                <div className="mt-4">
-                  <h2 className="text-2xl font-bold text-slate-900">Dr. Priyanka Katwal</h2>
-                  <p className="text-pink-600 font-medium">Gynecologist</p>
-                  
+              <div className="flex flex-col items-start text-left w-full mt-6">
+                <div className="flex items-center gap-4">
+                  <OptimizedImage
+                    src="/assets/home/drpriyanka.png"
+                    alt="Dr. Priyanka Katwal - Gynecologist"
+                    width={128}
+                    height={128}
+                    className="h-24 w-24 sm:h-28 sm:w-28 md:h-32 md:w-32 rounded-full border-4 border-pink-200 object-cover shadow-md hover:scale-105 transition-transform duration-300 flex-shrink-0"
+                    containerClassName=""
+                  />
+                  <div>
+                    <h2 className="text-xl sm:text-2xl font-bold text-slate-900">Dr. Priyanka Katwal</h2>
+                    <p className="text-pink-600 font-medium">Gynecologist</p>
+                  </div>
                 </div>
               </div>
               
@@ -101,9 +102,9 @@ export default function Home() {
                   width: 100%;
                   max-width: 100%;
                   margin: 0 auto 1.5rem;
-                  height: 70vh;
-                  max-height: 75vh;
-                  min-height: 65vh;
+                  height: 84vh; /* 120% of 70vh */
+                  max-height: 90vh; /* 120% of 75vh */
+                  min-height: 78vh; /* 120% of 65vh */
                   display: flex;
                   flex-direction: column;
                 }
@@ -122,12 +123,12 @@ export default function Home() {
               }
             `}</style>
             {[
-              {title:'HPV Vaccination', img:'/assets/services/HPV-vaccination.jpg', desc:'The HPV (Human Papillomavirus) vaccination is a vital preventive measure against certain types of HPV.'},
-              {title:'HPV DNA Test', img:'/assets/services/HPV-DNA-Test.jpg', desc:'A screening used to detect high-risk types of HPV that can lead to cervical cancer.'},
-              {title:'PAP Smear', img:'/assets/services/PAP-Smear.jpg', desc:'A crucial screening tool for detecting cervical cancer and its precursors.'},
+              {title:'HPV Vaccination', img:'/assets/services/hpv-vaccination.jpg', desc:'The HPV (Human Papillomavirus) vaccination is a vital preventive measure against certain types of HPV.'},
+              {title:'HPV DNA Test', img:'/assets/services/hpv-dna-test.jpg', desc:'A screening used to detect high-risk types of HPV that can lead to cervical cancer.'},
+              {title:'PAP Smear', img:'/assets/services/pap-smear.jpg', desc:'A crucial screening tool for detecting cervical cancer and its precursors.'},
               {title:'Colposcopy', img:'/assets/services/colposcopy.jpg', desc:'Diagnostic procedure to examine the cervix, vagina, and vulva for disease.'},
-              {title:'Breast USG', img:'/assets/services/Breast-USG.jpg', desc:'Non-invasive imaging technique to examine breast tissue for abnormalities.'},
-              {title:'Endometrial Biopsy', img:'/assets/services/Cervical-Endometrial-Biopsy.jpg', desc:'Diagnostic procedures to examine cervix and uterine lining tissues.'},
+              {title:'Breast USG', img:'/assets/services/breast-usg.jpg', desc:'Non-invasive imaging technique to examine breast tissue for abnormalities.'},
+              {title:'Endometrial Biopsy', img:'/assets/services/cervical-endometrial-biopsy.jpg', desc:'Diagnostic procedures to examine cervix and uterine lining tissues.'},
             ].map((s)=> (
               <div key={s.title} className="service-card bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden text-center flex flex-col h-full w-full">
                 <div className="service-thumb">
@@ -237,7 +238,7 @@ export default function Home() {
               </div>
               <div className="p-6">
                 <h3 className="text-lg font-semibold text-slate-900 mb-2">How to safe abortion care ?</h3>
-                <p className="text-sm text-slate-600 mb-4">Accessing safe abortion services is crucial for preventing complications and ensuring women's health.</p>
+                <p className="text-sm text-slate-600 mb-4">Accessing safe abortion services is crucial for preventing complications and ensuring women's health. Our clinic provides confidential and professional care with the highest medical standards. Our experienced team ensures your safety and comfort throughout the process.</p>
                 <a 
                   href="https://www.who.int/news/item/26-09-2022-ask-the-expert-10-questions-on-safe-abortion-care" 
                   target="_blank" 
@@ -263,7 +264,7 @@ export default function Home() {
               </div>
               <div className="p-6">
                 <h3 className="text-lg font-semibold text-slate-900 mb-2">What is Breast Cancer?</h3>
-                <p className="text-sm text-slate-600 mb-4">Breast cancers can start from different parts of the breast and understanding them is key to prevention.</p>
+                <p className="text-sm text-slate-600 mb-4">Breast cancers can start from different parts of the breast and understanding them is key to prevention. Early detection through regular screenings and self-exams significantly improves treatment outcomes. Our clinic offers comprehensive breast health services including mammograms and ultrasounds.</p>
                 <a 
                   href="https://www.cancer.org/cancer/types/breast-cancer/about/what-is-breast-cancer.html" 
                   target="_blank" 
@@ -334,7 +335,8 @@ export default function Home() {
               <div className="mt-8 pt-6 border-t border-gray-200">
                 <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 text-center">
                   <h4 className="text-xl font-semibold text-slate-900 mb-4">Emergency Contact</h4>
-                  <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                  <div className="flex flex-col items-center justify-center gap-2">
+                    <p className="text-sm text-slate-600 mb-2">Call Now</p>
                     <a 
                       href="tel:+9779819090115" 
                       className="inline-flex items-center justify-center bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full text-base font-medium transition-colors whitespace-nowrap w-full sm:w-auto"
@@ -342,7 +344,7 @@ export default function Home() {
                       <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                       </svg>
-                      Call Now: +977 981-9090115
+                      +977 981-9090115
                     </a>
                   </div>
                   <p className="text-sm text-slate-600 mt-3">24/7 Emergency Services Available</p>

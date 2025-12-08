@@ -12,17 +12,18 @@ export default function SiteFooter() {
               className="h-24 w-auto mb-4"
             />
             <h2 className="text-2xl font-bold text-slate-900">Dr. Priyanka's Clinic</h2>
+            <p className="text-pink-600 font-medium">A Multi-speciality Womens' Health Clinic</p>
             <p className="text-pink-600 font-medium">Gynecology </p>
           </div>
           <p className="text-slate-700 mb-6 text-[15px] leading-relaxed">
             Dr. Priyanka's Clinic is a leading healthcare provider in Birtamode, Jhapa, Nepal, offering comprehensive gynecological and obstetric care.
           </p>
-          <div className="flex items-center justify-center gap-5 mt-8 flex-wrap">
+          <div className="flex items-center justify-start gap-5 mt-8 flex-wrap">
             <style jsx global>{`
               @media (max-width: 640px) {
                 .social-icon {
-                  width: 44px;
-                  height: 44px;
+                  width: 66px;
+                  height: 66px;
                   display: flex;
                   align-items: center;
                   justify-content: center;
@@ -39,35 +40,35 @@ export default function SiteFooter() {
             `}</style>
             {/* Facebook */}
             <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook" className="social-icon text-pink-600 hover:text-white hover:bg-pink-600 transition-all duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-7.5 w-7.5">
                 <path d="M22 12.06C22 6.48 17.52 2 11.94 2S2 6.48 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.9h2.54V9.41c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.45h-1.25c-1.23 0-1.61.77-1.61 1.56v1.86h2.74l-.44 2.9h-2.3V22c4.78-.76 8.44-4.92 8.44-9.94Z"/>
               </svg>
             </a>
             
             {/* Instagram */}
             <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram" className="social-icon text-pink-600 hover:text-white hover:bg-pink-600 transition-all duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-7.5 w-7.5">
                 <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11Zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm5.5-1a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/>
               </svg>
             </a>
             
             {/* YouTube */}
             <a href="https://youtube.com" target="_blank" rel="noreferrer" aria-label="YouTube" className="social-icon text-pink-600 hover:text-white hover:bg-pink-600 transition-all duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-7.5 w-7.5">
                 <path d="M23.5 7.2c0-.2 0-.4-.1-.6-.1-.2-.2-.4-.4-.5-.2-.2-.4-.3-.6-.4-.2 0-.4-.1-.6-.1-2.7-.2-5.4-.3-8.1-.3-2.7 0-5.4.1-8.1.3-.2 0-.4.1-.6.1-.2.1-.4.3-.6.4-.2.2-.3.4-.4.6 0 .2-.1.4-.1.6v9.6c0 .2 0 .4.1.6.1.2.2.4.4.5.2.2.4.3.6.4.2 0 .4.1.6.1 2.7.2 5.4.3 8.1.3 2.7 0 5.4-.1 8.1-.3.2 0 .4-.1.6-.1.2-.1.4-.3.6-.4.2-.2.3-.4.4-.6 0-.2.1-.4.1-.6V7.2zm-13 7.7V8.2l6.8 3.4-6.8 3.3z"/>
               </svg>
             </a>
             
             {/* LinkedIn */}
             <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="social-icon text-pink-600 hover:text-white hover:bg-pink-600 transition-all duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-7.5 w-7.5">
                 <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3v9zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.86-1.38-1.86-.88 0-1.87.61-1.87 3.26V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.65.94 3.65 4.2V19z"/>
               </svg>
             </a>
             
             {/* Twitter */}
             <a href="https://twitter.com" target="_blank" rel="noreferrer" aria-label="Twitter" className="social-icon text-pink-600 hover:text-white hover:bg-pink-600 transition-all duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-7.5 w-7.5">
                 <path d="M22.46 6.01c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
               </svg>
             </a>
@@ -137,14 +138,32 @@ export default function SiteFooter() {
             </li>
           </ul>
           {/* Book Appointment Section */}
-          <div className="mt-6">
-            <h3 className="font-bold text-slate-900 mb-3 text-xl">Book an Appointment</h3>
-            <p className="text-slate-700 mb-4 text-[15px] leading-relaxed">
-              We offer comprehensive gynecological and obstetric care, including family planning, ultrasound, and fertility treatments.
-            </p>
-            <a href="/services" className="inline-block text-pink-600 hover:text-pink-700 font-medium">
-              View All Services →
-            </a>
+          <div className="mt-8 mb-4">
+            <h3 className="font-bold text-slate-900 mb-4 text-xl">Book an Appointment</h3>
+            <div className="mt-3">
+              <a 
+                href="/book-appointment" 
+                className="relative inline-flex items-center justify-center px-5 py-2.5 sm:px-6 sm:py-3 overflow-hidden text-sm sm:text-base font-medium text-white transition-all duration-300 bg-gradient-to-r from-pink-500 to-pink-600 rounded-full group hover:from-pink-600 hover:to-pink-700 hover:shadow-lg hover:shadow-pink-200 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2 whitespace-nowrap"
+              >
+                <span className="relative">
+                  <svg 
+                    className="w-4 h-4 sm:w-5 sm:h-5 mr-2 -ml-1" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24" 
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      strokeWidth="2" 
+                      d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    ></path>
+                  </svg>
+                </span>
+                <span>Book an Appointment</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>

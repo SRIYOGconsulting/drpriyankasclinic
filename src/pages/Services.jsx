@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useState, useEffect } from 'react';
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
+import { FaCalendarAlt } from 'react-icons/fa';
 
 const ServiceItem = ({ service: s, index }) => {
   const [ref, inView] = useInView({
@@ -133,7 +134,10 @@ const Section = ({ small, title, items, isCustomGrid = false, customLayout = fal
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className="mr-2 text-lg">+</span>Book an Appointment
+              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              </svg>
+              Book an Appointment
             </motion.a>
           </motion.div>
         </motion.div>
@@ -194,14 +198,17 @@ const Section = ({ small, title, items, isCustomGrid = false, customLayout = fal
             transition={{ delay: 0.8 }}
           >
             <motion.a 
-              href="https://www.facebook.com/Doctor.Priyankas.Clinic" 
+              href="https://www.facebook.com/" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="inline-flex items-center bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-full transition-colors"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className="mr-2 text-lg">+</span>Book an Appointment
+              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              </svg>
+              Book an Appointment
             </motion.a>
           </motion.div>
         </motion.div>
@@ -209,6 +216,7 @@ const Section = ({ small, title, items, isCustomGrid = false, customLayout = fal
     </motion.section>
   );
 };
+
 
 export default function Services() {
   const [isMounted, setIsMounted] = useState(false);
@@ -221,15 +229,15 @@ export default function Services() {
     small: 'Gynaecology',
     title: 'Cancer Prevention, Screening and Diagnosis',
     items: [
-      { title: 'HPV Vaccination', img: '/assets/services/HPV-vaccination.jpg', desc: 'The HPV (Human Papillomavirus) vaccination is a vital preventive measure against certain types of HPV that can cause cervical, anal, throat, and other cancers.' },
-      { title: 'HPV DNA Test', img: '/assets/services/HPV-DNA-Test.jpg', desc: 'Medical screening used to detect the presence of high-risk types of Human Papillomavirus (HPV) that can lead to cervical cancer.' },
-      { title: 'PAP Smear', img: '/assets/services/PAP-Smear.jpg', desc: 'A crucial screening tool for detecting cervical cancer and its precursors in women.' },
-      { title: 'Colposcopy', img: '/assets/services/colposcopy.jpg', desc: 'Diagnostic procedure used to closely examine the cervix, vagina, and vulva for signs of disease.' },
-      { title: 'LEEP', img: '/assets/services/LEEP.jpg', desc: 'Loop Electrosurgical Excision Procedure to remove abnormal or precancerous cells from the cervix.' },
-      { title: 'CA 125, CEA, CA19-9 and other Blood Tests', img: '/assets/services/CA125-CEACA19-9test.jpg', desc: 'Tumor marker blood tests used to help detect and monitor certain types of cancers.' },
-      { title: 'Breast USG', img: '/assets/services/Breast-USG.jpg', desc: 'Non-invasive imaging technique used to examine breast tissue for abnormalities.' },
-      { title: 'TVS and USG', img: '/assets/services/TVS-USG.jpg', desc: 'Transvaginal Sonography (TVS) and Ultrasound (USG) imaging to visualize internal organs.' },
-      { title: 'Cervical and Endometrial Biopsy', img: '/assets/services/Cervical-Endometrial-Biopsy.jpg', desc: 'Diagnostic procedures used to examine cervical and uterine lining tissues for disease.' },
+      { title: 'HPV Vaccination', img: '/assets/services/hpv-vaccination.jpg', desc: 'The HPV (Human Papillomavirus) vaccination is a vital preventive measure against certain types of HPV that can cause cervical, anal, throat, and other cancers.' },
+      { title: 'HPV DNA Test', img: '/assets/services/hpv-dna-test.jpg', desc: 'HPV DNA test detects high-risk HPV types that may cause cervical cancer. A key screening tool for early risk identification and women’s health protection.' },
+      { title: 'PAP Smear', img: '/assets/services/pap-smear.jpg', desc: 'A vital test that helps identify cervical cancer early by detecting abnormal cell changes and HPV risk, supporting timely care and better health outcomes.' },
+      { title: 'Colposcopy', img: '/assets/services/colposcopy.jpg', desc: 'A diagnostic exam that closely inspects the cervix, vagina, and vulva to detect abnormal cells, infections, or early signs of disease for timely treatment.' },
+      { title: 'LEEP', img: '/assets/services/leep.jpg', desc: 'A procedure that uses a thin electrified loop to remove abnormal or precancerous cervical cells, helping prevent cervical cancer and support early treatment.' },
+      { title: 'CA 125, CEA, CA19-9 and other Blood Tests', img: '/assets/services/ca125-ceaca19-9test.jpg', desc: 'Blood tests that measure specific tumor markers to help detect, track, and monitor various cancers, supporting early diagnosis and treatment planning.' },
+      { title: 'Breast USG', img: '/assets/services/breast-usg.jpg', desc: 'A non-invasive imaging method that examines breast tissue to identify lumps, changes, or other abnormalities for early detection and improved breast health.' },
+      { title: 'TVS and USG', img: '/assets/services/tvs-usg.jpg', desc: ' Imaging techniques like TVS and USG that provide clear visualization of internal organs, helping detect abnormalities and support accurate medical diagnosis.' },
+      { title: 'Cervical and Endometrial Biopsy', img: '/assets/services/cervical-endometrial-biopsy.jpg', desc: 'Diagnostic procedures that evaluate cervical and uterine lining tissues to identify abnormalities, detect disease early, and guide appropriate treatment.' },
     ],
   };
 
@@ -237,14 +245,14 @@ export default function Services() {
     small: 'Obstetrics services',
     title: 'The Care of Women during Pregnancy and Childbirth',
     items: [
-      { title: 'Prenatal, Antenatal and Postnatal Care and Counseling', img: '/assets/services/Prenatal-Antenatal-Postnatal-Care-Counseling.jpg', desc: 'Care and counseling focusing on the well-being of mother and baby during pregnancy, childbirth, and after delivery.' },
-      { title: 'Safe Abortion Practices', img: '/assets/services/Safe-Abortion-Practices.jpg', desc: 'Medical procedures and guidelines designed to minimize risks and ensure health and well-being.' },
-      { title: 'Family Planning and Counseling', img: '/assets/services/Family-Planning-Counseling.jpg', desc: 'Knowledge and resources for reproductive health and family size decisions.' },
-      { title: 'High Risk Pregnancy', img: '/assets/services/High-Risk-Pregnancy.jpg', desc: 'Management of pregnancies with increased risks to mother or fetus.' },
-      { title: 'Infertility Diagnosis and Treatment', img: '/assets/services/Infertility-Diagnosis-Treatment.jpg', desc: 'Diagnosis and treatment options for infertility.' },
-      { title: 'Painless Delivery and Cesarean Delivery', img: '/assets/services/Painless-Delivery-Cesarean-Delivery.jpg', desc: 'Epidural anesthesia and Cesarean delivery options for safe childbirth.' },
-      { title: 'Genetic Screening', img: '/assets/services/Genetic-Screening.jpg', desc: 'Identify risk of inherited genetic disorders or predispositions to diseases.' },
-      { title: 'STD Diagnosis and Management', img: '/assets/services/STD-Diagnosis-Management.jpg', desc: 'Comprehensive approach to identifying and treating sexually transmitted infections.' },
+      { title: 'Prenatal, Antenatal and Postnatal Care and Counseling', img: '/assets/services/prenatal-antenatal-postnatal-care-counseling.jpg', desc: 'Care and counseling that support the health of mother and baby through pregnancy, childbirth, and postpartum, ensuring safety, guidance, and overall well-being.' },
+      { title: 'Safe Abortion Practices', img: '/assets/services/safe-abortion-practices.jpg', desc: ' Safe medical protocols focused on reducing risks, protecting health, and promoting overall well-being through proper guidance and standardized care.' },
+      { title: 'Family Planning and Counseling', img: '/assets/services/family-planning-counseling.jpg', desc: 'Trusted information and support for reproductive health, empowering individuals to make informed decisions about family planning and future goals.' },
+      { title: 'High Risk Pregnancy', img: '/assets/services/high-risk-pregnancy.jpg', desc: 'Specialized care for high-risk pregnancies, ensuring safety for both mother and baby through close monitoring and advanced medical support.' },
+      { title: 'Infertility Diagnosis and Treatment', img: '/assets/services/infertility-diagnosis-treatment.jpg', desc: 'Comprehensive evaluation and modern treatments for infertility, helping individuals and couples achieve healthy and informed paths to parenthood.' },
+      { title: 'Painless Delivery and Cesarean Delivery', img: '/assets/services/painless-delivery-cesarean-delivery.jpg', desc: 'Safe childbirth support through epidural pain relief and Cesarean delivery options, ensuring comfort and medical safety for mothers.' },
+      { title: 'Genetic Screening', img: '/assets/services/genetic-screening.jpg', desc: 'Genetic screening to detect inherited conditions and disease risks, enabling early guidance, prevention, and informed health decisions' },
+      { title: 'STD Diagnosis and Management', img: '/assets/services/std-diagnosis-management.jpg', desc: 'Complete STI care, from accurate detection to effective treatment, ensuring protection, awareness, and long-term sexual health' },
     ],
   };
 
@@ -252,8 +260,8 @@ export default function Services() {
     small: 'Obstetrics services',
     title: 'An obstetrician provides routine prenatal care to people who are pregnant. They also diagnose and treat complications during pregnancy.',
     items: [
-      { title: 'Diagnostic Hysteroscopy', img: '/assets/services/Diagnostic-Hysteroscopy.jpg', desc: 'Minimally invasive procedure to examine the inside of the uterus.' },
-      { title: 'MVA', img: '/assets/services/MVA.jpg', desc: 'Manual Vacuum Aspiration for early pregnancy management.' },
+      { title: 'Diagnostic Hysteroscopy', img: '/assets/services/diagnostic-hysteroscopy.jpg', desc: 'A gentle, minimally invasive method to view the uterus, aiding diagnosis and improving treatment decisions with reduced discomfort.' },
+      { title: 'MVA', img: '/assets/services/mva.jpg', desc: 'A safe, quick, and minimally invasive procedure using Manual Vacuum Aspiration for effective early pregnancy care and management.' },
     ],
   };
 
@@ -263,23 +271,23 @@ export default function Services() {
     items: [
       { 
         title: 'Personalized Care Plan', 
-        img: '/assets/services/Infertility-Diagnosis-Treatment.jpg', 
-        desc: 'Tailored healthcare plans designed specifically for your unique needs and health goals.'
+        img: '/assets/services/infertility-diagnosis-treatment.jpg', 
+        desc: 'Personalized healthcare plans crafted to match your unique needs, lifestyle, and long-term wellness goals for better health outcomes.'
       },
       { 
         title: '24/7 Doctor Support', 
-        img: '/assets/services/Prenatal-Antenatal-Postnatal-Care-Counseling.jpg', 
-        desc: 'Round-the-clock access to healthcare professionals for your peace of mind.'
+        img: '/assets/services/prenatal-antenatal-postnatal-care-counseling.jpg', 
+        desc: '24/7 access to trusted healthcare professionals, ensuring constant support, timely guidance, and complete peace of mind.'
       },
       { 
         title: 'Emotional Counseling', 
-        img: '/assets/services/Family-Planning-Counseling.jpg', 
-        desc: 'Professional support for emotional well-being during your healthcare journey.'
+        img: '/assets/services/family-planning-counseling.jpg', 
+        desc: 'Dedicated emotional support from trained professionals to help you stay balanced, confident, and supported throughout your healthcare journey.'
       },
       { 
         title: 'Wellness Programs', 
-        img: '/assets/services/Genetic-Screening.jpg', 
-        desc: 'Comprehensive programs focused on maintaining and improving overall health.'
+        img: '/assets/services/genetic-screening.jpg', 
+        desc: 'Wide-ranging health programs designed to maintain wellness, prevent illness, and support long-term improvements in your overall health.'
       },
     ]
   };
@@ -292,38 +300,62 @@ export default function Services() {
     <div>
       {/* Hero Section with Animation */}
       <motion.section 
-        className="relative h-64 md:h-72 flex items-end" 
+        className="relative h-80 md:h-96 flex items-center" 
         style={{
           backgroundImage: "url('/assets/home/slider/1.jpg')", 
           backgroundSize: 'cover', 
-          backgroundPosition: 'center'
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
         }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
       >
         <motion.div 
-          className="w-full bg-black/30 absolute inset-0"
+          className="w-full bg-black/50 absolute inset-0"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         />
         <motion.div 
-          className="relative max-w-6xl mx-auto px-4 pb-12 text-white grid md:grid-cols-3 items-end w-full"
+          className="relative max-w-6xl mx-auto px-4 py-16 md:py-24 text-white w-full text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <div className="md:col-span-2">
-            <p className="opacity-90 mb-2">We are here for your care.</p>
-            <h1 className="text-3xl md:text-5xl font-bold">Our Services</h1>
-          </div>
-          <div className="flex md:justify-end mt-4 md:mt-0">
-            <nav className="text-sm">
-              <a href="/" className="hover:underline">Home</a> 
-              <span className="mx-1">/</span> 
-              <span>Services</span>
-            </nav>
+          <div className="mb-4">
+            <motion.p 
+              className="text-lg md:text-xl font-medium mb-3 opacity-90"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+            >
+              We are here for your care
+            </motion.p>
+            <motion.h1 
+              className="text-4xl md:text-6xl font-bold mb-6"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+            >
+              Our Services
+            </motion.h1>
+            <motion.div 
+              className="h-1 w-20 bg-pink-500 mx-auto mb-6"
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ delay: 0.6, duration: 0.5 }}
+            />
+            <motion.nav 
+              className="text-sm flex justify-center space-x-2"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.7 }}
+            >
+              <a href="/" className="hover:text-pink-300 transition-colors">Home</a> 
+              <span>/</span> 
+              <span className="text-pink-300">Services</span>
+            </motion.nav>
           </div>
         </motion.div>
       </motion.section>
@@ -337,48 +369,64 @@ export default function Services() {
         transition={{ duration: 0.6 }}
       >
         <div className="max-w-6xl mx-auto px-4">
-          <div className="relative">
-            <motion.img 
-              src="/assets/section/section-back-icon.png" 
-              alt="section-back" 
-              className="absolute -top-10 right-0 opacity-10 w-20 h-20" 
-              animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            />
-            <motion.h5 
-              className="text-slate-500 mb-2"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-            >
-              health care facility
-            </motion.h5>
-            <motion.h1 
-              className="text-3xl md:text-4xl font-bold text-slate-900 mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-            >
-              Dedicated Services
-            </motion.h1>
+          <div className="relative flex flex-col md:flex-row items-center md:items-start gap-8">
+            <div className="md:flex-1">
+              <motion.h5 
+                className="text-slate-500 mb-2"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+              >
+                health care facility
+              </motion.h5>
+              <motion.h1 
+                className="text-3xl md:text-4xl font-bold text-slate-900 mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+              >
+                Dedicated Services
+              </motion.h1>
+              <motion.div 
+                className="h-1 w-20 bg-pink-600 mb-6"
+                initial={{ scaleX: 0 }}
+                whileInView={{ scaleX: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, duration: 0.8 }}
+              />
+              <motion.p 
+                className="text-slate-700"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5 }}
+              >
+                From safe abortion practices to family planning and high-risk pregnancy management, we prioritize your safety and comfort. Our clinic is equipped to provide painless delivery and Cesarean delivery options, as well as genetic screening and STD diagnosis and management.
+              </motion.p>
+            </div>
+            
+            {/* 100% Satisfaction Badge - Right Side */}
             <motion.div 
-              className="h-1 w-20 bg-pink-600 mb-6"
-              initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
+              className="mt-8 md:mt-0"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-            />
-            <motion.p 
-              className="text-slate-700 max-w-2xl"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.5 }}
+              transition={{ delay: 0.6, duration: 0.5 }}
             >
-              From safe abortion practices to family planning and high-risk pregnancy management, we prioritize your safety and comfort. Our clinic is equipped to provide painless delivery and Cesarean delivery options, as well as genetic screening and STD diagnosis and management.
-            </motion.p>
+              <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full bg-gradient-to-br from-pink-100 to-pink-50 border-4 border-pink-200 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <div className="absolute inset-0 rounded-full border-8 border-pink-200 border-opacity-30 animate-pulse"></div>
+                <div className="text-center p-4">
+                  <span className="block text-3xl md:text-4xl font-bold text-pink-600">100%</span>
+                  <span className="block text-base font-medium text-slate-700">Satisfaction</span>
+                  <span className="block text-xs text-slate-500 mt-0.5">Guaranteed</span>
+                </div>
+                <div className="absolute -bottom-3 bg-pink-600 text-white text-[10px] font-semibold px-3 py-0.5 rounded-full shadow-md whitespace-nowrap">
+                  Our Promise
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </motion.section>
@@ -389,7 +437,7 @@ export default function Services() {
       <Section {...sec3} customLayout isCustomGrid />
       <Section {...sec4} />
       <FAQSection />
-    </div>
+ n   </div>
   );
 }
 

@@ -4,6 +4,7 @@ import SiteFooter from './components/SiteFooter';
 import ScrollToTop from './components/ScrollToTop';
 import WhatsAppButton from './components/WhatsAppButton';
 import BackToTop from './components/BackToTop';
+import SidekickIcons from './components/SidekickIcons';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
@@ -12,6 +13,9 @@ import ContactPage from './pages/ContactPage';
 import FAQ from './pages/faq';
 import AppointmentPage from './pages/AppointmentPage';
 import SitemapPage from './pages/SitemapPage';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
+import Disclaimer from './pages/Disclaimer';
 
 function App() {
   return (
@@ -28,11 +32,15 @@ function App() {
           <Route path="/faq" element={<FAQ />} />
           <Route path="/book-appointment" element={<AppointmentPage />} />
           <Route path="/sitemap" element={<SitemapPage />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/terms" element={<TermsOfService />} />
+          <Route path="/disclaimer" element={<Disclaimer />} />
         </Routes>
       </main>
       <SiteFooter />
       <WhatsAppButton />
       <BackToTop />
+      <SidekickIcons />
     </div>
   )
 }
