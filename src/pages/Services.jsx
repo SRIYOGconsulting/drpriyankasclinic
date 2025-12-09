@@ -3,6 +3,7 @@ import { useInView } from 'react-intersection-observer';
 import { useState, useEffect } from 'react';
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 import { FaCalendarAlt } from 'react-icons/fa';
+import PageBanner from '../components/PageBanner';
 
 const ServiceItem = ({ service: s, index }) => {
   const [ref, inView] = useInView({
@@ -254,6 +255,8 @@ export default function Services() {
       { title: 'Genetic Screening', img: '/assets/services/genetic-screening.jpg', desc: 'Genetic screening to detect inherited conditions and disease risks, enabling early guidance, prevention, and informed health decisions' },
       { title: 'STD Diagnosis and Management', img: '/assets/services/std-diagnosis-management.jpg', desc: 'Complete STI care, from accurate detection to effective treatment, ensuring protection, awareness, and long-term sexual health' },
     ],
+    isCustomGrid: true,
+    customLayout: true
   };
 
   const sec3 = {
@@ -298,67 +301,15 @@ export default function Services() {
 
   return (
     <div>
-      {/* Hero Section with Animation */}
-      <motion.section 
-        className="relative h-80 md:h-96 flex items-center" 
-        style={{
-          backgroundImage: "url('/assets/home/slider/1.jpg')", 
-          backgroundSize: 'cover', 
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
-        }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-      >
-        <motion.div 
-          className="w-full bg-black/50 absolute inset-0"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        />
-        <motion.div 
-          className="relative max-w-6xl mx-auto px-4 py-16 md:py-24 text-white w-full text-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-        >
-          <div className="mb-4">
-            <motion.p 
-              className="text-lg md:text-xl font-medium mb-3 opacity-90"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-            >
-              We are here for your care
-            </motion.p>
-            <motion.h1 
-              className="text-4xl md:text-6xl font-bold mb-6"
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-            >
-              Our Services
-            </motion.h1>
-            <motion.div 
-              className="h-1 w-20 bg-pink-500 mx-auto mb-6"
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ delay: 0.6, duration: 0.5 }}
-            />
-            <motion.nav 
-              className="text-sm flex justify-center space-x-2"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.7 }}
-            >
-              <a href="/" className="hover:text-pink-300 transition-colors">Home</a> 
-              <span>/</span> 
-              <span className="text-pink-300">Services</span>
-            </motion.nav>
-          </div>
-        </motion.div>
-      </motion.section>
+      <PageBanner 
+        title="Our Services"
+        description="We are here for your care"
+        breadcrumbs={[
+          { label: 'Home', href: '/' },
+          { label: 'Services' }
+        ]}
+        bgImage="/assets/home/slider/1.jpg"
+      />
 
       {/* Intro Section with Animation */}
       <motion.section 

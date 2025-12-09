@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import PageBanner from '../components/PageBanner';
 
 // Sample images with different aspect ratios for masonry effect
 const galleryItems = [
@@ -36,64 +37,45 @@ export default function Gallery() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Group images into chunks of 5 for the masonry layout
-  const chunkArray = (arr, size) => {
-    const result = [];
-    for (let i = 0; i < arr.length; i += size) {
-      result.push(arr.slice(i, i + size));
-    }
-    return result;
-  };
-
-  const imageChunks = chunkArray(galleryItems, isMobile ? 2 : 5);
+  // No need for chunking with columns layout
 
   return (
     <div className="bg-gray-50 min-h-screen">
+      <PageBanner 
+        title="Our Gallery"
+        description="Explore our state-of-the-art facilities and compassionate care through our photo gallery"
+        breadcrumbs={[
+          { label: 'Home', href: '/' },
+          { label: 'Gallery' }
+        ]}
+        bgImage="/assets/home/slider/1.jpg"
+      />
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
-        <nav className="mb-6">
-          <a href="/" className="text-pink-600 hover:text-pink-800 text-sm">
-            Home
-          </a>
-          <span className="mx-2 text-gray-400">/</span>
-          <span className="text-gray-600 text-sm">Gallery</span>
-        </nav>
 
-        <header className="text-center mb-12">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">Our Gallery</h1>
-          <div className="w-20 h-1 bg-pink-500 mx-auto mb-4"></div>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Explore our state-of-the-art facilities and compassionate care through our photo gallery
-          </p>
-        </header>
-
-        {/* Masonry Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {imageChunks.map((chunk, chunkIndex) => (
-            <div key={chunkIndex} className="space-y-6">
-              {chunk.map((item, itemIndex) => {
-                const index = chunkIndex * (isMobile ? 2 : 5) + itemIndex;
-                return (
-                  <div 
-                    key={item.id}
-                    className={`relative group overflow-hidden rounded-lg shadow-md cursor-pointer ${item.aspect}`}
-                    onClick={() => setOpenIndex(index)}
-                  >
-                    <img
-                      src={`/assets/gallery/${item.src}`}
-                      alt={item.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                      <div className="text-white">
-                        <h3 className="font-medium text-sm sm:text-base">{item.title}</h3>
-                      </div>
-                    </div>
+        {/* Masonry Gallery with Columns */}
+        <div className="px-4 sm:px-0">
+          <div className="space-y-6 columns-1 sm:columns-2 lg:columns-3 xl:columns-4">
+            {galleryItems.map((item, index) => (
+              <div 
+                key={item.id}
+                className={`relative group overflow-hidden rounded-lg shadow-md cursor-pointer mb-6 break-inside-avoid ${item.aspect}`}
+                onClick={() => setOpenIndex(index)}
+              >
+                <img
+                  src={`/assets/gallery/${item.src}`}
+                  alt={item.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                  <div className="text-white">
+                    <h3 className="font-medium text-sm sm:text-base">{item.title}</h3>
                   </div>
-                );
-              })}
-            </div>
-          ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 

@@ -102,23 +102,17 @@ export default function Home() {
                   width: 100%;
                   max-width: 100%;
                   margin: 0 auto 1.5rem;
-                  height: 84vh; /* 120% of 70vh */
-                  max-height: 90vh; /* 120% of 75vh */
-                  min-height: 78vh; /* 120% of 65vh */
+                  height: auto;
                   display: flex;
                   flex-direction: column;
                 }
                 .service-card .service-thumb {
-                  flex: 0 0 65%;
-                  height: 65%;
+                  flex: 0 0 auto;
+                  height: auto;
                 }
                 .service-card .service-thumb img {
                   width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                }
-                .service-card .service-body {
-                  flex: 1;
+                  height: auto;
                 }
               }
             `}</style>
@@ -130,7 +124,7 @@ export default function Home() {
               {title:'Breast USG', img:'/assets/services/breast-usg.jpg', desc:'Non-invasive imaging technique to examine breast tissue for abnormalities.'},
               {title:'Endometrial Biopsy', img:'/assets/services/cervical-endometrial-biopsy.jpg', desc:'Diagnostic procedures to examine cervix and uterine lining tissues.'},
             ].map((s)=> (
-              <div key={s.title} className="service-card bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden text-center flex flex-col h-full w-full">
+              <div key={s.title} className="service-card bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden text-center">
                 <div className="service-thumb">
                   <OptimizedImage
                     src={s.img}
@@ -141,21 +135,19 @@ export default function Home() {
                     containerClassName="w-full h-48"
                   />
                 </div>
-                <div className="service-body px-6 pb-6 -mt-4 flex-1 flex">
-                  <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5 flex flex-col w-full h-full">
+                <div className="p-6 -mt-4">
+                  <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
                     <h3 className="text-xl font-semibold text-slate-900">{s.title}</h3>
                     <p className="text-sm text-slate-700 mt-2 mb-2">{s.desc}</p>
-                    <div className="mt-auto">
-                      <a 
-                        href="https://www.facebook.com/Doctor.Priyankas.Clinic" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        aria-label={`Book appointment for ${s.title}`}
-                        className="inline-flex justify-center items-center w-full px-3 py-2 rounded-full border border-pink-600 text-pink-700 hover:bg-pink-50 hover:text-pink-800 text-xs sm:text-sm font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2"
-                      >
-                        Book Appointment
-                      </a>
-                    </div>
+                    <a 
+                      href="https://www.facebook.com/Doctor.Priyankas.Clinic" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      aria-label={`Book appointment for ${s.title}`}
+                      className="inline-flex justify-center items-center w-full px-3 py-2 rounded-full border border-pink-600 text-pink-700 hover:bg-pink-50 hover:text-pink-800 text-xs sm:text-sm font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2"
+                    >
+                      Book Appointment
+                    </a>
                   </div>
                 </div>
               </div>

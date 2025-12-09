@@ -2,7 +2,6 @@ import { Routes, Route } from 'react-router-dom';
 import SiteHeader from './components/SiteHeader';
 import SiteFooter from './components/SiteFooter';
 import ScrollToTop from './components/ScrollToTop';
-import WhatsAppButton from './components/WhatsAppButton';
 import BackToTop from './components/BackToTop';
 import SidekickIcons from './components/SidekickIcons';
 import Home from './pages/Home';
@@ -30,7 +29,7 @@ function App() {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/faq" element={<FAQ />} />
-          <Route path="/book-appointment" element={<AppointmentPage />} />
+          <Route path="/appointment" element={<AppointmentPage />} />
           <Route path="/sitemap" element={<SitemapPage />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<TermsOfService />} />
@@ -38,7 +37,6 @@ function App() {
         </Routes>
       </main>
       <SiteFooter />
-      <WhatsAppButton />
       <BackToTop />
       <SidekickIcons />
     </div>

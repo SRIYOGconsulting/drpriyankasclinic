@@ -1,18 +1,17 @@
+import PageBanner from '../components/PageBanner';
+
 export default function ContactPage() {
   return (
-    <div>
-      <section className="relative bg-slate-900 text-white">
-        <div className="absolute inset-0">
-          <img src="/assets/gallery/slider2.jpg" alt="Contact Banner" className="w-full h-full object-cover opacity-30" />
-        </div>
-        <div className="relative max-w-6xl mx-auto px-4 py-16">
-          <div className="text-sm text-white/90">Home / Contact</div>
-          <h1 className="text-3xl md:text-4xl font-bold mt-2">Contact Us</h1>
-          <div className="mt-3">
-            <img src="/assets/shape/section-title-line.png" alt="section-line" className="h-2 w-auto" />
-          </div>
-        </div>
-      </section>
+    <div className="bg-white">
+      <PageBanner 
+        title="Get In Touch"
+        description="We're here to help and answer any questions you might have. Reach out to us and we'll respond as soon as possible."
+        breadcrumbs={[
+          { label: 'Home', href: '/' },
+          { label: 'Contact Us' }
+        ]}
+        bgImage="/assets/home/slider/1.jpg"
+      />
 
       <div className="max-w-6xl mx-auto px-4 py-12">
         {/* Contact Info Section */}
