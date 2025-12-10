@@ -11,49 +11,50 @@ const ServiceItem = ({ service: s, index }) => {
     threshold: 0.1,
   });
 
+  // Calculate if the title is long (more than 30 characters) or if it's one of the specific services
+  const isLongTitle = s.title.length > 30 || [
+    'Prenatal, Antenatal and Postnatal Care and Counseling',
+    'Safe Abortion Practices',
+    'Diagnostic Hysteroscopy',
+    'MVA'
+  ].includes(s.title);
+
   return (
     <motion.div
       ref={ref}
       initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="w-full h-full"
+      className="w-full h-full flex flex-col"
     >
-      <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden h-full flex flex-col hover:shadow-md transition-shadow duration-300">
-        <div className="service-thumb overflow-hidden">
+      <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden text-center hover:shadow-md transition-shadow duration-300 flex flex-col h-full">
+        <div className="service-thumb h-40 sm:h-48 flex-shrink-0">
           <motion.img 
             src={s.img} 
             alt={s.title} 
-            className="w-full h-48 sm:h-56 md:h-48 lg:h-52 object-cover"
+            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
             loading="lazy"
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.3 }}
           />
         </div>
-        <div className="p-5 flex-1 flex flex-col">
-          <motion.h3 
-            className="text-lg sm:text-xl font-semibold text-slate-900 mb-2"
-            whileHover={{ color: '#DB2777' }}
-          >
-            {s.title}
-          </motion.h3>
-          <p className="text-sm text-slate-600 flex-1">{s.desc}</p>
-          <div className="mt-4 pt-3 border-t border-gray-100">
-            <motion.a 
-              href="https://www.facebook.com/Doctor.Priyankas.Clinic" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="block w-full text-center px-4 py-2.5 rounded-full border-2 border-pink-600 text-pink-600 hover:bg-pink-50 text-sm font-medium transition-colors"
-              whileHover={{ 
-                scale: 1.02,
-                backgroundColor: '#DB2777',
-                color: 'white',
-                borderColor: '#DB2777'
-              }}
-              whileTap={{ scale: 0.98 }}
-            >
-              Book an Appointment
-            </motion.a>
+        <div className="p-4 sm:p-5 -mt-3 sm:-mt-4 flex-1 flex flex-col">
+          <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-4 sm:p-5 flex-1 flex flex-col">
+            <h3 className={`text-base sm:text-lg font-semibold text-slate-900 mb-2 ${isLongTitle ? 'line-clamp-2 h-12 sm:h-14' : 'line-clamp-2 h-10 sm:h-12'} flex items-center justify-center`}>
+              {s.title}
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-700 mb-3 sm:mb-4 line-clamp-3 min-h-[3.5rem] sm:min-h-[4.5rem] flex items-center">
+              {s.desc}
+            </p>
+            <div className="mt-auto pt-2 sm:pt-3">
+              <a 
+                href="https://www.facebook.com/Doctor.Priyankas.Clinic" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label={`Book appointment for ${s.title}`}
+                className="inline-flex justify-center items-center w-full px-3 py-1.5 sm:py-2 text-xs sm:text-sm rounded-full border border-pink-600 text-pink-700 hover:bg-pink-50 hover:text-pink-800 font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-1"
+              >
+                Book an Appointment
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -149,48 +150,13 @@ const Section = ({ small, title, items, isCustomGrid = false, customLayout = fal
           animate={inView ? { opacity: 1 } : {}}
           transition={{ delay: 0.7 }}
         >
-          {isCustomGrid ? (
-            <div className="space-y-8">
-              {customLayout ? (
-                <div className="space-y-6">
-                  {/* First row - 2 centered items */}
-                  <div className="flex justify-center">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6" style={{ maxWidth: 'calc(66.666667% + 1.5rem)' }}>
-                      {items.slice(0, 2).map((s, index) => (
-                        <ServiceItem key={s.title} service={s} index={index} />
-                      ))}
-                    </div>
-                  </div>
-                  
-                  {/* Second row - 3 items */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {items.slice(2, 5).map((s, index) => (
-                      <ServiceItem key={s.title} service={s} index={index + 2} />
-                    ))}
-                  </div>
-                  
-                  {/* Third row - 3 items */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {items.slice(5).map((s, index) => (
-                      <ServiceItem key={s.title} service={s} index={index + 5} />
-                    ))}
-                  </div>
-                </div>
-              ) : (
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {items.map((s, index) => (
-                    <ServiceItem key={s.title} service={s} index={index} />
-                  ))}
-                </div>
-              )}
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {items.map((s, index) => (
-                <ServiceItem key={s.title} service={s} index={index} />
-              ))}
-            </div>
-          )}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {items.map((s, index) => (
+              <div key={s.title} className="w-full">
+                <ServiceItem service={s} index={index} />
+              </div>
+            ))}
+          </div>
           
           <motion.div 
             className="mt-8 md:hidden text-center"

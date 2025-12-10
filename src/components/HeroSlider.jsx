@@ -38,9 +38,8 @@ export default function HeroSlider() {
        
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         
-    
         <div className="absolute inset-0 flex items-end md:items-center">
-          <div className="max-w-6xl w-full mx-auto px-4 py-12 md:py-0">
+          <div className="max-w-6xl w-full mx-auto px-4 pt-16 pb-8 md:py-0">
             <div className="max-w-2xl text-white">
               {current.headingSmall && (
                 <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/20 backdrop-blur-sm mb-4">

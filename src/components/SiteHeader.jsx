@@ -29,7 +29,7 @@ export default function SiteHeader() {
   }, [isMenuOpen]);
 
   return (
-    <header className={`w-full bg-white fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'shadow-lg' : 'shadow-sm'}`}>
+    <header className={`w-full bg-white fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'shadow-lg' : 'shadow-sm'} pt-2 md:pt-0`}>
       {/* Top bar with contact info - mobile optimized */}
       <div className="bg-[#1a1a1a] text-white text-sm py-3 md:py-2">
         <div className="w-full max-w-[95%] mx-auto px-2 md:px-4 flex flex-col items-center md:flex-row md:justify-between md:items-center">
