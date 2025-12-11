@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 import { FaCalendarAlt } from 'react-icons/fa';
 import PageBanner from '../components/PageBanner';
+import OptimizedImage from '../components/OptimizedImage';
 
 const ServiceItem = ({ service: s, index }) => {
   const [ref, inView] = useInView({
@@ -23,13 +24,21 @@ const ServiceItem = ({ service: s, index }) => {
       className="w-full h-full flex flex-col"
     >
       <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden text-center hover:shadow-md transition-shadow duration-300 flex flex-col h-full">
-        <div className="service-thumb h-40 sm:h-48 flex-shrink-0">
-          <motion.img 
-            src={s.img} 
-            alt={s.title} 
-            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-            loading="lazy"
-          />
+        <div className="service-thumb h-40 sm:h-48 flex-shrink-0 relative">
+          <motion.div 
+            className="w-full h-full overflow-hidden"
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
+          >
+            <OptimizedImage
+              src={s.img}
+              alt={s.title}
+              width={400}
+              height={300}
+              className="w-full h-full object-cover"
+              containerClassName="w-full h-full"
+            />
+          </motion.div>
         </div>
         <div className="p-4 sm:p-5 -mt-3 sm:-mt-4 flex-1 flex flex-col">
           <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-4 sm:p-5 flex-1 flex flex-col">
