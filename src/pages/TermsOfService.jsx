@@ -21,7 +21,7 @@ export default function TermsOfService() {
 
   return (
     <div className="min-h-screen bg-gray-50 py-12">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
         <div className="bg-white rounded-xl shadow-sm overflow-hidden">
           {/* Header */}
           <div className="bg-gradient-to-r from-pink-600 to-pink-700 text-white p-6 md:p-8">

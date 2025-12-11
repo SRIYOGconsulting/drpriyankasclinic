@@ -1,6 +1,6 @@
 export default function SiteFooter() {
   return (
-    <footer className="mt-16 relative overflow-hidden bg-gradient-to-b from-pink-50 to-amber-50">
+    <footer className="relative overflow-hidden bg-gradient-to-b from-pink-50 to-amber-50">
       {/* Main Footer Content */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10 sm:py-14 grid gap-10 grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 text-base text-slate-700">
         {/* Column 1: About with Logo */}

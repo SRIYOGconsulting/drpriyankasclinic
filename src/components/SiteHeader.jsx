@@ -29,7 +29,7 @@ export default function SiteHeader() {
   }, [isMenuOpen]);
 
   return (
-    <header className={`w-full bg-white fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'shadow-lg' : 'shadow-sm'} pt-2 md:pt-0`}>
+    <header className={`w-full bg-white fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'shadow-lg' : 'shadow-sm'}`}>
       {/* Top bar with contact info - mobile optimized */}
       <div className="bg-[#1a1a1a] text-white text-sm py-3 md:py-2">
         <div className="w-full max-w-[95%] mx-auto px-2 md:px-4 flex flex-col items-center md:flex-row md:justify-between md:items-center">
@@ -60,7 +60,7 @@ export default function SiteHeader() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-1 lg:space-x-2">
+          <nav className="hidden md:flex items-center space-x-1 lg:space-x-2 ml-auto">
             <NavLink 
               to="/" 
               end 
@@ -196,7 +196,7 @@ export default function SiteHeader() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
-            <div className={`overflow-hidden transition-all duration-200 ${isServicesOpen ? 'max-h-40' : 'max-h-0'}`}>
+            <div className={`overflow-hidden transition-all duration-200 ${isServicesOpen ? 'max-h-60' : 'max-h-0'}`}>
               <div className="ml-4 space-y-1 py-1">
                 <a 
                   href="/services#gynecology" 
