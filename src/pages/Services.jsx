@@ -11,13 +11,8 @@ const ServiceItem = ({ service: s, index }) => {
     threshold: 0.1,
   });
 
-  // Calculate if the title is long (more than 30 characters) or if it's one of the specific services
-  const isLongTitle = s.title.length > 30 || [
-    'Prenatal, Antenatal and Postnatal Care and Counseling',
-    'Safe Abortion Practices',
-    'Diagnostic Hysteroscopy',
-    'MVA'
-  ].includes(s.title);
+  // Calculate if the title is long (more than 30 characters)
+  const isLongTitle = s.title.length > 30;
 
   return (
     <motion.div
@@ -38,7 +33,7 @@ const ServiceItem = ({ service: s, index }) => {
         </div>
         <div className="p-4 sm:p-5 -mt-3 sm:-mt-4 flex-1 flex flex-col">
           <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-4 sm:p-5 flex-1 flex flex-col">
-            <h3 className={`text-base sm:text-lg font-semibold text-slate-900 mb-2 ${isLongTitle ? 'line-clamp-2 h-12 sm:h-14' : 'line-clamp-2 h-10 sm:h-12'} flex items-center justify-center`}>
+            <h3 className={`${isLongTitle ? 'text-sm sm:text-base' : 'text-base sm:text-lg'} font-semibold text-slate-900 mb-2 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem] leading-tight flex items-center justify-center`}>
               {s.title}
             </h3>
             <p className="text-xs sm:text-sm text-slate-700 mb-3 sm:mb-4 line-clamp-3 min-h-[3.5rem] sm:min-h-[4.5rem] flex items-center">
@@ -46,12 +41,13 @@ const ServiceItem = ({ service: s, index }) => {
             </p>
             <div className="mt-auto pt-2 sm:pt-3">
               <a 
-                href="https://www.facebook.com/Doctor.Priyankas.Clinic" 
-                target="_blank" 
-                rel="noopener noreferrer"
+                href="/appointment" 
                 aria-label={`Book appointment for ${s.title}`}
                 className="inline-flex justify-center items-center w-full px-3 py-1.5 sm:py-2 text-xs sm:text-sm rounded-full border border-pink-600 text-pink-700 hover:bg-pink-50 hover:text-pink-800 font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-1"
               >
+                <svg className="w-3.5 h-3.5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
                 Book an Appointment
               </a>
             </div>
@@ -83,15 +79,7 @@ const Section = ({ small, title, items, isCustomGrid = false, customLayout = fal
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.2 }}
         >
-          <div className="md:col-span-2 relative">
-            <motion.img 
-              src="/assets/section/section-back-icon.png" 
-              alt="" 
-              className="hidden md:block absolute -top-10 opacity-10 w-16 h-16 md:w-20 md:h-20 left-0" 
-              aria-hidden="true"
-              animate={inView ? { rotate: 360 } : {}}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            />
+          <div className="md:col-span-2">
             {small && <motion.h5 
               className="text-pink-600 text-sm sm:text-base font-medium mb-2"
               initial={{ opacity: 0, x: -20 }}
@@ -129,9 +117,7 @@ const Section = ({ small, title, items, isCustomGrid = false, customLayout = fal
             transition={{ delay: 0.6 }}
           >
             <motion.a 
-              href="https://www.facebook.com/Doctor.Priyankas.Clinic" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+              href="/appointment"
               className="inline-flex items-center bg-pink-600 hover:bg-pink-700 text-white px-5 py-2.5 sm:py-3 rounded-full transition-colors"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -150,13 +136,56 @@ const Section = ({ small, title, items, isCustomGrid = false, customLayout = fal
           animate={inView ? { opacity: 1 } : {}}
           transition={{ delay: 0.7 }}
         >
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Mobile View (unchanged) */}
+          <div className="md:hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {items.map((s, index) => (
-              <div key={s.title} className="w-full">
+              <div key={`mobile-${s.title}`} className="w-full">
                 <ServiceItem service={s} index={index} />
               </div>
             ))}
           </div>
+          
+          {/* Desktop View */}
+          {isCustomGrid && customLayout ? (
+            <div className="hidden md:block">
+              {/* First row - 2 centered cards */}
+              <div className="flex justify-center w-full mb-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6" style={{ maxWidth: '66.666667%' }}>
+                  {items.slice(0, 2).map((s, index) => (
+                    <div key={s.title} className="w-full">
+                      <ServiceItem service={s} index={index} />
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              {/* Second row - 3 cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+                {items.slice(2, 5).map((s, index) => (
+                  <div key={s.title} className="w-full">
+                    <ServiceItem service={s} index={index + 2} />
+                  </div>
+                ))}
+              </div>
+              
+              {/* Third row - 3 cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {items.slice(5).map((s, index) => (
+                  <div key={s.title} className="w-full">
+                    <ServiceItem service={s} index={index + 5} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {items.map((s, index) => (
+                <div key={`desktop-${s.title}`} className="w-full">
+                  <ServiceItem service={s} index={index} />
+                </div>
+              ))}
+            </div>
+          )}
           
           <motion.div 
             className="mt-8 md:hidden text-center"
@@ -165,9 +194,7 @@ const Section = ({ small, title, items, isCustomGrid = false, customLayout = fal
             transition={{ delay: 0.8 }}
           >
             <motion.a 
-              href="https://www.facebook.com/" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+              href="/appointment"
               className="inline-flex items-center bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-full transition-colors"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

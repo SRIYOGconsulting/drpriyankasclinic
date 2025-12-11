@@ -26,7 +26,7 @@ export default function HeroSlider() {
 
   return (
     <section className="relative w-full">
-      <div className="relative h-[500px] md:h-[90vh] max-h-[800px] overflow-hidden">
+      <div className="relative h-[400px] md:h-[90vh] max-h-[800px] overflow-hidden">
         {slides.map((s, i) => (
           <img
             key={s.img}
@@ -35,11 +35,12 @@ export default function HeroSlider() {
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${i === index ? 'opacity-100' : 'opacity-0'}`}
           />
         ))}
-       
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         
-        <div className="absolute inset-0 flex items-end md:items-center">
-          <div className="max-w-6xl w-full mx-auto px-4 pt-16 pb-8 md:py-0">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent md:bg-gradient-to-r md:from-black/60 md:to-transparent" />
+        
+        {/* Desktop Content (hidden on mobile) */}
+        <div className="hidden md:flex absolute inset-0 items-center">
+          <div className="max-w-6xl w-full mx-auto px-4">
             <div className="max-w-2xl text-white">
               {current.headingSmall && (
                 <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/20 backdrop-blur-sm mb-4">
@@ -57,7 +58,7 @@ export default function HeroSlider() {
               )}
               <div className="mt-8 flex flex-wrap gap-4">
                 <a 
-                  href="/contact" 
+                  href="/appointment" 
                   className="inline-flex items-center justify-center bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-full text-base font-medium transition-all duration-200 hover:shadow-lg hover:shadow-pink-500/20"
                 >
                   <svg 
@@ -99,6 +100,57 @@ export default function HeroSlider() {
               aria-label={`Go to slide ${i+1}`} 
             />
           ))}
+        </div>
+      </div>
+      
+      {/* Mobile Content (shown below image) */}
+      <div className="block md:hidden bg-white py-8 px-4">
+        <div className="max-w-2xl mx-auto">
+          {current.headingSmall && (
+            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-pink-100 text-pink-800 mb-4">
+              <span className="w-2 h-2 bg-pink-500 rounded-full mr-2"></span>
+              <span className="text-sm font-medium">{current.headingSmall}</span>
+            </div>
+          )}
+          <h2 className="text-3xl font-bold text-gray-900">
+            {current.heading}
+          </h2>
+          {current.text && (
+            <p className="mt-3 text-gray-600">
+              {current.text}
+            </p>
+          )}
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a 
+              href="/contact" 
+              className="inline-flex items-center justify-center bg-pink-600 hover:bg-pink-700 text-white px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200"
+            >
+              <svg 
+                className="w-4 h-4 mr-2" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24" 
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  strokeWidth="2" 
+                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                />
+              </svg>
+              Book Appointment
+            </a>
+            <a 
+              href="/services" 
+              className="inline-flex items-center justify-center px-5 py-2.5 border-2 border-pink-600 text-pink-600 hover:bg-pink-50 rounded-full text-sm font-medium transition-colors duration-200"
+            >
+              Our Services
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </section>

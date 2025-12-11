@@ -87,11 +87,12 @@ export default function ContactPage() {
           <h3 className="text-2xl font-semibold text-slate-900 mb-4">Ready to Schedule an Appointment?</h3>
           <p className="text-slate-600 mb-6">Contact us today to book your consultation or ask any questions.</p>
           <a
-            href="https://www.facebook.com/Doctor.Priyankas.Clinic"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-pink-600 hover:bg-pink-700 text-white font-medium px-6 py-3 rounded-full transition-colors duration-200"
+            href="/appointment"
+            className="inline-flex items-center bg-pink-600 hover:bg-pink-700 text-white font-medium px-6 py-3 rounded-full transition-colors duration-200"
           >
+            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
             Book an Appointment
           </a>
         </div>

@@ -52,10 +52,13 @@ export default function Home() {
               
               <div className="flex flex-col sm:flex-row justify-center w-full mt-5 gap-3 max-w-md mx-auto">
                 <a 
-                  href="/contact" 
+                  href="/appointment" 
                   aria-label="Book an appointment with Dr. Priyanka"
-                  className="bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-full text-sm sm:text-base font-medium whitespace-nowrap transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 text-center w-full focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2"
+                  className="bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-full text-sm sm:text-base font-medium whitespace-nowrap transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 text-center w-full focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 flex items-center justify-center gap-2"
                 >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                  </svg>
                   Book an Appointment
                 </a>
                 <a 
@@ -118,11 +121,11 @@ export default function Home() {
             `}</style>
             {[
               {title:'HPV Vaccination', img:'/assets/services/hpv-vaccination.jpg', desc:'The HPV (Human Papillomavirus) vaccination is a vital preventive measure against certain types of HPV.'},
-              {title:'HPV DNA Test', img:'/assets/services/hpv-dna-test.jpg', desc:'A screening used to detect high-risk types of HPV that can lead to cervical cancer.'},
-              {title:'PAP Smear', img:'/assets/services/pap-smear.jpg', desc:'A crucial screening tool for detecting cervical cancer and its precursors.'},
-              {title:'Colposcopy', img:'/assets/services/colposcopy.jpg', desc:'Diagnostic procedure to examine the cervix, vagina, and vulva for disease.'},
-              {title:'Breast USG', img:'/assets/services/breast-usg.jpg', desc:'Non-invasive imaging technique to examine breast tissue for abnormalities.'},
-              {title:'Endometrial Biopsy', img:'/assets/services/cervical-endometrial-biopsy.jpg', desc:'Diagnostic procedures to examine cervix and uterine lining tissues.'},
+              {title:'HPV DNA Test', img:'/assets/services/hpv-dna-test.jpg', desc:'The HPV screening is a vital diagnostic method for detecting high-risk types of HPV.'},
+              {title:'PAP Smear', img:'/assets/services/pap-smear.jpg', desc:'The cervical cancer screening is a vital method for detecting cervical cancer and its precursors.'},
+              {title:'Colposcopy', img:'/assets/services/colposcopy.jpg', desc:'The cervical diagnostic procedure is a vital method for examining the cervix, vagina, and vulva for disease.'},
+              {title:'Breast USG', img:'/assets/services/breast-usg.jpg', desc:'The breast imaging technique is a vital non-invasive method for examining breast tissue for abnormalities.'},
+              {title:'Endometrial Biopsy', img:'/assets/services/cervical-endometrial-biopsy.jpg', desc:'The uterine diagnostic procedure is a vital method for examining the cervix and uterine lining tissues.'},
             ].map((s)=> (
               <div key={s.title} className="service-card bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden text-center">
                 <div className="service-thumb">
@@ -135,19 +138,26 @@ export default function Home() {
                     containerClassName="w-full h-48"
                   />
                 </div>
-                <div className="p-6 -mt-4">
-                  <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
-                    <h3 className="text-xl font-semibold text-slate-900">{s.title}</h3>
-                    <p className="text-sm text-slate-700 mt-2 mb-2">{s.desc}</p>
-                    <a 
-                      href="https://www.facebook.com/Doctor.Priyankas.Clinic" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      aria-label={`Book appointment for ${s.title}`}
-                      className="inline-flex justify-center items-center w-full px-3 py-2 rounded-full border border-pink-600 text-pink-700 hover:bg-pink-50 hover:text-pink-800 text-xs sm:text-sm font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2"
-                    >
-                      Book Appointment
-                    </a>
+                <div className="p-4 sm:p-5 -mt-3 sm:-mt-4 flex-1 flex flex-col">
+                  <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-4 sm:p-5 flex-1 flex flex-col">
+                    <h3 className={`text-base sm:text-lg font-semibold text-slate-900 mb-2 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem] leading-tight flex items-center justify-center`}>
+                      {s.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-slate-700 mb-3 sm:mb-4 line-clamp-3 min-h-[3.5rem] sm:min-h-[4.5rem] flex items-center">
+                      {s.desc}
+                    </p>
+                    <div className="mt-auto pt-2 sm:pt-3">
+                      <a 
+                        href="/appointment"
+                        aria-label={`Book an appointment for ${s.title}`}
+                        className="inline-flex justify-center items-center w-full px-3 py-1.5 sm:py-2 text-xs sm:text-sm rounded-full border border-pink-600 text-pink-700 hover:bg-pink-50 hover:text-pink-800 font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-1"
+                      >
+                        <svg className="w-3.5 h-3.5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                        Book an Appointment
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -163,16 +173,13 @@ export default function Home() {
     <div className="text-center">
       <h2 className="text-3xl font-bold text-slate-900 mb-2">Safe Abortion Practices</h2>
       <div className="w-20 h-1 bg-pink-500 mx-auto mb-6"></div>
-      <a 
-        href="https://www.facebook.com/Doctor.Priyankas.Clinic" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="inline-flex items-center justify-center bg-pink-600 hover:bg-pink-700 text-white font-medium px-5 py-2.5 rounded-lg transition-colors duration-200"
-      >
-        Book an Appointment
-        <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          <a
+            href="/appointment"
+            className="inline-flex items-center bg-pink-600 hover:bg-pink-700 text-white font-medium px-6 py-3 rounded-full transition-colors duration-200"
+          >      <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
         </svg>
+        Book an Appointment
       </a>
     </div>
     <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mt-8">
