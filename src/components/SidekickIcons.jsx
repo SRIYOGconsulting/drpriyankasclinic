@@ -8,7 +8,7 @@ const SidekickIcons = () => {
   
   const icons = [
     { 
-      icon: <FaWhatsapp className="w-6 h-6" />, 
+      icon: <FaWhatsapp className="w-6 h-6 md:w-6 md:h-6 w-5 h-5" />, //  added responsive size
       label: 'Chat on WhatsApp',
       link: 'https://wa.me/1234567890?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment',
       color: 'bg-green-500 hover:bg-green-600',
@@ -16,7 +16,7 @@ const SidekickIcons = () => {
       pulse: true
     },
     { 
-      icon: <FiPhone className="w-6 h-6" />, 
+      icon: <FiPhone className="w-6 h-6 md:w-6 md:h-6 w-5 h-5" />, //  added responsive size
       label: 'Call Us',
       link: 'tel:+1234567890',
       color: 'bg-blue-500 hover:bg-blue-600',
@@ -24,7 +24,7 @@ const SidekickIcons = () => {
       pulse: true
     },
     { 
-      icon: <FaFacebookMessenger className="w-6 h-6" />, 
+      icon: <FaFacebookMessenger className="w-6 h-6 md:w-6 md:h-6 w-5 h-5" />, //  added responsive size
       label: 'Message Us',
       link: 'https://m.me/Doctor.Priyankas.Clinic',
       color: 'bg-blue-400 hover:bg-blue-500',
@@ -32,7 +32,7 @@ const SidekickIcons = () => {
       pulse: true
     },
     { 
-      icon: <FaTiktok className="w-6 h-6" />, 
+      icon: <FaTiktok className="w-6 h-6 md:w-6 md:h-6 w-5 h-5" />, //  added responsive size
       label: 'Follow on TikTok',
       link: 'https://www.tiktok.com/@drpriyankasclinic',
       color: 'bg-black hover:bg-gray-800',
@@ -72,7 +72,10 @@ const SidekickIcons = () => {
   };
 
   return (
-    <div className="fixed right-0 bottom-24 z-50 flex flex-col space-y-4 pr-4">
+ <div 
+      className="fixed right-0 bottom-24 z-50 flex flex-col space-y-4 pr-4 
+      md:space-y-4 space-y-2"  //  tighter spacing on mobile
+    >
       {icons.map((item, index) => (
         <motion.div 
           key={index}
@@ -95,12 +98,14 @@ const SidekickIcons = () => {
             href={item.link}
             target="_blank"
             rel="noopener noreferrer"
-            className={`${item.color} text-white w-14 h-14 rounded-full shadow-xl flex items-center justify-center relative overflow-hidden`}
+           className={`${item.color} text-white 
+              w-14 h-14 md:w-14 md:h-14 w-10 h-10  
+              rounded-full shadow-xl flex items-center justify-center relative overflow-hidden`}
             whileHover={{ 
               y: -8,
               scale: 1.1,
               boxShadow: '0 15px 30px -5px rgba(0, 0, 0, 0.3)'
-            }}
+            }} //  mobile smaller size
             whileTap={{ 
               scale: 0.95 
             }}
