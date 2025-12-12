@@ -138,7 +138,7 @@ export default function Home() {
                     containerClassName="w-full h-48"
                   />
                 </div>
-                <div className="p-4 sm:p-5 -mt-3 sm:-mt-4 flex-1 flex flex-col">
+                <div className="p-4 sm:p-5 -mt-3 sm:-mt-8 flex-1 flex flex-col">
                   <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-4 sm:p-5 flex-1 flex flex-col">
                     <h3 className={`text-base sm:text-lg font-semibold text-slate-900 mb-2 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem] leading-tight flex items-center justify-center`}>
                       {s.title}
@@ -216,7 +216,7 @@ export default function Home() {
             
             <div className="mt-8">
               <a 
-                href="https://drpriyankasclinic.com/blog.htm" 
+                href="https://drpriyankasclinic.com/blog.html" 
                 className="inline-flex items-center bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-full text-sm font-medium transition-colors"
               >
                 Our Blog

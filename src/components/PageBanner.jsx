@@ -7,7 +7,7 @@ const PageBanner = ({
   bgImage = "/assets/gallery/slider2.jpg" 
 }) => {
   return (
-    <section className="relative bg-slate-900 text-white h-[300px] md:h-[380px] w-full mt-16">
+    <section className="relative bg-slate-900 text-white h-[300px] md:h-[380px] w-full mt-8 sm:mt-12 md:mt-8">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 w-full h-full overflow-hidden">
         <img 
