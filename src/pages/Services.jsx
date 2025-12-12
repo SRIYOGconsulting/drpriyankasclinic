@@ -3,6 +3,7 @@ import { useInView } from 'react-intersection-observer';
 import { useState, useEffect } from 'react';
 import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 import { FaCalendarAlt } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import PageBanner from '../components/PageBanner';
 import OptimizedImage from '../components/OptimizedImage';
 
@@ -49,8 +50,8 @@ const ServiceItem = ({ service: s, index }) => {
               {s.desc}
             </p>
             <div className="mt-auto pt-2 sm:pt-3">
-              <a 
-                href="/appointment" 
+              <Link 
+                to={`/appointment?service=${encodeURIComponent(s.title)}`}
                 aria-label={`Book appointment for ${s.title}`}
                 className="inline-flex justify-center items-center w-full px-3 py-1.5 sm:py-2 text-xs sm:text-sm rounded-full border border-pink-600 text-pink-700 hover:bg-pink-50 hover:text-pink-800 font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-1"
               >
@@ -58,7 +59,7 @@ const ServiceItem = ({ service: s, index }) => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                 </svg>
                 Book an Appointment
-              </a>
+              </Link>
             </div>
           </div>
         </div>

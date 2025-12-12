@@ -55,7 +55,7 @@ export default function SiteHeader() {
             <img 
               src="/assets/logo/dr-priyankas-clinic-logo.png" 
               alt="Dr. Priyanka's Clinic Logo" 
-              className="h-16 sm:h-20 w-auto"
+              className="h-14 sm:h-16 md:h-20 w-auto max-w-[180px] md:max-w-none"
             />
           </Link>
 

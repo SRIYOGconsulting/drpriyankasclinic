@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { FaUser, FaEnvelope, FaPhone, FaCalendarAlt, FaClock, FaNotesMedical, FaUserMd, FaChevronLeft } from 'react-icons/fa';
 import { FiChevronDown } from 'react-icons/fi';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -6,17 +7,30 @@ import { useNavigate } from 'react-router-dom';
 
 export default function AppointmentPage() {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [activeFaqIndex, setActiveFaqIndex] = useState(null);
-  const [formData, setFormData] = useState({
+  const serviceFromUrl = searchParams.get('service');
+  const [formData, setFormData] = useState(() => ({
     fullName: '',
     email: '',
     phone: '+977 ',
     appointmentDate: '',
     appointmentTime: '',
-    service: '',
+    service: serviceFromUrl || '',
     message: ''
-  });
+  }));
+
+  // Update form data when serviceFromUrl changes
+  useEffect(() => {
+    if (serviceFromUrl) {
+      const decodedService = decodeURIComponent(serviceFromUrl);
+      setFormData(prev => ({
+        ...prev,
+        service: decodedService
+      }));
+    }
+  }, [serviceFromUrl]);
 
   const faqs = [
     {
@@ -102,11 +116,25 @@ export default function AppointmentPage() {
   ];
 
   const services = [
-    'General Checkup',
-    'Gynecology Consultation',
-    'Prenatal Care',
-    'Family Planning',
-    'Ultrasound',
+    'HPV Vaccination',
+    'HPV DNA Test',
+    'PAP Smear',
+    'Colposcopy',
+    'LEEP',
+    'CA 125, CEA, CA19-9 and other Blood Tests',
+    'Breast USG',
+    'TVS and USG',
+    'Cervical and Endometrial Biopsy',
+    'Prenatal, Antenatal and Postnatal Care and Counseling',
+    'Safe Abortion Practices',
+    'Family Planning and Counseling',
+    'High Risk Pregnancy',
+    'Infertility Diagnosis and Treatment',
+    'Painless Delivery and Cesarean Delivery',
+    'Genetic Screening',
+    'STD Diagnosis and Management',
+    'Diagnostic Hysteroscopy',
+    'MVA',
     'Other (please specify in message)'
   ];
 

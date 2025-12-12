@@ -8,7 +8,7 @@ const SidekickIcons = () => {
   
   const icons = [
     { 
-      icon: <FaWhatsapp className="w-6 h-6 md:w-6 md:h-6 w-5 h-5" />, //  added responsive size
+      icon: <FaWhatsapp className="w-4 h-4" />,
       label: 'Chat on WhatsApp',
       link: 'https://wa.me/1234567890?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment',
       color: 'bg-green-500 hover:bg-green-600',
@@ -16,7 +16,7 @@ const SidekickIcons = () => {
       pulse: true
     },
     { 
-      icon: <FiPhone className="w-6 h-6 md:w-6 md:h-6 w-5 h-5" />, //  added responsive size
+      icon: <FiPhone className="w-4 h-4" />,
       label: 'Call Us',
       link: 'tel:+1234567890',
       color: 'bg-blue-500 hover:bg-blue-600',
@@ -24,7 +24,7 @@ const SidekickIcons = () => {
       pulse: true
     },
     { 
-      icon: <FaFacebookMessenger className="w-6 h-6 md:w-6 md:h-6 w-5 h-5" />, //  added responsive size
+      icon: <FaFacebookMessenger className="w-4 h-4" />,
       label: 'Message Us',
       link: 'https://m.me/Doctor.Priyankas.Clinic',
       color: 'bg-blue-400 hover:bg-blue-500',
@@ -32,7 +32,7 @@ const SidekickIcons = () => {
       pulse: true
     },
     { 
-      icon: <FaTiktok className="w-6 h-6 md:w-6 md:h-6 w-5 h-5" />, //  added responsive size
+      icon: <FaTiktok className="w-4 h-4" />,
       label: 'Follow on TikTok',
       link: 'https://www.tiktok.com/@drpriyankasclinic',
       color: 'bg-black hover:bg-gray-800',
@@ -73,8 +73,8 @@ const SidekickIcons = () => {
 
   return (
  <div 
-      className="fixed right-0 bottom-24 z-50 flex flex-col space-y-4 pr-4 
-      md:space-y-4 space-y-2"  //  tighter spacing on mobile
+      className="fixed right-0 bottom-24 z-40 flex flex-col space-y-2 pr-2 
+      md:pr-3"  // Reduced spacing and padding to make it more compact
     >
       {icons.map((item, index) => (
         <motion.div 
@@ -98,9 +98,8 @@ const SidekickIcons = () => {
             href={item.link}
             target="_blank"
             rel="noopener noreferrer"
-           className={`${item.color} text-white 
-              w-14 h-14 md:w-14 md:h-14 w-10 h-10  
-              rounded-full shadow-xl flex items-center justify-center relative overflow-hidden`}
+            className={`${item.color} w-10 h-10 md:w-11 md:h-11 rounded-full shadow-md flex items-center justify-center 
+              text-white transition-all duration-300 hover:shadow-lg transform hover:scale-105 relative overflow-hidden`}
             whileHover={{ 
               y: -8,
               scale: 1.1,
@@ -146,7 +145,8 @@ const SidekickIcons = () => {
           </motion.a>
           
           <motion.div 
-            className="absolute right-full mr-3 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white text-sm px-3 py-2 rounded-lg whitespace-nowrap shadow-lg"
+            className="absolute right-full mr-2 whitespace-nowrap bg-gray-800 text-white text-xs py-1 px-2 rounded-md 
+              shadow-md transform transition-all duration-200 ease-in-out text-nowrap"
             initial={{ opacity: 0, x: 10 }}
             animate={{ 
               opacity: isHovered === index ? 1 : 0,
