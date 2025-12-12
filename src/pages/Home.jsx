@@ -36,7 +36,7 @@ export default function Home() {
               <div className="flex flex-col items-start text-left w-full mt-6">
                 <div className="flex items-center gap-4">
                   <OptimizedImage
-                    src={`${process.env.PUBLIC_URL}/assets/home/drpriyanka.png`}
+  src="/assets/home/drpriyanka.png"
                     alt="Dr. Priyanka Katwal - Gynecologist"
                     width={128}
                     height={128}
@@ -73,7 +73,8 @@ export default function Home() {
           </div>
           <div className="hidden md:block">
             <OptimizedImage
-              src={`${process.env.PUBLIC_URL}/assets/home/specialized.jpg`}
+  src="/assets/home/specialized.jpg"
+            
               alt="Specialized Gynecology Services"
               width={600}
               height={400}
