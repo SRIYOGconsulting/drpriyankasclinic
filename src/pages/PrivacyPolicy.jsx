@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import PageBanner from '../components/PageBanner';
 
 export default function PrivacyPolicy() {
   useEffect(() => {
@@ -17,19 +18,17 @@ export default function PrivacyPolicy() {
   ];
 
   return (
-<div className="min-h-screen bg-gray-50 pt-20 pb-9 md:pt-11 md:pb-11">
-  {/* Full Width Header/Ribbon */}
-  <div className="bg-gradient-to-r from-pink-600 to-pink-700 text-white w-full">
-    <div className="max-w-7xl mx-auto px-4 md:px-8 py-12">
-      <h1 className="text-3xl md:text-4xl font-bold mb-2">
-        Privacy Policy
-      </h1>
-    </div>
-  </div>
-
-      {/* Main Content - 80% Width */}
-      <div className="max-w-7xl mx-auto px-4 md:px-8 py-12">
-        <div className="max-w-5xl mx-auto">
+<div className="min-h-screen bg-gray-50">
+      <PageBanner 
+        title="Privacy Policy"
+        description="Learn how we collect, use, and protect your personal information"
+        breadcrumbs={[
+          { label: 'Home', href: '/' },
+          { label: 'Privacy Policy' }
+        ]}
+      />
+      
+        <div className="w-[80%] md:max-w-5xl mx-auto">
           <div className="prose prose-pink max-w-none">
             {/* Table of Contents */}
             <div className="mb-8 p-4 bg-gray-50 rounded-lg">
@@ -138,6 +137,5 @@ export default function PrivacyPolicy() {
           </div>
         </div>
       </div>
-    </div>
   );
 }

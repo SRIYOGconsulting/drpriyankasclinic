@@ -38,7 +38,7 @@ const FAQ = () => {
         <meta name="description" content="Find answers to common questions about our services, appointments, and more at Dr. Priya's Clinic." />
       </Helmet>
       
-      <div className="max-w-3xl mx-auto">
+      <div className="w-[80%] max-w-3xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-extrabold text-gray-900 mb-4">Frequently Asked Questions</h1>
           <p className="text-xl text-gray-600">Find answers to common questions about our services and policies</p>

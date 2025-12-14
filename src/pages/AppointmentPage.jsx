@@ -183,7 +183,7 @@ export default function AppointmentPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
+      <div className="w-[80%] max-w-7xl mx-auto">
         {/* Back Button */}
         <button
           onClick={() => navigate(-1)}

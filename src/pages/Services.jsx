@@ -322,7 +322,7 @@ export default function Services() {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        <div className="max-w-6xl mx-auto px-4">
+        <div className="w-[80%] max-w-6xl mx-auto px-4">
           <div className="relative flex flex-col md:flex-row items-center md:items-start gap-8">
             <div className="md:flex-1">
               <motion.h5 

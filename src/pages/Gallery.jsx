@@ -51,7 +51,7 @@ export default function Gallery() {
         bgImage="/assets/home/slider/1.jpg"
       />
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
+      <div className="w-[80%] max-w-7xl mx-auto px-4 sm:px-6 py-12">
 
         {/* Masonry Gallery with Columns */}
         <div className="px-4 sm:px-0">

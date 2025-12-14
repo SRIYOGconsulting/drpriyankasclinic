@@ -50,7 +50,7 @@ export default function SiteHeader() {
 
       {/* Main navigation */}
       <div className="bg-white border-b border-gray-100">
-        <div className="w-full max-w-[95%] mx-auto px-2 md:px-4 py-3 flex items-center justify-between">
+        <div className="w-full max-w-[80%] mx-auto px-2 md:px-4 py-3 flex items-center justify-between">
           <Link to="/" className="flex items-center">
             <img 
               src="/assets/logo/dr-priyankas-clinic-logo.png" 

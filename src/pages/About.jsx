@@ -13,7 +13,7 @@ export default function About() {
         bgImage="/assets/home/slider/1.jpg"
       />
       
-      <div className="max-w-6xl mx-auto px-4 py-12">
+      <div className="w-4/5 mx-auto px-4 py-12">
         <div className="grid gap-10 md:grid-cols-2 items-start">
           <div>
             <div className="relative">

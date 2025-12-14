@@ -13,7 +13,7 @@ export default function ContactPage() {
         bgImage="/assets/home/slider/1.jpg"
       />
 
-      <div className="max-w-6xl mx-auto px-4 py-12">
+      <div className="w-[80%] max-w-7xl mx-auto px-4 py-12">
         {/* Contact Info Section */}
         <div className="mb-12 text-center">
           <h2 className="text-3xl font-bold text-slate-900 mb-4">Our Location</h2>

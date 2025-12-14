@@ -26,7 +26,7 @@ export default function Home() {
 
       {/* About snippet */}
       <section className="bg-pink-50">
-        <div className="max-w-6xl mx-auto px-4 py-16 grid gap-6 md:grid-cols-2 items-center">
+        <div className="w-[80%] max-w-6xl mx-auto px-4 py-16 grid gap-6 md:grid-cols-2 items-center">
           <div>
             <p className="uppercase tracking-wide text-sm text-pink-600">Welcome to Dr. Priyanka’s Clinic</p>
             <h1 className="text-3xl md:text-5xl font-bold text-slate-900 mt-2">Your Health - Our Priority</h1>
