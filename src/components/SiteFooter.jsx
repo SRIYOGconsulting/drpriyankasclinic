@@ -85,7 +85,10 @@ export default function SiteFooter() {
             <li><a href="/gallery" className="hover:text-pink-600 transition-colors">Gallery</a></li>
             <li><a href="/contact" className="hover:text-pink-600 transition-colors">Contact Us</a></li>
             <li><a href="/sitemap" className="hover:text-pink-600 transition-colors">Sitemap</a></li>
+             <li><a href="/testimonials" className="hover:text-pink-600 transition-colors">Testimonials</a></li>
+              <li><a href="/emergency" className="hover:text-pink-600 transition-colors">Emergency help</a></li>
           </ul>
+
         </div>
 
         {/* Column 3: Browse More */}
