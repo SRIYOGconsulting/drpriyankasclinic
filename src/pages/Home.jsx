@@ -216,14 +216,7 @@ export default function Home() {
             <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">Latest Updates</h1>
             <div className="w-12 h-1 bg-pink-500 mx-auto"></div>
             
-            <div className="mt-8">
-              <a 
-                href="https://drpriyankasclinic.com/blog.html" 
-                className="inline-flex items-center bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-full text-sm font-medium transition-colors"
-              >
-                Our Blog
-              </a>
-            </div>
+            <h2 className="text-2xl font-semibold text-slate-800 mt-8">Our Blog</h2>
           </div>
           
           {/* Blog Posts Grid */}

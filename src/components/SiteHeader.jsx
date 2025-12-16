@@ -31,8 +31,8 @@ export default function SiteHeader() {
   return (
     <header className={`w-full bg-white fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'shadow-lg' : 'shadow-sm'}`}>
       {/* Top bar with contact info - mobile optimized */}
-      <div className="bg-[#1a1a1a] text-white text-sm py-3 md:py-2">
-        <div className="w-full max-w-[95%] mx-auto px-2 md:px-4 flex flex-col items-center md:flex-row md:justify-between md:items-center">
+      <div className="bg-[#1a1a1a] text-white text-sm py-3 md:py-2 w-full">
+        <div className="w-[80%] max-w-7xl mx-auto px-2 md:px-4 flex flex-col items-center md:flex-row md:justify-between md:items-center">
           <a href="tel:+9779819090115" className="flex items-center text-sm hover:text-pink-400 transition-colors w-full justify-center md:justify-start md:w-auto">
             <svg className="w-4 h-4 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
@@ -49,8 +49,8 @@ export default function SiteHeader() {
       </div>
 
       {/* Main navigation */}
-      <div className="bg-white border-b border-gray-100">
-        <div className="w-full max-w-[80%] mx-auto px-2 md:px-4 py-3 flex items-center justify-between">
+      <div className="bg-white border-b border-gray-100 w-[80%] max-w-7xl mx-auto">
+        <div className="w-full px-2 md:px-4 py-3 flex items-center justify-between">
           <Link to="/" className="flex items-center">
             <img 
               src="/assets/logo/dr-priyankas-clinic-logo.png" 

@@ -1,26 +1,26 @@
 import { useState, useEffect } from 'react';
 import PageBanner from '../components/PageBanner';
 
-// Sample images with different aspect ratios for masonry effect
+// Gallery images with aspect ratios
 const galleryItems = [
-  { id: 1, src: '1.jpg', title: 'Clinic Interior', aspect: 'aspect-[4/3]' },
-  { id: 2, src: '2.jpg', title: 'Medical Equipment', aspect: 'aspect-square' },
-  { id: 3, src: '3.jpg', title: 'Waiting Area', aspect: 'aspect-[3/4]' },
-  { id: 4, src: '5.jpg', title: 'Consultation Room', aspect: 'aspect-square' },
-  { id: 5, src: '6.jpg', title: 'Patient Care', aspect: 'aspect-[4/3]' },
-  { id: 6, src: '7.jpg', title: 'Modern Facilities', aspect: 'aspect-[3/4]' },
-  { id: 7, src: '8.jpg', title: 'Diagnostic Center', aspect: 'aspect-square' },
-  { id: 8, src: '9.jpg', title: 'Expert Staff', aspect: 'aspect-[4/3]' },
-  { id: 9, src: '10.jpg', title: 'Treatment Room', aspect: 'aspect-square' },
-  { id: 10, src: '11.jpg', title: 'Reception Area', aspect: 'aspect-[3/4]' },
-  { id: 11, src: '12.jpg', title: 'Examination', aspect: 'aspect-[4/3]' },
-  { id: 12, src: '13.jpg', title: 'Medical Team', aspect: 'aspect-square' },
-  { id: 13, src: '14.jpg', title: 'Therapy Room', aspect: 'aspect-[3/4]' },
-  { id: 14, src: '15.jpg', title: 'Patient Room', aspect: 'aspect-[4/3]' },
-  { id: 15, src: 'slider1.jpg', title: 'Facility Tour', aspect: 'aspect-square' },
-  { id: 16, src: 'slider2.jpg', title: 'Medical Staff', aspect: 'aspect-[3/4]' },
-  { id: 17, src: 'slider3.jpg', title: 'Equipment', aspect: 'aspect-[4/3]' },
-  { id: 18, src: 'slider4.jpg', title: 'Clinic Overview', aspect: 'aspect-square' },
+  { id: 1, src: '1.jpg', aspect: 'aspect-[4/3]' },
+  { id: 2, src: '2.jpg', aspect: 'aspect-square' },
+  { id: 3, src: '3.jpg', aspect: 'aspect-[3/4]' },
+  { id: 4, src: '5.jpg', aspect: 'aspect-square' },
+  { id: 5, src: '6.jpg', aspect: 'aspect-[4/3]' },
+  { id: 6, src: '7.jpg', aspect: 'aspect-[3/4]' },
+  { id: 7, src: '8.jpg', aspect: 'aspect-square' },
+  { id: 8, src: '9.jpg', aspect: 'aspect-[4/3]' },
+  { id: 9, src: '10.jpg', aspect: 'aspect-square' },
+  { id: 10, src: '11.jpg', aspect: 'aspect-[3/4]' },
+  { id: 11, src: '12.jpg', aspect: 'aspect-[4/3]' },
+  { id: 12, src: '13.jpg', aspect: 'aspect-square' },
+  { id: 13, src: '14.jpg', aspect: 'aspect-[3/4]' },
+  { id: 14, src: '15.jpg', aspect: 'aspect-[4/3]' },
+  { id: 15, src: 'slider1.jpg', aspect: 'aspect-square' },
+  { id: 16, src: 'slider2.jpg', aspect: 'aspect-[3/4]' },
+  { id: 17, src: 'slider3.jpg', aspect: 'aspect-[4/3]' },
+  { id: 18, src: 'slider4.jpg', aspect: 'aspect-square' },
 ];
 
 export default function Gallery() {
@@ -64,7 +64,7 @@ export default function Gallery() {
               >
                 <img
                   src={`/assets/gallery/${item.src}`}
-                  alt={item.title}
+                  alt="Clinic photo"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   loading="lazy"
                 />
@@ -101,11 +101,11 @@ export default function Gallery() {
           <div className="relative w-full max-w-5xl max-h-[90vh] flex items-center justify-center">
             <img
               src={`/assets/gallery/${galleryItems[openIndex].src}`}
-              alt={galleryItems[openIndex].title}
+              alt="Clinic photo"
               className="max-h-[85vh] max-w-full object-contain"
             />
             <div className="absolute bottom-4 left-0 right-0 text-center text-white text-sm opacity-80">
-              {galleryItems[openIndex].title} • {openIndex + 1} of {galleryItems.length}
+              {openIndex + 1} of {galleryItems.length}
             </div>
           </div>
 
