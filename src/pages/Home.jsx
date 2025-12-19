@@ -72,15 +72,18 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="hidden md:block">
-            <OptimizedImage
-              src={`${import.meta.env.BASE_URL}assets/home/specialized.jpg`}
-              alt="Specialized Gynecology Services"
-              width={600}
-              height={400}
-              className="rounded-xl shadow-sm border border-pink-100 w-full h-auto hover:scale-[1.02] transition-transform duration-500"
-              containerClassName="w-full h-full"
-            />
+          <div className="hidden md:flex items-center justify-center w-full h-full p-4">
+            <div className="relative w-full max-w-2xl">
+              <OptimizedImage
+                src={`${import.meta.env.BASE_URL}assets/home/specialized.jpg`}
+                alt="Specialized Gynecology Services"
+                width={800}
+                height={600}
+                className="rounded-xl shadow-lg border-4 border-white w-full h-auto hover:scale-[1.03] transition-transform duration-500"
+                containerClassName="w-full h-full"
+                priority
+              />
+            </div>
           </div>
         </div>
       </section>
