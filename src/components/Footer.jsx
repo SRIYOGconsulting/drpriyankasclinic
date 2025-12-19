@@ -80,10 +80,10 @@ export default function SiteFooter() {
           <h3 className="font-bold text-slate-900 mb-3 text-xl text-left">Quick Links</h3>
           <ul className="space-y-3 pl-1 text-[15px]">
             <li><a href="/" className="hover:text-pink-600 transition-colors">Home</a></li>
-            <li><a href="/about" className="hover:text-pink-600 transition-colors">About Us</a></li>
+           
             <li><a href="/services" className="hover:text-pink-600 transition-colors">Services</a></li>
             <li><a href="/gallery" className="hover:text-pink-600 transition-colors">Gallery</a></li>
-            <li><a href="/contact" className="hover:text-pink-600 transition-colors">Contact Us</a></li>
+            <li><a href="/faq" className="hover:text-pink-600 transition-colors">FAQ</a></li>
             <li><a href="/sitemap" className="hover:text-pink-600 transition-colors">Sitemap</a></li>
              <li><a href="/testimonials" className="hover:text-pink-600 transition-colors">Testimonials</a></li>
               <li><a href="/emergency" className="hover:text-pink-600 transition-colors">Emergency help</a></li>

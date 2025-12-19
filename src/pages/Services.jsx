@@ -5,7 +5,6 @@ import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
 import { FaCalendarAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import PageBanner from '../components/PageBanner';
-import OptimizedImage from '../components/OptimizedImage';
 
 const ServiceItem = ({ service: s, index }) => {
   const [ref, inView] = useInView({
@@ -31,13 +30,13 @@ const ServiceItem = ({ service: s, index }) => {
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
           >
-            <OptimizedImage
+            <img
               src={s.img}
               alt={s.title}
               width={400}
               height={300}
               className="w-full h-full object-cover"
-              containerClassName="w-full h-full"
+              loading="lazy"
             />
           </motion.div>
         </div>
@@ -233,15 +232,15 @@ export default function Services() {
     small: 'Gynaecology',
     title: 'Cancer Prevention, Screening and Diagnosis',
     items: [
-      { title: 'HPV Vaccination', img: `${import.meta.env.BASE_URL}assets/services/hpv-vaccination.jpg`, desc: 'The HPV (Human Papillomavirus) vaccination is a vital preventive measure against certain types of HPV that can cause cervical, anal, throat, and other cancers.' },
-      { title: 'HPV DNA Test', img: `${import.meta.env.BASE_URL}assets/services/hpv-dna-test.jpg`, desc: 'HPV DNA test detects high-risk HPV types that may cause cervical cancer. A key screening tool for early risk identification and women\'s health protection.' },
-      { title: 'PAP Smear', img: `${import.meta.env.BASE_URL}assets/services/pap-smear.jpg`, desc: 'A vital test that helps identify cervical cancer early by detecting abnormal cell changes and HPV risk, supporting timely care and better health outcomes.' },
-      { title: 'Colposcopy', img: `${import.meta.env.BASE_URL}assets/services/colposcopy.jpg`, desc: 'A diagnostic exam that closely inspects the cervix, vagina, and vulva to detect abnormal cells, infections, or early signs of disease for timely treatment.' },
-      { title: 'LEEP', img: `${import.meta.env.BASE_URL}assets/services/leep.jpg`, desc: 'A procedure that uses a thin electrified loop to remove abnormal or precancerous cervical cells, helping prevent cervical cancer and support early treatment.' },
-      { title: 'CA 125, CEA, CA19-9 and other Blood Tests', img: `${import.meta.env.BASE_URL}assets/services/ca125-ceaca19-9test.jpg`, desc: 'Blood tests that measure specific tumor markers to help detect, track, and monitor various cancers, supporting early diagnosis and treatment planning.' },
-      { title: 'Breast USG', img: `${import.meta.env.BASE_URL}assets/services/breast-usg.jpg`, desc: 'A non-invasive imaging method that examines breast tissue to identify lumps, changes, or other abnormalities for early detection and improved breast health.' },
-      { title: 'TVS and USG', img: `${import.meta.env.BASE_URL}assets/services/tvs-usg.jpg`, desc: 'Imaging techniques like TVS and USG that provide clear visualization of internal organs, helping detect abnormalities and support accurate medical diagnosis.' },
-      { title: 'Cervical and Endometrial Biopsy', img: `${import.meta.env.BASE_URL}assets/services/cervical-endometrial-biopsy.jpg`, desc: 'Diagnostic procedures that evaluate cervical and uterine lining tissues to identify abnormalities, detect disease early, and guide appropriate treatment.' },
+      { title: 'HPV Vaccination', img: '/assets/services/hpv-vaccination.jpg', desc: 'The HPV (Human Papillomavirus) vaccination is a vital preventive measure against certain types of HPV that can cause cervical, anal, throat, and other cancers.' },
+      { title: 'HPV DNA Test', img: '/assets/services/hpv-dna-test.jpg', desc: 'HPV DNA test detects high-risk HPV types that may cause cervical cancer. A key screening tool for early risk identification and women\'s health protection.' },
+      { title: 'PAP Smear', img: '/assets/services/pap-smear.jpg', desc: 'A vital test that helps identify cervical cancer early by detecting abnormal cell changes and HPV risk, supporting timely care and better health outcomes.' },
+      { title: 'Colposcopy', img: '/assets/services/colposcopy.jpg', desc: 'A diagnostic exam that closely inspects the cervix, vagina, and vulva to detect abnormal cells, infections, or early signs of disease for timely treatment.' },
+      { title: 'LEEP', img: '/assets/services/leep.jpg', desc: 'A procedure that uses a thin electrified loop to remove abnormal or precancerous cervical cells, helping prevent cervical cancer and support early treatment.' },
+      { title: 'CA 125, CEA, CA19-9 and other Blood Tests', img: '/assets/services/ca125-ceaca19-9test.jpg', desc: 'Blood tests that measure specific tumor markers to help detect, track, and monitor various cancers, supporting early diagnosis and treatment planning.' },
+      { title: 'Breast USG', img: '/assets/services/breast-usg.jpg', desc: 'A non-invasive imaging method that examines breast tissue to identify lumps, changes, or other abnormalities for early detection and improved breast health.' },
+      { title: 'TVS and USG', img: '/assets/services/tvs-usg.jpg', desc: 'Imaging techniques like TVS and USG that provide clear visualization of internal organs, helping detect abnormalities and support accurate medical diagnosis.' },
+      { title: 'Cervical and Endometrial Biopsy', img: '/assets/services/cervical-endometrial-biopsy.jpg', desc: 'Diagnostic procedures that evaluate cervical and uterine lining tissues to identify abnormalities, detect disease early, and guide appropriate treatment.' },
     ],
   };
 
@@ -249,14 +248,14 @@ export default function Services() {
     small: 'Obstetrics services',
     title: 'The Care of Women during Pregnancy and Childbirth',
     items: [
-      { title: 'Prenatal, Antenatal and Postnatal Care and Counseling', img: `${import.meta.env.BASE_URL}assets/services/prenatal-antenatal-postnatal-care-counseling.jpg`, desc: 'Care and counseling that support the health of mother and baby through pregnancy, childbirth, and postpartum, ensuring safety, guidance, and overall well-being.' },
-      { title: 'Safe Abortion Practices', img: `${import.meta.env.BASE_URL}assets/services/safe-abortion-practices.jpg`, desc: 'Safe medical protocols focused on reducing risks, protecting health, and promoting overall well-being through proper guidance and standardized care.' },
-      { title: 'Family Planning and Counseling', img: `${import.meta.env.BASE_URL}assets/services/family-planning-counseling.jpg`, desc: 'Trusted information and support for reproductive health, empowering individuals to make informed decisions about family planning and future goals.' },
-      { title: 'High Risk Pregnancy', img: `${import.meta.env.BASE_URL}assets/services/high-risk-pregnancy.jpg`, desc: 'Specialized care for high-risk pregnancies, ensuring safety for both mother and baby through close monitoring and advanced medical support.' },
-      { title: 'Infertility Diagnosis and Treatment', img: `${import.meta.env.BASE_URL}assets/services/infertility-diagnosis-treatment.jpg`, desc: 'Comprehensive evaluation and modern treatments for infertility, helping individuals and couples achieve healthy and informed paths to parenthood.' },
-      { title: 'Painless Delivery and Cesarean Delivery', img: `${import.meta.env.BASE_URL}assets/services/painless-delivery-cesarean-delivery.jpg`, desc: 'Safe childbirth support through epidural pain relief and Cesarean delivery options, ensuring comfort and medical safety for mothers.' },
-      { title: 'Genetic Screening', img: `${import.meta.env.BASE_URL}assets/services/genetic-screening.jpg`, desc: 'Genetic screening to detect inherited conditions and disease risks, enabling early guidance, prevention, and informed health decisions' },
-      { title: 'STD Diagnosis and Management', img: `${import.meta.env.BASE_URL}assets/services/std-diagnosis-management.jpg`, desc: 'Complete STI care, from accurate detection to effective treatment, ensuring protection, awareness, and long-term sexual health' },
+      { title: 'Prenatal, Antenatal and Postnatal Care and Counseling', img: '/assets/services/prenatal-antenatal-postnatal-care-counseling.jpg', desc: 'Care and counseling that support the health of mother and baby through pregnancy, childbirth, and postpartum, ensuring safety, guidance, and overall well-being.' },
+      { title: 'Safe Abortion Practices', img: '/assets/services/safe-abortion-practices.jpg', desc: 'Safe medical protocols focused on reducing risks, protecting health, and promoting overall well-being through proper guidance and standardized care.' },
+      { title: 'Family Planning and Counseling', img: '/assets/services/family-planning-counseling.jpg', desc: 'Trusted information and support for reproductive health, empowering individuals to make informed decisions about family planning and future goals.' },
+      { title: 'High Risk Pregnancy', img: '/assets/services/high-risk-pregnancy.jpg', desc: 'Specialized care for high-risk pregnancies, ensuring safety for both mother and baby through close monitoring and advanced medical support.' },
+      { title: 'Infertility Diagnosis and Treatment', img: '/assets/services/infertility-diagnosis-treatment.jpg', desc: 'Comprehensive evaluation and modern treatments for infertility, helping individuals and couples achieve healthy and informed paths to parenthood.' },
+      { title: 'Painless Delivery and Cesarean Delivery', img: '/assets/services/painless-delivery-cesarean-delivery.jpg', desc: 'Safe childbirth support through epidural pain relief and Cesarean delivery options, ensuring comfort and medical safety for mothers.' },
+      { title: 'Genetic Screening', img: '/assets/services/genetic-screening.jpg', desc: 'Genetic screening to detect inherited conditions and disease risks, enabling early guidance, prevention, and informed health decisions' },
+      { title: 'STD Diagnosis and Management', img: '/assets/services/std-diagnosis-management.jpg', desc: 'Complete STI care, from accurate detection to effective treatment, ensuring protection, awareness, and long-term sexual health' },
     ],
     isCustomGrid: true,
     customLayout: true
@@ -266,8 +265,8 @@ export default function Services() {
     small: 'Obstetrics services',
     title: 'An obstetrician provides routine prenatal care to people who are pregnant. They also diagnose and treat complications during pregnancy.',
     items: [
-      { title: 'Diagnostic Hysteroscopy', img: `${import.meta.env.BASE_URL}assets/services/diagnostic-hysteroscopy.jpg`, desc: 'A gentle, minimally invasive method to view the uterus, aiding diagnosis and improving treatment decisions with reduced discomfort.' },
-      { title: 'MVA', img: `${import.meta.env.BASE_URL}assets/services/mva.jpg`, desc: 'A safe, quick, and minimally invasive procedure using Manual Vacuum Aspiration for effective early pregnancy care and management.' },
+      { title: 'Diagnostic Hysteroscopy', img: '/assets/services/diagnostic-hysteroscopy.jpg', desc: 'A gentle, minimally invasive method to view the uterus, aiding diagnosis and improving treatment decisions with reduced discomfort.' },
+      { title: 'MVA', img: '/assets/services/mva.jpg', desc: 'A safe, quick, and minimally invasive procedure using Manual Vacuum Aspiration for effective early pregnancy care and management.' },
     ],
   };
 
@@ -277,22 +276,22 @@ export default function Services() {
     items: [
       { 
         title: 'Personalized Care Plan', 
-        img: `${import.meta.env.BASE_URL}assets/services/infertility-diagnosis-treatment.jpg`, 
+        img: '/assets/services/infertility-diagnosis-treatment.jpg', 
         desc: 'Personalized healthcare plans crafted to match your unique needs, lifestyle, and long-term wellness goals for better health outcomes.'
       },
       { 
         title: '24/7 Doctor Support', 
-        img: `${import.meta.env.BASE_URL}assets/services/prenatal-antenatal-postnatal-care-counseling.jpg`, 
+        img: '/assets/services/prenatal-antenatal-postnatal-care-counseling.jpg', 
         desc: '24/7 access to trusted healthcare professionals, ensuring constant support, timely guidance, and complete peace of mind.'
       },
       { 
         title: 'Emotional Counseling', 
-        img: `${import.meta.env.BASE_URL}assets/services/family-planning-counseling.jpg`, 
+        img: '/assets/services/family-planning-counseling.jpg', 
         desc: 'Dedicated emotional support from trained professionals to help you stay balanced, confident, and supported throughout your healthcare journey.'
       },
       { 
         title: 'Wellness Programs', 
-        img: `${import.meta.env.BASE_URL}assets/services/genetic-screening.jpg`, 
+        img: '/assets/services/genetic-screening.jpg', 
         desc: 'Wide-ranging health programs designed to maintain wellness, prevent illness, and support long-term improvements in your overall health.'
       },
     ]
@@ -305,8 +304,8 @@ export default function Services() {
   return (
     <div>
       <PageBanner 
-        title="Our Services"
-        description="We are here for your care"
+        title="Your Health, Our Priority"
+        description="Experience comprehensive gynecological and obstetric care with our specialized services"
         breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: 'Services' }
@@ -390,99 +389,8 @@ export default function Services() {
       <Section {...sec2} customLayout isCustomGrid />
       <Section {...sec3} customLayout isCustomGrid />
       <Section {...sec4} />
-      <FAQSection />
- n   </div>
+     
+   </div>
   );
 }
 
-const FAQSection = () => {
-  const [activeIndex, setActiveIndex] = useState(null);
-
-  const faqs = [
-    {
-      question: "What services do you offer?",
-      answer: "We offer a comprehensive range of gynecological and obstetric services including cancer prevention, prenatal and postnatal care, family planning, infertility treatment, and more. Our services are designed to provide complete women's healthcare under one roof."
-    },
-    {
-      question: "How do I book an appointment?",
-      answer: "You can book an appointment by calling our clinic directly, using our online booking system, or by visiting us in person. We recommend booking in advance to secure your preferred time slot, especially for routine check-ups and screenings."
-    },
-    {
-      question: "Do you accept insurance?",
-      answer: "Yes, we accept most major insurance plans. Please contact our office with your insurance information to verify coverage before your appointment. Our staff will be happy to assist you with any insurance-related questions."
-    },
-    {
-      question: "What should I bring to my first appointment?",
-      answer: "For your first visit, please bring your insurance card, photo ID, list of current medications, and any relevant medical records or test results from previous providers. If you're coming for a specific concern, please have details about your symptoms and medical history ready."
-    },
-    {
-      question: "How early should I arrive for my appointment?",
-      answer: "We recommend arriving 15 minutes before your scheduled appointment time to complete any necessary paperwork and ensure a smooth check-in process. This helps us stay on schedule and provide the best possible care to all our patients."
-    }
-  ];
-
-  const toggleAccordion = (index) => {
-    setActiveIndex(activeIndex === index ? null : index);
-  };
-
-  return (
-    <section className="py-16 bg-slate-50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-12">
-          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-4">
-            Frequently Asked Questions
-          </h2>
-          <div className="w-24 h-1 bg-pink-600 mx-auto"></div>
-        </div>
-
-        <div className="max-w-3xl mx-auto space-y-4">
-          {faqs.map((faq, index) => (
-            <motion.div 
-              key={index}
-              className="border border-gray-200 rounded-lg overflow-hidden shadow-sm"
-              initial={false}
-              animate={{ 
-                borderColor: activeIndex === index ? '#DB2777' : '#E5E7EB',
-                boxShadow: activeIndex === index ? '0 4px 6px -1px rgba(219, 39, 119, 0.1), 0 2px 4px -1px rgba(219, 39, 119, 0.06)' : '0 1px 2px 0 rgba(0, 0, 0, 0.05)'
-              }}
-              transition={{ duration: 0.2 }}
-            >
-              <motion.button
-                className={`w-full px-6 py-4 text-left flex justify-between items-center ${activeIndex === index ? 'bg-pink-50' : 'bg-white hover:bg-gray-50'}`}
-                onClick={() => toggleAccordion(index)}
-                aria-expanded={activeIndex === index}
-                aria-controls={`faq-panel-${index}`}
-              >
-                <span className="font-medium text-slate-800">{faq.question}</span>
-                {activeIndex === index ? 
-                  <FiChevronUp className="w-5 h-5 text-pink-600" /> : 
-                  <FiChevronDown className="w-5 h-5 text-gray-400" />
-                }
-              </motion.button>
-              <AnimatePresence>
-                {activeIndex === index && (
-                  <motion.div
-                    id={`faq-panel-${index}`}
-                    initial="collapsed"
-                    animate="open"
-                    exit="collapsed"
-                    variants={{
-                      open: { opacity: 1, height: 'auto' },
-                      collapsed: { opacity: 0, height: 0 }
-                    }}
-                    transition={{ duration: 0.3, ease: 'easeInOut' }}
-                    className="overflow-hidden"
-                  >
-                    <div className="px-6 pb-6 pt-2 text-slate-600">
-                      {faq.answer}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};

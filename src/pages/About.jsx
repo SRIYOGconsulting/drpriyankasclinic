@@ -4,8 +4,8 @@ export default function About() {
   return (
     <div className="bg-white">
       <PageBanner 
-        title="About Dr. Priyanka's Clinic"
-        description="Compassionate and comprehensive women's healthcare in Birtamode, Jhapa"
+        title="Our Story"
+        description="Discover the compassionate care and expertise that defines Dr. Priyanka's Clinic"
         breadcrumbs={[
           { label: 'Home', href: '/' },
           { label: 'About Us' }

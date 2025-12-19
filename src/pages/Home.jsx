@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import HeroSlider from '../components/HeroSlider';
+import HeroSlider from '../components/Hero';
 import OptimizedImage from '../components/OptimizedImage';
 
 export default function Home() {
@@ -216,7 +216,7 @@ export default function Home() {
             <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">Latest Updates</h1>
             <div className="w-12 h-1 bg-pink-500 mx-auto"></div>
             
-            <h2 className="text-2xl font-semibold text-slate-800 mt-8">Our Blog</h2>
+          
           </div>
           
           {/* Blog Posts Grid */}
@@ -232,7 +232,7 @@ export default function Home() {
               </div>
               <div className="p-6">
                 <h3 className="text-lg font-semibold text-slate-900 mb-2">How to safe abortion care ?</h3>
-                <p className="text-sm text-slate-600 mb-4">Accessing safe abortion services is crucial for preventing complications and ensuring women's health. Our clinic provides confidential and professional care with the highest medical standards. Our experienced team ensures your safety and comfort throughout the process.</p>
+                <p className="text-sm text-slate-600 mb-4">Accessing safe abortion services is crucial for preventing complications and ensuring women's health. Our clinic provides confidential and professional care with the highest medical standards, prioritizing your privacy at every step.<br/> Our experienced team ensures your safety, comfort, and dignity throughout the process. We understand this is a significant decision, and we support you with comprehensive pre-procedure counseling, care during your visit, and thorough follow-up to ensure your complete recovery.</p>
                 <a 
                   href="https://www.who.int/news/item/26-09-2022-ask-the-expert-10-questions-on-safe-abortion-care" 
                   target="_blank" 
@@ -257,8 +257,8 @@ export default function Home() {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-lg font-semibold text-slate-900 mb-2">What is Breast Cancer?</h3>
-                <p className="text-sm text-slate-600 mb-4">Breast cancers can start from different parts of the breast and understanding them is key to prevention. Early detection through regular screenings and self-exams significantly improves treatment outcomes. Our clinic offers comprehensive breast health services including mammograms and ultrasounds.</p>
+                <h3 className="text-lg font-semibold text-slate-900 mb-2">What is Breast Cancer ?</h3>
+                <p className="text-sm text-slate-600 mb-4"> Breast cancers can start from different parts of the breast, and understanding them is key to prevention and early intervention. Early detection through regular screenings and self-exams significantly improves treatment outcomes and survival rates.<br/> Our clinic offers comprehensive breast health services including mammograms, ultrasounds, and clinical examinations by experienced specialists. We provide personalized care plans tailored to your risk factors and guide you through your journey with expertise and compassion.</p>
                 <a 
                   href="https://www.cancer.org/cancer/types/breast-cancer/about/what-is-breast-cancer.html" 
                   target="_blank" 

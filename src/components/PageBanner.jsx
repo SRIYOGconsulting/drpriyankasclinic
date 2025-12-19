@@ -10,16 +10,17 @@ const PageBanner = ({
     <section className="relative bg-slate-900 text-white h-[280px] sm:h-[320px] md:h-[380px] w-full mt-0">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 w-full h-full overflow-hidden">
-        <img 
-          src={bgImage} 
+        <img
+          src={bgImage.startsWith('http') ? bgImage : bgImage}
           alt={title}
-          className="w-full h-full object-cover"
+          width="100%"
+          height="100%"
+          className="object-cover w-full h-full"
           style={{
             objectPosition: 'center center',
-            filter: 'brightness(0.5) contrast(1.1)',
-            width: '100%',
-            height: '100%',
+            filter: 'brightness(0.5) contrast(1.1)'
           }}
+          loading="lazy"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-slate-900/50 to-slate-900/80"></div>
       </div>

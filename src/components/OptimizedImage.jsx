@@ -1,61 +1,51 @@
-import { useState, useEffect } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-export default function OptimizedImage({
-  src,
-  alt,
-  width,
-  height,
+const OptimizedImage = ({ 
+  src, 
+  alt, 
+  width, 
+  height, 
   className = '',
-  containerClassName = '',
-  ...props
-}) {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [hasError, setHasError] = useState(false);
+  style = {},
+  ...props 
+}) => {
+  // Handle different src formats (absolute, relative, or full URLs)
+  const getImageUrl = () => {
+    if (!src) return '';
+    // If it's already a full URL or data URL, return as is
+    if (src.startsWith('http') || src.startsWith('data:')) return src;
+    // Handle public assets (assuming they're in the public folder)
+    return `${process.env.PUBLIC_URL || ''}${src.startsWith('/') ? src : `/${src}`}`;
+  };
 
-  useEffect(() => {
-    const img = new Image();
-    img.src = src;
-    
-    const handleLoad = () => setIsLoaded(true);
-    const handleError = () => setHasError(true);
-    
-    img.addEventListener('load', handleLoad);
-    img.addEventListener('error', handleError);
-    
-    return () => {
-      img.removeEventListener('load', handleLoad);
-      img.removeEventListener('error', handleError);
-    };
-  }, [src]);
-
-  if (hasError) {
-    return (
-      <div 
-        className={`bg-gray-100 flex items-center justify-center ${containerClassName}`}
-        style={{ width, height }}
-      >
-        <span className="text-gray-400">Image not available</span>
-      </div>
-    );
-  }
+  const imageStyle = {
+    width: width === '100%' ? '100%' : `${width}px`,
+    height: height ? `${height}px` : 'auto',
+    maxWidth: '100%',
+    objectFit: 'cover',
+    ...style
+  };
 
   return (
-    <div className={`relative overflow-hidden ${containerClassName}`}>
-      <img
-        src={src}
-        alt={alt || ''}
-        width={width}
-        height={height}
-        loading="lazy"
-        className={`${className} transition-opacity duration-300 ${
-          isLoaded ? 'opacity-100' : 'opacity-0'
-        }`}
-        onError={() => setHasError(true)}
-        {...props}
-      />
-      {!isLoaded && (
-        <div className="absolute inset-0 bg-gray-100 animate-pulse"></div>
-      )}
-    </div>
+    <img
+      src={getImageUrl()}
+      alt={alt || ''}
+      loading="lazy"
+      className={className}
+      style={imageStyle}
+      {...props}
+    />
   );
-}
+};
+
+OptimizedImage.propTypes = {
+  src: PropTypes.string.isRequired,
+  alt: PropTypes.string,
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  className: PropTypes.string,
+  style: PropTypes.object,
+};
+
+export default OptimizedImage;

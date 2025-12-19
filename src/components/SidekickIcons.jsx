@@ -8,7 +8,7 @@ const SidekickIcons = () => {
   
   const icons = [
     { 
-      icon: <FaWhatsapp className="w-4 h-4" />,
+      icon: <FaWhatsapp className="w-5 h-5" />,
       label: 'Chat on WhatsApp',
       link: 'https://wa.me/1234567890?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment',
       color: 'bg-green-500 hover:bg-green-600',
@@ -16,7 +16,7 @@ const SidekickIcons = () => {
       pulse: true
     },
     { 
-      icon: <FiPhone className="w-4 h-4" />,
+      icon: <FiPhone className="w-5 h-5" />,
       label: 'Call Us',
       link: 'tel:+1234567890',
       color: 'bg-blue-500 hover:bg-blue-600',
@@ -24,7 +24,7 @@ const SidekickIcons = () => {
       pulse: true
     },
     { 
-      icon: <FaFacebookMessenger className="w-4 h-4" />,
+      icon: <FaFacebookMessenger className="w-5 h-5" />,
       label: 'Message Us',
       link: 'https://m.me/Doctor.Priyankas.Clinic',
       color: 'bg-blue-400 hover:bg-blue-500',
@@ -32,7 +32,7 @@ const SidekickIcons = () => {
       pulse: true
     },
     { 
-      icon: <FaTiktok className="w-4 h-4" />,
+      icon: <FaTiktok className="w-5 h-5" />,
       label: 'Follow on TikTok',
       link: 'https://www.tiktok.com/@drpriyankasclinic',
       color: 'bg-black hover:bg-gray-800',
@@ -98,11 +98,11 @@ const SidekickIcons = () => {
             href={item.link}
             target="_blank"
             rel="noopener noreferrer"
-            className={`${item.color} w-10 h-10 md:w-11 md:h-11 rounded-full shadow-md flex items-center justify-center 
+            className={`${item.color} w-12 h-12 md:w-14 md:h-14 rounded-full shadow-md flex items-center justify-center 
               text-white transition-all duration-300 hover:shadow-lg transform hover:scale-105 relative overflow-hidden`}
             whileHover={{ 
-              y: -8,
-              scale: 1.1,
+              y: -6,
+              scale: 1.08,
               boxShadow: '0 15px 30px -5px rgba(0, 0, 0, 0.3)'
             }} //  mobile smaller size
             whileTap={{ 
