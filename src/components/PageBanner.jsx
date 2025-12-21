@@ -4,7 +4,7 @@ const PageBanner = ({
   title, 
   description, 
   breadcrumbs = [], 
-  bgImage = "/assets/gallery/slider2.jpg" 
+  bgImage = "/public/gallery/slider2.jpg" 
 }) => {
   return (
     <section className="relative bg-slate-900 text-white h-[280px] sm:h-[320px] md:h-[380px] w-full mt-0">

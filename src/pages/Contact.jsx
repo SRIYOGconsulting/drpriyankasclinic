@@ -87,7 +87,9 @@ export default function ContactPage() {
           <h3 className="text-2xl font-semibold text-slate-900 mb-4">Ready to Schedule an Appointment?</h3>
           <p className="text-slate-600 mb-6">Contact us today to book your consultation or ask any questions.</p>
           <a
-            href="/appointment"
+            href="https://wa.me/9779819090115?text=Hello%20Dr.%20Priyanka,%20I%20would%20like%20to%20book%20an%20appointment"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center bg-pink-600 hover:bg-pink-700 text-white font-medium px-6 py-3 rounded-full transition-colors duration-200"
           >
             <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

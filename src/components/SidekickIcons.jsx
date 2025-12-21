@@ -10,7 +10,7 @@ const SidekickIcons = () => {
     { 
       icon: <FaWhatsapp className="w-5 h-5" />,
       label: 'Chat on WhatsApp',
-      link: 'https://wa.me/1234567890?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment',
+      link: 'https://d.sriyog.com/priyanka',
       color: 'bg-green-500 hover:bg-green-600',
       delay: 0.1,
       pulse: true
@@ -18,7 +18,7 @@ const SidekickIcons = () => {
     { 
       icon: <FiPhone className="w-5 h-5" />,
       label: 'Call Us',
-      link: 'tel:+1234567890',
+      link: 'tel:+9779819090115',
       color: 'bg-blue-500 hover:bg-blue-600',
       delay: 0.2,
       pulse: true
@@ -26,7 +26,7 @@ const SidekickIcons = () => {
     { 
       icon: <FaFacebookMessenger className="w-5 h-5" />,
       label: 'Message Us',
-      link: 'https://m.me/Doctor.Priyankas.Clinic',
+      link: 'https://d.sriyog.com/priyankamessenger',
       color: 'bg-blue-400 hover:bg-blue-500',
       delay: 0.3,
       pulse: true
@@ -34,7 +34,7 @@ const SidekickIcons = () => {
     { 
       icon: <FaTiktok className="w-5 h-5" />,
       label: 'Follow on TikTok',
-      link: 'https://www.tiktok.com/@drpriyankasclinic',
+      link: 'https://d.sriyog.com/priyankastiktok',
       color: 'bg-black hover:bg-gray-800',
       delay: 0.4,
       pulse: true

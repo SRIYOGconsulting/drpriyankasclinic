@@ -63,7 +63,7 @@ export default function Gallery() {
                 onClick={() => setOpenIndex(index)}
               >
                 <img
-                  src={`/assets/gallery/${item.src}`}
+                  src={`/public/gallery/${item.src}`}
                   alt="Clinic photo"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   loading="lazy"

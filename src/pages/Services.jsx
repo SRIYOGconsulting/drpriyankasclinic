@@ -49,16 +49,18 @@ const ServiceItem = ({ service: s, index }) => {
               {s.desc}
             </p>
             <div className="mt-auto pt-2 sm:pt-3">
-              <Link 
-                to={`/appointment?service=${encodeURIComponent(s.title)}`}
-                aria-label={`Book appointment for ${s.title}`}
+              <a 
+                href={`https://wa.me/9779819090115?text=Hello%20Dr.%20Priyanka,%20I%20would%20like%20to%20book%20an%20appointment%20for%20${encodeURIComponent(s.title)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Book appointment for ${s.title} on WhatsApp`}
                 className="inline-flex justify-center items-center w-full px-3 py-1.5 sm:py-2 text-xs sm:text-sm rounded-full border border-pink-600 text-pink-700 hover:bg-pink-50 hover:text-pink-800 font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-1"
               >
                 <svg className="w-3.5 h-3.5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                 </svg>
                 Book an Appointment
-              </Link>
+              </a>
             </div>
           </div>
         </div>

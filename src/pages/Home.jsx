@@ -51,10 +51,12 @@ export default function Home() {
                 </div>
               </div>
               
-              <div className="flex flex-col sm:flex-row justify-center w-full mt-5 gap-3 max-w-md mx-auto">
+              <div className="flex flex-col sm:flex-row justify-center w-[80%] mt-5 gap-3 max-w-md mx-auto">
                 <a 
-                  href="/appointment" 
-                  aria-label="Book an appointment with Dr. Priyanka"
+                  href="https://wa.me/9779819090115?text=Hello%20Dr.%20Priyanka,%20I%20would%20like%20to%20book%20an%20appointment" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Book an appointment with Dr. Priyanka on WhatsApp"
                   className="bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-full text-sm sm:text-base font-medium whitespace-nowrap transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 text-center w-full focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 flex items-center justify-center gap-2"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -101,7 +103,7 @@ export default function Home() {
               <div className="w-20 h-1 bg-gradient-to-r from-pink-500 to-amber-400 mx-auto rounded-full"></div>
             </div>
           </div>
-          <div className="mt-6 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 px-4 sm:px-0">
+          <div className="mt-6 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 px-4 sm:px-0 w-full flex justify-center items-center">
             {/* Single column on mobile, full width */}
             <style jsx global>{`
               @media (max-width: 640px) {
@@ -118,7 +120,7 @@ export default function Home() {
                   height: auto;
                 }
                 .service-card .service-thumb img {
-                  width: 100%;
+                  width: 80%;
                   height: auto;
                 }
               }
@@ -151,16 +153,18 @@ export default function Home() {
                       {s.desc}
                     </p>
                     <div className="mt-auto pt-2 sm:pt-3">
-                      <Link 
-                        to={`/appointment?service=${encodeURIComponent(s.title)}`}
-                        aria-label={`Book an appointment for ${s.title}`}
+                      <a 
+                        href={`https://wa.me/9779819090115?text=Hello%20Dr.%20Priyanka,%20I%20would%20like%20to%20book%20an%20appointment%20for%20${encodeURIComponent(s.title)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Book an appointment for ${s.title} on WhatsApp`}
                         className="inline-flex justify-center items-center w-full px-3 py-1.5 sm:py-2 text-xs sm:text-sm rounded-full border border-pink-600 text-pink-700 hover:bg-pink-50 hover:text-pink-800 font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-1"
                       >
                         <svg className="w-3.5 h-3.5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                         </svg>
                         Book an Appointment
-                      </Link>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -235,7 +239,8 @@ export default function Home() {
               </div>
               <div className="p-6">
                 <h3 className="text-lg font-semibold text-slate-900 mb-2">How to safe abortion care ?</h3>
-                <p className="text-sm text-slate-600 mb-4">Accessing safe abortion services is crucial for preventing complications and ensuring women's health. Our clinic provides confidential and professional care with the highest medical standards, prioritizing your privacy at every step.<br/> Our experienced team ensures your safety, comfort, and dignity throughout the process. We understand this is a significant decision, and we support you with comprehensive pre-procedure counseling, care during your visit, and thorough follow-up to ensure your complete recovery.</p>
+                <p className="text-sm text-slate-600 mb-4">Accessing safe abortion services is crucial for preventing complications and ensuring women's health. Our clinic provides confidential and professional care with the highest medical standards, prioritizing your privacy at every step.</p>
+                <p className="text-sm text-slate-600 mb-4">Our experienced team ensures your safety, comfort, and dignity throughout the process. We understand this is a significant decision, and we support you with comprehensive pre-procedure counseling, care during your visit, and thorough follow-up to ensure your complete recovery.</p>
                 <a 
                   href="https://www.who.int/news/item/26-09-2022-ask-the-expert-10-questions-on-safe-abortion-care" 
                   target="_blank" 
@@ -261,7 +266,8 @@ export default function Home() {
               </div>
               <div className="p-6">
                 <h3 className="text-lg font-semibold text-slate-900 mb-2">What is Breast Cancer ?</h3>
-                <p className="text-sm text-slate-600 mb-4"> Breast cancers can start from different parts of the breast, and understanding them is key to prevention and early intervention. Early detection through regular screenings and self-exams significantly improves treatment outcomes and survival rates.<br/> Our clinic offers comprehensive breast health services including mammograms, ultrasounds, and clinical examinations by experienced specialists. We provide personalized care plans tailored to your risk factors and guide you through your journey with expertise and compassion.</p>
+                <p className="text-sm text-slate-600 mb-4">Breast cancers can start from different parts of the breast, and understanding them is key to prevention and early intervention. Early detection through regular screenings and self-exams significantly improves treatment outcomes and survival rates.</p>
+                <p className="text-sm text-slate-600 mb-4">Our clinic offers comprehensive breast health services including mammograms, ultrasounds, and clinical examinations by experienced specialists. We provide personalized care plans tailored to your risk factors and guide you through your journey with expertise and compassion.</p>
                 <a 
                   href="https://www.cancer.org/cancer/types/breast-cancer/about/what-is-breast-cancer.html" 
                   target="_blank" 

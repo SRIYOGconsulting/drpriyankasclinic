@@ -17,7 +17,7 @@ export default function About() {
         <div className="grid gap-10 md:grid-cols-2 items-start">
           <div>
             <div className="relative">
-              <img src="/assets/home/specialized.jpg" alt="Clinic" className="rounded-xl border-2 border-slate-300 shadow-xl" />
+              <img src="/images/gallery/5.jpg" alt="Clinic" className="rounded-xl border-2 border-slate-300 shadow-xl w-full h-auto" />
             </div>
           </div>
           <div>

@@ -2,6 +2,18 @@ import { useState } from 'react';
 import PageBanner from '../components/PageBanner';
 import { FaQuoteLeft, FaStar, FaTimes } from 'react-icons/fa';
 
+// Function to generate placeholder avatar with initials
+const getInitialsAvatar = (name, size = 100, bgColor = 'f3f4f6', textColor = '9ca3af') => {
+  const initials = name
+    .split(' ')
+    .map(word => word[0])
+    .join('')
+    .toUpperCase()
+    .substring(0, 2);
+  
+  return `https://ui-avatars.com/api/?name=${encodeURIComponent(initials)}&background=${bgColor}&color=${textColor}&size=${size}`;
+};
+
 export default function Testimonials() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formData, setFormData] = useState({
@@ -19,25 +31,67 @@ export default function Testimonials() {
       id: 1,
       name: 'Ramesh Shrestha',
       role: 'Patient',
-      content: 'Dr. Priyanka provided excellent care during my treatment. Her expertise and compassionate approach made me feel comfortable throughout my recovery.',
+      content: 'Dr. Priyanka provided excellent care during my treatment. Her expertise and compassionate approach made me feel comfortable throughout my recovery. The clinic staff was always friendly and professional, and I never had to wait long for my appointments.',
       rating: 5,
-      image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg=='
+      date: '2 weeks ago',
+      treatment: 'General Checkup',
+      image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==',
+      icon: '👨‍💼'
     },
     {
       id: 2,
       name: 'Sunita Gurung',
       role: 'Patient',
-      content: 'The team at Dr. Priyanka\'s clinic is amazing. They were very professional and caring during my entire treatment process.',
+      content: 'The team at Dr. Priyanka\'s clinic is amazing. They were very professional and caring during my entire treatment process. The doctor took the time to explain everything clearly and made sure all my concerns were addressed. I highly recommend this clinic!',
       rating: 5,
-      image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg=='
+      date: '1 month ago',
+      treatment: 'Prenatal Care',
+      image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==',
+      icon: '👩‍⚕️'
     },
     {
       id: 3,
       name: 'Amit Sharma',
       role: 'Patient',
-      content: 'I highly recommend Dr. Priyanka for her exceptional medical care and friendly staff. The clinic is well-maintained and has a welcoming atmosphere.',
+      content: 'I highly recommend Dr. Priyanka for her exceptional medical care and friendly staff. The clinic is well-maintained and has a welcoming atmosphere. The doctor is very knowledgeable and takes the time to listen to all my concerns. The online appointment system is very convenient too!',
       rating: 4,
-      image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg=='
+      date: '3 weeks ago',
+      treatment: 'Diabetes Management',
+      image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==',
+      icon: '👨‍💼'
+    },
+    {
+      id: 4,
+      name: 'Anjali Rai',
+      role: 'Patient',
+      content: 'Outstanding experience! Dr. Priyanka is very thorough and takes the time to explain everything in detail. The clinic is clean and modern, and the staff is very friendly. I appreciate the follow-up calls to check on my progress after the visit.',
+      rating: 5,
+      date: '1 week ago',
+      treatment: 'Pediatric Care',
+      image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==',
+      icon: '👩‍👧'
+    },
+    {
+      id: 5,
+      name: 'Rajesh Thapa',
+      role: 'Patient',
+      content: 'Professional and caring staff. The doctor was very patient and answered all my questions. The clinic has a very calming environment which helped ease my anxiety. The online prescription refill system is very convenient and saves a lot of time.',
+      rating: 4,
+      date: '2 days ago',
+      treatment: 'Cardiac Consultation',
+      image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==',
+      icon: '👨‍⚕️'
+    },
+    {
+      id: 6,
+      name: 'Meera Karki',
+      role: 'Patient',
+      content: 'I\'ve been a patient here for years and I wouldn\'t go anywhere else. Dr. Priyanka and her team provide exceptional care. They remember personal details and make you feel valued. The clinic has extended hours which is very helpful for working professionals.',
+      rating: 5,
+      date: '5 days ago',
+      treatment: 'Annual Physical',
+      image: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==',
+      icon: '👵'
     },
   ];
 
@@ -147,35 +201,72 @@ export default function Testimonials() {
       <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
         {/* Text Testimonials */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-center text-slate-900 mb-12">What Our Patients Say</h2>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-slate-900 mb-3">What Our Patients Say</h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-pink-500 to-purple-600 mx-auto rounded-full"></div>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {textTestimonials.map((testimonial) => (
-              <div key={testimonial.id} className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+              <div key={testimonial.id} className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 border border-gray-100">
+                {/* Rating Stars */}
                 <div className="flex items-center mb-4">
-                  <div className="w-16 h-16 rounded-full overflow-hidden bg-gray-200 flex-shrink-0">
-                    <img 
-                      src={testimonial.image} 
-                      alt={testimonial.name}
-                      className="w-full h-full object-cover"
-                      onError={(e) => {
-                        e.target.onerror = null;
-                        e.target.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22100%22%20height%3D%22100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20fill%3D%22%23f3f4f6%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20font-family%3D%22Arial%22%20font-size%3D%2230%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20fill%3D%22%239ca3af%22%3E{testimonial.name.charAt(0)}%3C%2Ftext%3E%3C%2Fsvg%3E';
-                      }}
+                  {[...Array(5)].map((_, i) => (
+                    <FaStar 
+                      key={i} 
+                      className={`w-5 h-5 ${i < testimonial.rating ? 'text-yellow-400' : 'text-gray-200'}`}
+                      fill="currentColor"
                     />
-                  </div>
-                  <div className="ml-4">
-                    <h3 className="text-lg font-semibold text-slate-800">{testimonial.name}</h3>
-                    <p className="text-sm text-slate-600">{testimonial.role}</p>
-                    <div className="flex mt-1">
-                      {renderStars(testimonial.rating)}
+                  ))}
+                </div>
+                
+                {/* Testimonial Text */}
+                <div className="relative mb-6">
+                  <FaQuoteLeft className="absolute -top-2 -left-2 text-gray-100 text-4xl -z-10" />
+                  <p className="text-gray-600 relative z-10">"{testimonial.content}"</p>
+                </div>
+                
+                {/* User Info */}
+                <div className="flex items-center pt-4 border-t border-gray-100">
+                  <div className="relative">
+                    <div className="w-14 h-14 rounded-full bg-pink-50 flex items-center justify-center text-3xl overflow-hidden mr-4">
+                      <img 
+                        src={getInitialsAvatar(testimonial.name)} 
+                        alt={testimonial.name}
+                        className="w-full h-full object-cover"
+                        onError={(e) => {
+                          e.target.onerror = null;
+                          e.target.src = getInitialsAvatar(testimonial.name);
+                        }}
+                      />
+                    </div>
+                    <div className="absolute -bottom-1 -right-1 bg-pink-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">
+                      {testimonial.rating}
                     </div>
                   </div>
-                </div>
-                <div className="relative">
-                  <FaQuoteLeft className="text-pink-200 text-3xl absolute -top-2 -left-2" />
-                  <p className="text-slate-700 italic pl-6 relative z-10">
-                    {testimonial.content}
-                  </p>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-semibold text-slate-800">{testimonial.name}</h3>
+                    <div className="flex items-center text-sm text-gray-500">
+                      <span>{testimonial.role}</span>
+                      {testimonial.treatment && (
+                        <>
+                          <span className="mx-2">•</span>
+                          <span>{testimonial.treatment}</span>
+                        </>
+                      )}
+                    </div>
+                    <div className="text-xs text-gray-400 flex items-center mt-1">
+                      <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
+                      </svg>
+                      {testimonial.date}
+                    </div>
+                    <div className="mt-1 flex items-center text-xs text-pink-500">
+                      <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      </svg>
+                      Verified Patient
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
