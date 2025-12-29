@@ -10,7 +10,7 @@ export default function About() {
           { label: 'Home', href: '/' },
           { label: 'About Us' }
         ]}
-        bgImage="/assets/home/slider/1.jpg"
+        bgImage="/images/home/slider/1.jpg"
       />
       
       <div className="w-4/5 mx-auto px-4 py-12">
@@ -29,7 +29,7 @@ export default function About() {
             <p className="text-slate-700 mt-3">At Dr. Priyanka's Clinic, we offer a wide range of Gynecological Services, including cancer prevention, screening, and diagnosis. Our services encompass HPV vaccination, HPV DNA testing, PAP smears, and colposcopy, along with advanced diagnostic tests like CA 125, CEA, CA 19-9 blood tests, breast ultrasound, transvaginal sonography (TVS), and cervical and endometrial biopsies.</p>
             <div className="flex flex-col items-start mt-8">
               <img 
-                src="/assets/home/drpriyanka.png" 
+                src="/images/home/drpriyanka.png" 
                 alt="Dr. Priyanka Katwal" 
                 className="h-32 w-32 md:h-40 md:w-40 rounded-full border-4 border-pink-100 shadow-lg" 
               />

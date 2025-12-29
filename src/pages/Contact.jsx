@@ -10,7 +10,7 @@ export default function ContactPage() {
           { label: 'Home', href: '/' },
           { label: 'Contact Us' }
         ]}
-        bgImage="/assets/home/slider/1.jpg"
+        bgImage="/images/home/slider/1.jpg"
       />
 
       <div className="w-[80%] max-w-7xl mx-auto px-4 py-12">

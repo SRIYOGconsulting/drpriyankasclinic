@@ -1,5 +1,7 @@
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import ClinicLogo from './ClinicLogo';
+
 
 export default function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -51,13 +53,7 @@ export default function SiteHeader() {
       {/* Main navigation */}
       <div className="bg-white border-b border-gray-100 w-[80%] max-w-7xl mx-auto">
         <div className="w-full px-2 md:px-4 py-3 flex items-center justify-between">
-          <Link to="/" className="flex items-center">
-            <img 
-              src="/assets/logo/dr-priyankas-clinic-logo.png" 
-              alt="Dr. Priyanka's Clinic Logo" 
-              className="h-14 sm:h-16 md:h-20 w-auto max-w-[180px] md:max-w-none"
-            />
-          </Link>
+          <ClinicLogo className="h-14 sm:h-16 md:h-20 w-auto" />
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-1 lg:space-x-2 ml-auto">
@@ -154,7 +150,7 @@ export default function SiteHeader() {
           {/* Logo */}
           <div className="px-4 pt-2 pb-3 border-b border-gray-100 bg-pink-50 flex justify-center">
             <img 
-              src="/assets/logo/dr-priyankas-clinic-logo.png" 
+              src="/images/logo/dr-priyankas-clinic-logo.png" 
               alt="Dr. Priyanka's Clinic Logo" 
               className="h-20 w-auto"  // Increased from h-16 to h-20 to match header logo
             />

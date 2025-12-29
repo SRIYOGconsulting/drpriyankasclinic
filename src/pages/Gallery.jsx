@@ -10,17 +10,13 @@ const galleryItems = [
   { id: 5, src: '6.jpg', aspect: 'aspect-[4/3]' },
   { id: 6, src: '7.jpg', aspect: 'aspect-[3/4]' },
   { id: 7, src: '8.jpg', aspect: 'aspect-square' },
-  { id: 8, src: '9.jpg', aspect: 'aspect-[4/3]' },
-  { id: 9, src: '10.jpg', aspect: 'aspect-square' },
-  { id: 10, src: '11.jpg', aspect: 'aspect-[3/4]' },
-  { id: 11, src: '12.jpg', aspect: 'aspect-[4/3]' },
-  { id: 12, src: '13.jpg', aspect: 'aspect-square' },
-  { id: 13, src: '14.jpg', aspect: 'aspect-[3/4]' },
-  { id: 14, src: '15.jpg', aspect: 'aspect-[4/3]' },
-  { id: 15, src: 'slider1.jpg', aspect: 'aspect-square' },
-  { id: 16, src: 'slider2.jpg', aspect: 'aspect-[3/4]' },
-  { id: 17, src: 'slider3.jpg', aspect: 'aspect-[4/3]' },
-  { id: 18, src: 'slider4.jpg', aspect: 'aspect-square' },
+  { id: 8, src: '13.jpg', aspect: 'aspect-square' },
+  { id: 9, src: '14.jpg', aspect: 'aspect-[3/4]' },
+  { id: 10, src: '15.jpg', aspect: 'aspect-[4/3]' },
+  { id: 11, src: 'slider1.jpg', aspect: 'aspect-square' },
+  { id: 12, src: 'slider2.jpg', aspect: 'aspect-[3/4]' },
+  { id: 13, src: 'slider3.jpg', aspect: 'aspect-[4/3]' },
+  { id: 14, src: 'slider4.jpg', aspect: 'aspect-square' },
 ];
 
 export default function Gallery() {
@@ -48,7 +44,7 @@ export default function Gallery() {
           { label: 'Home', href: '/' },
           { label: 'Gallery' }
         ]}
-        bgImage="/assets/home/slider/1.jpg"
+        bgImage="/images/home/slider/1.jpg"
       />
       
       <div className="w-[80%] max-w-7xl mx-auto px-4 sm:px-6 py-12">
@@ -63,7 +59,7 @@ export default function Gallery() {
                 onClick={() => setOpenIndex(index)}
               >
                 <img
-                  src={`/public/gallery/${item.src}`}
+                  src={`/images/gallery/${item.src}`}
                   alt="Clinic photo"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   loading="lazy"
@@ -100,7 +96,7 @@ export default function Gallery() {
           
           <div className="relative w-full max-w-5xl max-h-[90vh] flex items-center justify-center">
             <img
-              src={`/assets/gallery/${galleryItems[openIndex].src}`}
+              src={`/images/gallery/${galleryItems[openIndex].src}`}
               alt="Clinic photo"
               className="max-h-[85vh] max-w-full object-contain"
             />

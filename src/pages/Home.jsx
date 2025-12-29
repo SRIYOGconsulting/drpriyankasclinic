@@ -37,7 +37,7 @@ export default function Home() {
               <div className="flex flex-col items-start text-left w-full mt-6">
                 <div className="flex items-center gap-4">
                   <OptimizedImage
-                    src={`/assets/home/drpriyanka.png`}
+                    src={`/images/home/drpriyanka.png`}
                     alt="Dr. Priyanka Katwal - Gynecologist"
                     width={128}
                     height={128}
@@ -77,7 +77,7 @@ export default function Home() {
           <div className="hidden md:flex items-center justify-center w-full h-full p-4">
             <div className="relative w-full max-w-2xl">
               <OptimizedImage
-                src={`${import.meta.env.BASE_URL}assets/home/specialized.jpg`}
+                src={`${import.meta.env.BASE_URL}images/home/specialized.jpg`}
                 alt="Specialized Gynecology Services"
                 width={800}
                 height={600}
@@ -126,12 +126,12 @@ export default function Home() {
               }
             `}</style>
             {[
-              {title:'HPV Vaccination', img:`${import.meta.env.BASE_URL}assets/services/hpv-vaccination.jpg`, desc:'The HPV (Human Papillomavirus) vaccination is a vital preventive measure against certain types of HPV.'},
-              {title:'HPV DNA Test', img:`${import.meta.env.BASE_URL}assets/services/hpv-dna-test.jpg`, desc:'The HPV screening is a vital diagnostic method for detecting high-risk types of HPV.'},
-              {title:'PAP Smear', img:`${import.meta.env.BASE_URL}assets/services/pap-smear.jpg`, desc:'The cervical cancer screening is a vital method for detecting cervical cancer and its precursors.'},
-              {title:'Colposcopy', img:`${import.meta.env.BASE_URL}assets/services/colposcopy.jpg`, desc:'The cervical diagnostic procedure is a vital method for examining the cervix, vagina, and vulva for disease.'},
-              {title:'Breast USG', img:`${import.meta.env.BASE_URL}assets/services/breast-usg.jpg`, desc:'The breast imaging technique is a vital non-invasive method for examining breast tissue for abnormalities.'},
-              {title:'Endometrial Biopsy', img:`${import.meta.env.BASE_URL}assets/services/cervical-endometrial-biopsy.jpg`, desc:'The uterine diagnostic procedure is a vital method for examining the cervix and uterine lining tissues.'},
+              {title:'HPV Vaccination', img:'/images/services/hpv-vaccination.jpg', desc:'The HPV (Human Papillomavirus) vaccination is a vital preventive measure against certain types of HPV.'},
+              {title:'HPV DNA Test', img:'/images/services/hpv-dna-test.jpg', desc:'The HPV screening is a vital diagnostic method for detecting high-risk types of HPV.'},
+              {title:'PAP Smear', img:'/images/services/pap-smear.jpg', desc:'The cervical cancer screening is a vital method for detecting cervical cancer and its precursors.'},
+              {title:'Colposcopy', img:'/images/services/colposcopy.jpg', desc:'The cervical diagnostic procedure is a vital method for examining the cervix, vagina, and vulva for disease.'},
+              {title:'Breast USG', img:'/images/services/breast-usg.jpg', desc:'The breast imaging technique is a vital non-invasive method for examining breast tissue for abnormalities.'},
+              {title:'Endometrial Biopsy', img:'/images/services/cervical-endometrial-biopsy.jpg', desc:'The uterine diagnostic procedure is a vital method for examining the cervix and uterine lining tissues.'},
             ].map((s)=> (
               <div key={s.title} className="service-card bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden text-center">
                 <div className="service-thumb">
@@ -232,7 +232,7 @@ export default function Home() {
             <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
               <div className="relative h-48 overflow-hidden">
                 <img 
-                  src="/assets/services/image.png" 
+                  src="/images/services/image.png" 
                   alt="Safe abortion care" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
                 />
@@ -259,7 +259,7 @@ export default function Home() {
             <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
               <div className="relative h-48 overflow-hidden">
                 <img 
-                  src="/assets/services/image copy.png" 
+                  src="/images/services/image copy.png" 
                   alt="Breast Cancer" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
                 />

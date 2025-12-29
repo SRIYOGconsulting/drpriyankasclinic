@@ -6,6 +6,9 @@ Allow: /
 Disallow: /admin/
 Disallow: /api/
 Disallow: /private/
+Disallow: /dashboard/
+Disallow: /*.json
+Disallow: /*.xml
 
 # Sitemap location
-Sitemap: https://www.drpriyaskathmandu.com/sitemap.xml
+Sitemap: https://drpriyankasclinic.com/sitemap.xml

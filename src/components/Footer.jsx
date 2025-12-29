@@ -7,7 +7,7 @@ export default function SiteFooter() {
         <div className="col-span-2 lg:col-span-2 text-center sm:text-left">
           <div className="flex flex-col items-center sm:items-start mb-6">
             <img 
-              src="/assets/logo/dr-priyankas-clinic-logo.png" 
+              src="/images/logo/dr-priyankas-clinic-logo.png" 
               alt="Dr. Priyanka's Clinic Logo" 
               className="h-24 w-auto mb-4"
             />

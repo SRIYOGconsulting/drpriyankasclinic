@@ -2,13 +2,13 @@ import { useEffect, useMemo, useState } from 'react'
 
 const slides = [
   {
-    img: '/assets/home/slider/1.jpg',
+    img: '/images/home/slider/1.jpg',
     headingSmall: 'We are here for your care.',
     heading: 'Specialized Gynecology',
     text: 'We are dedicated to providing personalized care to each of our patients with comfort and confidentiality.',
   },
   {
-    img: '/assets/home/slider/2.jpg',
+    img: '/images/home/slider/2.jpg',
     headingSmall: 'Welcome to Dr. Priyanka’s Clinic',
     heading: 'Your Health - Our Priority',
     text: 'Established on April 25, 2023, our clinic is committed to providing comprehensive healthcare services tailored specifically for women.',

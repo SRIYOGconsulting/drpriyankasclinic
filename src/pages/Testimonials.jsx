@@ -195,7 +195,7 @@ export default function Testimonials() {
           { label: 'Home', href: '/' },
           { label: 'Testimonials' }
         ]}
-        bgImage="/assets/home/slider/1.jpg"
+        bgImage="/images/home/slider/1.jpg"
       />
 
       <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
