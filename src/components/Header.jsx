@@ -53,7 +53,9 @@ export default function SiteHeader() {
       {/* Main navigation */}
       <div className="bg-white border-b border-gray-100 w-[80%] max-w-7xl mx-auto">
         <div className="w-full px-2 md:px-4 py-3 flex items-center justify-between">
-          <ClinicLogo className="h-16 sm:h-20 md:h-24 w-auto" />
+          <Link to="/" className="inline-block">
+            <ClinicLogo className="h-16 sm:h-20 md:h-24 w-auto" />
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-1 lg:space-x-2 ml-auto">

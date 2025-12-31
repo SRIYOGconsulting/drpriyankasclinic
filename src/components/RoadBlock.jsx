@@ -8,9 +8,6 @@ const RoadBlock = () => {
   const [showClose, setShowClose] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   
-  // Available days with images
-  const availableDays = [1, 3, 10, 18, 30, 31];
-  
   // Get current date for dynamic image path
   const today = new Date();
   const month = today.toLocaleString('default', { month: 'long' }).toLowerCase();
@@ -18,12 +15,27 @@ const RoadBlock = () => {
   
   // Set initial image source
   useEffect(() => {
-    const hasImageForToday = availableDays.includes(day);
-    setCurrentImage(
-      hasImageForToday 
-        ? `/images/roadblock/${month}/${day}.jpg` 
-        : "/images/roadblock/default.jpg"
-    );
+    const imagePath = `/images/roadblock/${month}/${day}.jpg`;
+    
+    // Check if image exists
+    const img = new Image();
+    img.onload = () => {
+      // Image exists, use it
+      setCurrentImage(imagePath);
+      setIsLoading(false);
+    };
+    img.onerror = () => {
+      // Image doesn't exist, use default
+      setCurrentImage("/images/roadblock/default.jpg");
+      setIsLoading(false);
+    };
+    img.src = imagePath;
+    
+    // Cleanup function
+    return () => {
+      img.onload = null;
+      img.onerror = null;
+    };
   }, [day, month]);
 
   // Handle image loading
