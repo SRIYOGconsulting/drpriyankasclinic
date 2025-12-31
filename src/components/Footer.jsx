@@ -181,7 +181,7 @@ export default function SiteFooter() {
                 <div className="text-slate-600">Birtamode, Jhapa, Nepal</div>
               </div>
               <div className="flex flex-wrap justify-center items-center gap-2">
-                <a href="/terms" className="text-slate-700/80 hover:text-pink-600 transition-colors whitespace-nowrap text-sm">Terms of Service</a>
+                <a href="/tos" className="text-slate-700/80 hover:text-pink-600 transition-colors whitespace-nowrap text-sm">Terms of Service</a>
                 <span className="text-slate-400/80">|</span>
                 <a href="/privacy" className="text-slate-700/80 hover:text-pink-600 transition-colors whitespace-nowrap text-sm">Privacy Policy</a>
                 <span className="text-slate-400/80">|</span>

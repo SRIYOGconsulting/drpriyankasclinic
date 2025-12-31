@@ -18,10 +18,12 @@ import Disclaimer from './pages/Disclaimer';
 import NotFound from './pages/404';
 import Emergency from './pages/Emergency';
 import Testimonials from './pages/Testimonials';
+import RoadBlock from './components/RoadBlock';
 
 function App() {
   return (
     <div className="min-h-screen flex flex-col">
+      <RoadBlock />
       <ScrollToTop />
       <SiteHeader />
       <main className="flex-1 pt-16 md:pt-24">
@@ -35,7 +37,7 @@ function App() {
           <Route path="/appointment" element={<Appointment />} />
           <Route path="/sitemap" element={<Sitemap />} />
           <Route path="/privacy" element={<Privacy />} />
-          <Route path="/terms-of-service" element={<Tos />} />
+          <Route path="/tos" element={<Tos />} />
           <Route path="/disclaimer" element={<Disclaimer />} />
           <Route path="/emergency" element={<Emergency />} />
           <Route path="/testimonials" element={<Testimonials />} />
@@ -47,7 +49,7 @@ function App() {
       <BackToTop />
       <SidekickIcons />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
