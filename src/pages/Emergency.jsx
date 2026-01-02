@@ -9,18 +9,7 @@ export default function EmergencyInfo() {
       description: '24/7 emergency ambulance service',
       icon: <FaAmbulance className="text-3xl text-pink-600" />
     },
-    { 
-      name: 'Local Hospital', 
-      number: '+977-23-XXXXXX', 
-      description: 'Nearest emergency medical facility',
-      icon: <FaHospital className="text-3xl text-green-600" />
-    },
-    { 
-      name: 'Clinic Emergency', 
-      number: '+977-23-XXXXXX', 
-      description: '24/7 clinic emergency line',
-      icon: <FaUserMd className="text-3xl text-purple-600" />
-    },
+    
   ];
 
   const emergencyProcedures = [

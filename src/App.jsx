@@ -4,6 +4,7 @@ import SiteFooter from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import BackToTop from './components/BackToTop';
 import SidekickIcons from './components/SidekickIcons';
+import PageTitle from './components/PageTitle';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
@@ -28,21 +29,21 @@ function App() {
       <SiteHeader />
       <main className="flex-1 pt-16 md:pt-24">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/faq" element={<Faq />} />
-          <Route path="/appointment" element={<Appointment />} />
-          <Route path="/sitemap" element={<Sitemap />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/tos" element={<Tos />} />
-          <Route path="/disclaimer" element={<Disclaimer />} />
-          <Route path="/emergency" element={<Emergency />} />
-          <Route path="/testimonials" element={<Testimonials />} />
+          <Route path="/" element={<><PageTitle title="Home" /><Home /></>} />
+          <Route path="/about" element={<><PageTitle title="About Us" /><About /></>} />
+          <Route path="/services" element={<><PageTitle title="Our Services" /><Services /></>} />
+          <Route path="/gallery" element={<><PageTitle title="Gallery" /><Gallery /></>} />
+          <Route path="/contact" element={<><PageTitle title="Contact Us" /><Contact /></>} />
+          <Route path="/faq" element={<><PageTitle title="FAQs" /><Faq /></>} />
+          <Route path="/appointment" element={<><PageTitle title="Book an Appointment" /><Appointment /></>} />
+          <Route path="/sitemap" element={<><PageTitle title="Sitemap" /><Sitemap /></>} />
+          <Route path="/privacy" element={<><PageTitle title="Privacy Policy" /><Privacy /></>} />
+          <Route path="/tos" element={<><PageTitle title="Terms of Service" /><Tos /></>} />
+          <Route path="/disclaimer" element={<><PageTitle title="Disclaimer" /><Disclaimer /></>} />
+          <Route path="/emergency" element={<><PageTitle title="Emergency" /><Emergency /></>} />
+          <Route path="/testimonials" element={<><PageTitle title="Testimonials" /><Testimonials /></>} />
           {/* Catch-all route for 404 */}
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<><PageTitle title="Page Not Found" /><NotFound /></>} />
         </Routes>
       </main>
       <SiteFooter />

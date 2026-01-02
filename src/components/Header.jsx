@@ -33,8 +33,8 @@ export default function SiteHeader() {
   return (
     <header className={`w-full bg-white fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'shadow-lg' : 'shadow-sm'}`}>
       {/* Top bar with contact info - mobile optimized */}
-      <div className="bg-[#1a1a1a] text-white text-sm py-3 md:py-2 w-full">
-        <div className="w-[80%] max-w-7xl mx-auto px-2 md:px-4 flex flex-col items-center md:flex-row md:justify-between md:items-center">
+      <div className="bg-[#1a1a1a] text-white text-sm py-2 w-full">
+        <div className="mx-auto w-[80%] max-w-[1600px] flex flex-col items-center md:flex-row md:justify-between md:items-center px-0">
           <a href="tel:+9779819090115" className="flex items-center text-sm hover:text-pink-400 transition-colors w-full justify-center md:justify-start md:w-auto">
             <svg className="w-4 h-4 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
@@ -51,14 +51,14 @@ export default function SiteHeader() {
       </div>
 
       {/* Main navigation */}
-      <div className="bg-white border-b border-gray-100 w-[80%] max-w-7xl mx-auto">
-        <div className="w-full px-2 md:px-4 py-3 flex items-center justify-between">
-          <Link to="/" className="inline-block">
-            <ClinicLogo className="h-16 sm:h-20 md:h-24 w-auto" />
+      <div className="bg-white border-b border-gray-100 w-full">
+        <div className="mx-auto w-[80%] max-w-[1600px] flex items-center justify-between py-3 px-0">
+          <Link to="/" className="z-50">
+            <ClinicLogo className="h-14 md:h-16 lg:h-20 w-auto" />
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-1 lg:space-x-2 ml-auto">
+          {/* Desktop Navigation - Show on larger screens */}
+          <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2 ml-auto">
             <NavLink 
               to="/" 
               end 
@@ -114,10 +114,10 @@ export default function SiteHeader() {
             </div>
           </nav>
 
-          {/* Mobile menu button */}
-          <div className="flex items-center space-x-2">
+          {/* Mobile menu button - Show on smaller screens */}
+          <div className="lg:hidden flex items-center space-x-2 z-50">
             <button 
-              className="md:hidden p-2 text-gray-700 hover:text-pink-600 focus:outline-none menu-button transition-colors"
+              className="lg:hidden p-2 text-gray-700 hover:text-pink-600 focus:outline-none menu-button transition-colors"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
             >
@@ -136,7 +136,7 @@ export default function SiteHeader() {
       </div>
 
       {/* Mobile menu overlay */}
-      <div className={`md:hidden fixed inset-0 z-40 transition-opacity duration-300 ${isMenuOpen ? 'visible opacity-100' : 'invisible opacity-0'}`}>
+      <div className={`lg:hidden fixed inset-0 z-40 transition-opacity duration-300 ${isMenuOpen ? 'visible opacity-100' : 'invisible opacity-0'}`}>
         <div 
           className="absolute inset-0 bg-black/40 backdrop-blur-[2px]" 
           onClick={() => setIsMenuOpen(false)}
@@ -146,15 +146,15 @@ export default function SiteHeader() {
 
       {/* Mobile menu drawer */}
       <div 
-        className={`md:hidden mobile-menu fixed top-0 left-0 h-full w-4/5 max-w-xs bg-white shadow-2xl border-r border-pink-100 z-50 transform transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}
+        className={`lg:hidden mobile-menu fixed top-0 left-0 h-full w-4/5 max-w-xs bg-white shadow-2xl border-r border-pink-100 z-50 transform transition-transform duration-300 ease-in-out ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'}`}
       >
         <div className="pt-6 pb-6 h-full overflow-y-auto flex flex-col">
           {/* Logo */}
-          <div className="px-4 pt-2 pb-3 border-b border-gray-100 bg-pink-50 flex justify-center">
+          <div className="px-4 py-3 border-b border-gray-100 bg-pink-50 flex justify-center">
             <img 
               src="/images/logo/dr-priyankas-clinic-logo.png" 
               alt="Dr. Priyanka's Clinic Logo" 
-              className="h-20 w-auto"  // Increased from h-16 to h-20 to match header logo
+              className="h-16 w-auto"
             />
           </div>
           
