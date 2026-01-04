@@ -80,7 +80,7 @@ const Section = ({ small, title, items, isCustomGrid = false, customLayout = fal
       transition={{ duration: 0.6 }}
       className="py-12 sm:py-16 bg-slate-50"
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="w-[80%] mx-auto px-4 sm:px-6">
         <motion.div 
           className="grid md:grid-cols-3 gap-6 md:gap-8 items-end mb-8 md:mb-10"
           initial={{ opacity: 0, y: 20 }}
