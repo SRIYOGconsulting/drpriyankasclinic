@@ -91,8 +91,10 @@ export default function SiteHeader() {
               Contact
             </NavLink>
             <div className="ml-1 sm:ml-2 md:ml-4">
-              <Link 
-                to="/appointment"
+              <a 
+                href="https://d.sriyog.com/priyanka"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="relative inline-flex items-center justify-center px-6 py-2.5 sm:px-7 sm:py-3 overflow-hidden text-sm sm:text-base font-medium text-white transition-all duration-300 bg-gradient-to-r from-pink-500 to-pink-600 rounded-full group hover:from-pink-600 hover:to-pink-700 hover:shadow-lg hover:shadow-pink-200 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-offset-2 whitespace-nowrap"
               >
                 <svg 
@@ -110,7 +112,7 @@ export default function SiteHeader() {
                   ></path>
                 </svg>
                 <span>Book an Appointment</span>
-              </Link>
+              </a>
             </div>
           </nav>
 
@@ -218,9 +220,10 @@ export default function SiteHeader() {
                   Family Planning
                 </a>
                 <a 
-                  href="/services#infertility" 
-                  className="block px-4 py-2 text-base text-gray-700 hover:bg-pink-50 rounded-lg"
-                  onClick={() => setIsMenuOpen(false)}
+                  href="https://d.sriyog.com/priyanka" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-full transition-colors shadow-sm"
                 >
                   Infertility Treatment
                 </a>
@@ -244,9 +247,11 @@ export default function SiteHeader() {
           
           {/* Mobile appointment CTA - Matches desktop style */}
           <div className="px-4 mt-auto py-3 border-t border-gray-100">
-            <Link 
-              to="/appointment"
-              className="inline-flex justify-center items-center w-full px-3 py-2 text-sm rounded-full border border-pink-600 bg-pink-600 text-white hover:bg-pink-700 hover:border-pink-700 font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-1"
+            <a 
+              href="https://d.sriyog.com/priyanka"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center w-full px-4 py-3 text-base font-medium text-white bg-pink-600 hover:bg-pink-700 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2"
               onClick={() => setIsMenuOpen(false)}
             >
               <svg 
@@ -264,7 +269,7 @@ export default function SiteHeader() {
                 ></path>
               </svg>
               Book an Appointment
-            </Link>
+            </a>
           </div>
         </div>
         </div>

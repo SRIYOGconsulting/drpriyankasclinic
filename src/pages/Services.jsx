@@ -17,7 +17,7 @@ const ServiceItem = ({ service: s, index }) => {
       ref={ref}
       initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
+      transition={{ duration: 0.3, delay: index * 0.05 }}
       className="w-full h-full flex flex-col"
     >
       <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden text-center hover:shadow-md transition-shadow duration-300 flex flex-col h-full">
@@ -100,7 +100,7 @@ const Section = ({ small, title, items, isCustomGrid = false, customLayout = fal
               className="text-2xl sm:text-3xl font-bold text-slate-900 leading-tight"
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.4 }}
+              transition={{ delay: 0.2 }}
             >
               {title}
             </motion.h2>
@@ -108,7 +108,7 @@ const Section = ({ small, title, items, isCustomGrid = false, customLayout = fal
               className="mt-3"
               initial={{ width: 0 }}
               animate={inView ? { width: '100%' } : {}}
-              transition={{ delay: 0.5, duration: 0.8 }}
+              transition={{ delay: 0.25, duration: 0.4 }}
             >
               <img 
                 src="/assets/shape/section-title-line.png" 
@@ -122,7 +122,7 @@ const Section = ({ small, title, items, isCustomGrid = false, customLayout = fal
             className="hidden md:flex justify-end pb-2"
             initial={{ opacity: 0, x: 20 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ delay: 0.6 }}
+            transition={{ delay: 0.3 }}
           >
             <motion.a 
               href="/appointment"
@@ -142,7 +142,7 @@ const Section = ({ small, title, items, isCustomGrid = false, customLayout = fal
           className="mt-8 md:mt-10"
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
-          transition={{ delay: 0.7 }}
+          transition={{ delay: 0.35 }}
         >
           {/* Mobile View (unchanged) */}
           <div className="md:hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -199,7 +199,7 @@ const Section = ({ small, title, items, isCustomGrid = false, customLayout = fal
             className="mt-8 md:hidden text-center"
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.8 }}
+            transition={{ delay: 0.4 }}
           >
             <motion.a 
               href="/appointment"
@@ -318,7 +318,7 @@ export default function Services() {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.3 }}
       >
         <div className="w-[80%] max-w-6xl mx-auto px-4">
           <div className="relative flex flex-col md:flex-row items-center md:items-start gap-8">
@@ -328,7 +328,7 @@ export default function Services() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
+                transition={{ delay: 0.1 }}
               >
                 health care facility
               </motion.h5>
@@ -337,7 +337,7 @@ export default function Services() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.3 }}
+                transition={{ delay: 0.15 }}
               >
                 Dedicated Services
               </motion.h1>
@@ -346,14 +346,14 @@ export default function Services() {
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.4, duration: 0.8 }}
+                transition={{ delay: 0.2, duration: 0.4 }}
               />
               <motion.p 
                 className="text-slate-700"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.5 }}
+                transition={{ delay: 0.25 }}
               >
                 From safe abortion practices to family planning and high-risk pregnancy management, we prioritize your safety and comfort. Our clinic is equipped to provide painless delivery and Cesarean delivery options, as well as genetic screening and STD diagnosis and management.
               </motion.p>
@@ -365,7 +365,7 @@ export default function Services() {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.6, duration: 0.5 }}
+              transition={{ delay: 0.3, duration: 0.3 }}
             >
               <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-full bg-gradient-to-br from-pink-100 to-pink-50 border-4 border-pink-200 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                 <div className="absolute inset-0 rounded-full border-8 border-pink-200 border-opacity-30 animate-pulse"></div>
