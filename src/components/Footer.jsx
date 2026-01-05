@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { AppLink } from '../utils/urlHelper';
 
 export default function SiteFooter() {
   return (
@@ -83,13 +83,13 @@ export default function SiteFooter() {
         <div className="lg:col-span-1 pl-2 sm:pl-0">
           <h3 className="font-bold text-slate-900 mb-3 text-xl text-left">Quick Links</h3>
           <ul className="space-y-3 pl-1 text-[15px]">
-            <li><Link to="/" className="hover:text-pink-600 transition-colors">Home</Link></li>
-            <li><Link to="/services" className="hover:text-pink-600 transition-colors">Services</Link></li>
-            <li><Link to="/gallery" className="hover:text-pink-600 transition-colors">Gallery</Link></li>
-            <li><Link to="/faq" className="hover:text-pink-600 transition-colors">FAQ</Link></li>
-            <li><Link to="/sitemap" className="hover:text-pink-600 transition-colors">Sitemap</Link></li>
-            <li><Link to="/testimonials" className="hover:text-pink-600 transition-colors">Testimonials</Link></li>
-            <li><Link to="/emergency" className="hover:text-pink-600 transition-colors">Emergency help</Link></li>
+            <li><AppLink to="/" className="hover:text-pink-600 transition-colors">Home</AppLink></li>
+            <li><AppLink to="/services" className="hover:text-pink-600 transition-colors">Services</AppLink></li>
+            <li><AppLink to="/gallery" className="hover:text-pink-600 transition-colors">Gallery</AppLink></li>
+            <li><AppLink to="/faq" className="hover:text-pink-600 transition-colors">FAQ</AppLink></li>
+            <li><AppLink to="/sitemap" className="hover:text-pink-600 transition-colors">Sitemap</AppLink></li>
+            <li><AppLink to="/testimonials" className="hover:text-pink-600 transition-colors">Testimonials</AppLink></li>
+            <li><AppLink to="/emergency" className="hover:text-pink-600 transition-colors">Emergency help</AppLink></li>
           </ul>
         </div>
 
