@@ -79,16 +79,14 @@ export default function SiteFooter() {
         <div className="lg:col-span-1 pl-2 sm:pl-0">
           <h3 className="font-bold text-slate-900 mb-3 text-xl text-left">Quick Links</h3>
           <ul className="space-y-3 pl-1 text-[15px]">
-            <li><a href="/" className="hover:text-pink-600 transition-colors">Home</a></li>
-           
-            <li><a href="/services" className="hover:text-pink-600 transition-colors">Services</a></li>
-            <li><a href="/gallery" className="hover:text-pink-600 transition-colors">Gallery</a></li>
-            <li><a href="/faq" className="hover:text-pink-600 transition-colors">FAQ</a></li>
-            <li><a href="/sitemap" className="hover:text-pink-600 transition-colors">Sitemap</a></li>
-             <li><a href="/testimonials" className="hover:text-pink-600 transition-colors">Testimonials</a></li>
-              <li><a href="/emergency" className="hover:text-pink-600 transition-colors">Emergency help</a></li>
+            <li><Link to="/" className="hover:text-pink-600 transition-colors">Home</Link></li>
+            <li><Link to="/services" className="hover:text-pink-600 transition-colors">Services</Link></li>
+            <li><Link to="/gallery" className="hover:text-pink-600 transition-colors">Gallery</Link></li>
+            <li><Link to="/faq" className="hover:text-pink-600 transition-colors">FAQ</Link></li>
+            <li><Link to="/sitemap" className="hover:text-pink-600 transition-colors">Sitemap</Link></li>
+            <li><Link to="/testimonials" className="hover:text-pink-600 transition-colors">Testimonials</Link></li>
+            <li><Link to="/emergency" className="hover:text-pink-600 transition-colors">Emergency help</Link></li>
           </ul>
-
         </div>
 
         {/* Column 3: Browse More */}
