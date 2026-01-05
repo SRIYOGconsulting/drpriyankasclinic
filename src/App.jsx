@@ -11,7 +11,6 @@ import Services from './pages/Services';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
 import Faq from './pages/Faq';
-import Appointment from './pages/Appointment';
 import Sitemap from './pages/Sitemap';
 import Privacy from './pages/Privacy';
 import Tos from './pages/Tos';
@@ -35,7 +34,6 @@ function App() {
           <Route path="/gallery" element={<><PageTitle title="Gallery" /><Gallery /></>} />
           <Route path="/contact" element={<><PageTitle title="Contact Us" /><Contact /></>} />
           <Route path="/faq" element={<><PageTitle title="FAQs" /><Faq /></>} />
-          <Route path="/appointment" element={<><PageTitle title="Book an Appointment" /><Appointment /></>} />
           <Route path="/sitemap" element={<><PageTitle title="Sitemap" /><Sitemap /></>} />
           <Route path="/privacy" element={<><PageTitle title="Privacy Policy" /><Privacy /></>} />
           <Route path="/tos" element={<><PageTitle title="Terms of Service" /><Tos /></>} />

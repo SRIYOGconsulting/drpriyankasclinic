@@ -53,10 +53,10 @@ export default function Home() {
               
               <div className="flex flex-col sm:flex-row justify-center w-[80%] mt-5 gap-3 max-w-md mx-auto">
                 <a 
-                  href="https://wa.me/9779819090115?text=Hello%20Dr.%20Priyanka,%20I%20would%20like%20to%20book%20an%20appointment" 
+                  href="https://d.sriyog.com/priyanka"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Book an appointment with Dr. Priyanka on WhatsApp"
+                  aria-label="Book an appointment with Dr. Priyanka"
                   className="bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-full text-sm sm:text-base font-medium whitespace-nowrap transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 text-center w-full focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 flex items-center justify-center gap-2"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -94,7 +94,7 @@ export default function Home() {
 
       {/* Services grid */}
       <section className="py-16 bg-slate-50">
-        <div className="max-w-6xl mx-auto px-4">
+        <div className="w-[90%] md:w-[80%] max-w-6xl mx-auto px-4">
           {/* Section title with decorations */}
           <div className="mb-12 text-center">
             <div className="relative inline-block">
@@ -181,15 +181,17 @@ export default function Home() {
     <div className="text-center">
       <h2 className="text-3xl font-bold text-slate-900 mb-2">Safe Abortion Practices</h2>
       <div className="w-20 h-1 bg-pink-500 mx-auto mb-6"></div>
-          <Link
-            to="/appointment"
+          <a
+            href="https://d.sriyog.com/priyanka"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center bg-pink-600 hover:bg-pink-700 text-white font-medium px-6 py-3 rounded-full transition-colors duration-200"
           >
             <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
             </svg>
             Book an Appointment
-          </Link>
+          </a>
     </div>
     <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mt-8">
       {/* Main Info Card */}
