@@ -1,3 +1,7 @@
+import React from 'react';
+import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+
 export default function SiteFooter() {
   return (
     <footer className="relative overflow-hidden bg-gradient-to-b from-pink-50 to-amber-50">

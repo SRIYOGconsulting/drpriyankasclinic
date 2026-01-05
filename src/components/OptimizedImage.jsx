@@ -8,6 +8,8 @@ const OptimizedImage = ({
   height, 
   className = '',
   style = {},
+  containerClassName = '',
+  priority = false,
   ...props 
 }) => {
   // Handle different src formats (absolute, relative, or full URLs)
@@ -27,15 +29,20 @@ const OptimizedImage = ({
     ...style
   };
 
+  // Filter out props that shouldn't be passed to the img element
+  const { containerClassName: _, priority: __, ...imgProps } = props;
+
   return (
-    <img
-      src={getImageUrl()}
-      alt={alt || ''}
-      loading="lazy"
-      className={className}
-      style={imageStyle}
-      {...props}
-    />
+    <div className={containerClassName}>
+      <img
+        src={getImageUrl()}
+        alt={alt || ''}
+        loading={priority ? 'eager' : 'lazy'}
+        className={className}
+        style={imageStyle}
+        {...imgProps}
+      />
+    </div>
   );
 };
 
@@ -45,6 +52,8 @@ OptimizedImage.propTypes = {
   width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   className: PropTypes.string,
+  containerClassName: PropTypes.string,
+  priority: PropTypes.bool,
   style: PropTypes.object,
 };
 

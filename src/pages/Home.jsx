@@ -105,7 +105,7 @@ export default function Home() {
           </div>
           <div className="mt-6 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 px-4 sm:px-0 w-full flex justify-center items-center">
             {/* Single column on mobile, full width */}
-            <style jsx global>{`
+            <style>{`
               @media (max-width: 640px) {
                 .service-card {
                   width: 100%;
