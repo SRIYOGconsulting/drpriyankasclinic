@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 /**
  * Helper function to generate URLs that work in both development and production
  * @param {string} path - The path to navigate to (e.g., '/about')

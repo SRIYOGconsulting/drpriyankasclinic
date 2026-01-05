@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
-import { AppLink } from '../utils/urlHelper';
+import { AppLink } from '../utils/urlHelper.jsx';
 
 export default function SiteFooter() {
   return (
@@ -185,11 +186,11 @@ export default function SiteFooter() {
                 <div className="text-slate-600">Birtamode, Jhapa, Nepal</div>
               </div>
               <div className="flex flex-wrap justify-center items-center gap-2">
-                <a href="/tos" className="text-slate-700/80 hover:text-pink-600 transition-colors whitespace-nowrap text-sm">Terms of Service</a>
+                <Link to="/tos" className="text-slate-700/80 hover:text-pink-600 transition-colors whitespace-nowrap text-sm">Terms of Service</Link>
                 <span className="text-slate-400/80">|</span>
-                <a href="/privacy" className="text-slate-700/80 hover:text-pink-600 transition-colors whitespace-nowrap text-sm">Privacy Policy</a>
+                <Link to="/privacy" className="text-slate-700/80 hover:text-pink-600 transition-colors whitespace-nowrap text-sm">Privacy Policy</Link>
                 <span className="text-slate-400/80">|</span>
-                <a href="/disclaimer" className="text-slate-700/80 hover:text-pink-600 transition-colors whitespace-nowrap text-sm">Disclaimer</a>
+                <Link to="/disclaimer" className="text-slate-700/80 hover:text-pink-600 transition-colors whitespace-nowrap text-sm">Disclaimer</Link>
               </div>
             </div>
             <div className="w-full text-center text-sm text-slate-600 pt-2 border-t border-slate-200">
