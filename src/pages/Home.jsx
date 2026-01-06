@@ -1,7 +1,101 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import HeroSlider from '../components/Hero';
 import OptimizedImage from '../components/OptimizedImage';
+
+const ServiceCard = ({ service }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const fullDescriptions = {
+    'HPV Vaccination': [
+      'The HPV (Human Papillomavirus) vaccination is a vital preventive measure against certain types of HPV that can cause cervical, anal, throat, and other cancers. The vaccine is most effective when administered before exposure to the virus, typically recommended for preteens and young adults.',
+      'It provides long-lasting protection and is a key component of cancer prevention strategies worldwide. The vaccine is safe, effective, and has been shown to significantly reduce the incidence of HPV-related cancers and genital warts.'
+    ],
+    'HPV DNA Test': [
+      'The HPV DNA test is a crucial diagnostic tool that detects high-risk HPV types that may cause cervical cancer. This test is more sensitive than a Pap smear in detecting precancerous changes.',
+      'It is recommended for women over 30 as part of routine cervical cancer screening, or as a follow-up to an abnormal Pap test result. The test is quick, painless, and can help identify women at risk of developing cervical cancer before any abnormal cells are visible.'
+    ],
+    'PAP Smear': [
+      'A Pap smear is a screening procedure for cervical cancer that tests for the presence of precancerous or cancerous cells on the cervix. It is one of the most reliable and effective cancer screening tests available.',
+      'Regular Pap tests can detect early changes in cervical cells, allowing for treatment before cancer develops. The procedure is quick, simple, and can be done during a routine pelvic exam. Early detection through regular screening is key to preventing cervical cancer.'
+    ],
+    'Colposcopy': [
+      'A colposcopy is a diagnostic procedure that provides a magnified view of the cervix, vagina, and vulva to detect abnormal cells. It is typically performed when a Pap test shows abnormal results.',
+      'During the procedure, the doctor may take a small tissue sample (biopsy) for further testing if needed. The procedure is usually done in the doctor\'s office and takes about 10-20 minutes. It allows for early detection and treatment of precancerous conditions.'
+    ],
+    'Breast USG': [
+      'Breast ultrasound is a non-invasive imaging technique that uses sound waves to examine breast tissue. It is particularly useful for evaluating breast lumps found during a physical exam or mammogram.',
+      'This test helps distinguish between solid masses (which may need biopsy) and fluid-filled cysts (which are typically benign). It is often used as a follow-up to an abnormal mammogram and is especially helpful for women with dense breast tissue where mammograms may be less effective.'
+    ],
+    'Endometrial Biopsy': [
+      'An endometrial biopsy is a procedure to remove a small sample of tissue from the lining of the uterus (endometrium). It is used to diagnose abnormal uterine bleeding, check for endometrial cancer, or evaluate the uterine lining in women with infertility.',
+      'The procedure is typically done in the doctor\'s office and provides valuable information about hormonal effects on the endometrium. While it may cause some cramping, the discomfort is usually brief and can be managed with over-the-counter pain relievers.'
+    ],
+    'Biopsy Procedures': [
+      'Biopsy procedures involve the removal of tissue samples for diagnostic examination. We offer various biopsy techniques including core needle, fine needle aspiration, and excisional biopsies to ensure accurate diagnosis.',
+      'Our team performs these procedures with precision and care, using imaging guidance when needed to target specific areas. The samples are analyzed by experienced pathologists to provide accurate diagnoses for appropriate treatment planning.'
+    ]
+  };
+
+  return (
+    <div className="service-card bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden text-center">
+      <div className="service-thumb">
+        <OptimizedImage
+          src={service.img}
+          alt={service.title}
+          width={400}
+          height={192}
+          className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+          containerClassName="w-full h-48"
+        />
+      </div>
+      <div className="p-4 sm:p-5 -mt-3 sm:-mt-8 flex-1 flex flex-col">
+        <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-4 sm:p-5 flex-1 flex flex-col">
+          <h3 className="text-base sm:text-lg font-semibold text-slate-900 mb-2 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem] leading-tight flex items-center justify-center">
+            {service.title}
+          </h3>
+          <div className="flex-1 flex flex-col">
+            <p className="text-xs sm:text-sm text-slate-700 mb-3 sm:mb-4 line-clamp-3 min-h-[3.5rem] sm:min-h-[4.5rem] flex items-center">
+              {service.desc}
+            </p>
+            {isExpanded && (
+              <div className="mt-2 text-xs sm:text-sm text-slate-600 text-left space-y-2">
+                {Array.isArray(fullDescriptions[service.title]) ? (
+                  fullDescriptions[service.title].map((paragraph, idx) => (
+                    <p key={idx} className="mb-2">{paragraph}</p>
+                  ))
+                ) : (
+                  <p>{service.desc}</p>
+                )}
+              </div>
+            )}
+          </div>
+          <div className="mt-auto pt-2 sm:pt-3">
+            <button
+              onClick={() => setIsExpanded(!isExpanded)}
+              className="inline-flex justify-center items-center w-full px-3 py-1.5 sm:py-2 text-xs sm:text-sm rounded-full border border-pink-600 text-pink-700 hover:bg-pink-50 hover:text-pink-800 font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-1"
+            >
+              {isExpanded ? (
+                <>
+                  <svg className="w-3.5 h-3.5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 15l7-7 7 7"></path>
+                  </svg>
+                  Show Less
+                </>
+              ) : (
+                <>
+                  <svg className="w-3.5 h-3.5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                  Read More
+                </>
+              )}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default function Home() {
   // Smooth scroll for anchor links
@@ -126,49 +220,14 @@ export default function Home() {
               }
             `}</style>
             {[
-              {title:'HPV Vaccination', img:'/images/services/hpv-vaccination.jpg', desc:'The HPV (Human Papillomavirus) vaccination is a vital preventive measure against certain types of HPV.'},
-              {title:'HPV DNA Test', img:'/images/services/hpv-dna-test.jpg', desc:'The HPV screening is a vital diagnostic method for detecting high-risk types of HPV.'},
-              {title:'PAP Smear', img:'/images/services/pap-smear.jpg', desc:'The cervical cancer screening is a vital method for detecting cervical cancer and its precursors.'},
-              {title:'Colposcopy', img:'/images/services/colposcopy.jpg', desc:'The cervical diagnostic procedure is a vital method for examining the cervix, vagina, and vulva for disease.'},
-              {title:'Breast USG', img:'/images/services/breast-usg.jpg', desc:'The breast imaging technique is a vital non-invasive method for examining breast tissue for abnormalities.'},
-              {title:'Endometrial Biopsy', img:'/images/services/cervical-endometrial-biopsy.jpg', desc:'The uterine diagnostic procedure is a vital method for examining the cervix and uterine lining tissues.'},
-            ].map((s)=> (
-              <div key={s.title} className="service-card bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden text-center">
-                <div className="service-thumb">
-                  <OptimizedImage
-                    src={s.img}
-                    alt={s.title}
-                    width={400}
-                    height={192}
-                    className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
-                    containerClassName="w-full h-48"
-                  />
-                </div>
-                <div className="p-4 sm:p-5 -mt-3 sm:-mt-8 flex-1 flex flex-col">
-                  <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-4 sm:p-5 flex-1 flex flex-col">
-                    <h3 className={`text-base sm:text-lg font-semibold text-slate-900 mb-2 line-clamp-2 min-h-[2.5rem] sm:min-h-[3rem] leading-tight flex items-center justify-center`}>
-                      {s.title}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-slate-700 mb-3 sm:mb-4 line-clamp-3 min-h-[3.5rem] sm:min-h-[4.5rem] flex items-center">
-                      {s.desc}
-                    </p>
-                    <div className="mt-auto pt-2 sm:pt-3">
-                      <a 
-                        href={`https://wa.me/9779819090115?text=Hello%20Dr.%20Priyanka,%20I%20would%20like%20to%20book%20an%20appointment%20for%20${encodeURIComponent(s.title)}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`Book an appointment for ${s.title} on WhatsApp`}
-                        className="inline-flex justify-center items-center w-full px-3 py-1.5 sm:py-2 text-xs sm:text-sm rounded-full border border-pink-600 text-pink-700 hover:bg-pink-50 hover:text-pink-800 font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:ring-offset-1"
-                      >
-                        <svg className="w-3.5 h-3.5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                        </svg>
-                        Book an Appointment
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              {title:'HPV Vaccination', img:'/images/services/hpv-vaccination.jpg', desc:'Preventive measure against HPV types that can cause cervical, anal, and throat cancers. Recommended for preteens and young adults.'},
+              {title:'HPV DNA Test', img:'/images/services/hpv-dna-test.jpg', desc:'Detects high-risk HPV types that may lead to cervical cancer. More sensitive than Pap smears for early detection of precancerous changes.'},
+              {title:'PAP Smear', img:'/images/services/pap-smear.jpg', desc:'Screening test for cervical cancer that detects abnormal cells before they become cancerous. Recommended every 3-5 years for women.'},
+              {title:'Colposcopy', img:'/images/services/colposcopy.jpg', desc:'Detailed examination of the cervix to identify abnormal cells. Performed when Pap test results are abnormal.'},
+              {title:'Breast USG', img:'/images/services/breast-usg.jpg', desc:'Imaging test using sound waves to examine breast tissue. Helps distinguish between solid masses and fluid-filled cysts.'},
+              {title:'Biopsy Procedures', img:'/images/services/cervical-endometrial-biopsy.jpg', desc:'Tissue sampling to diagnose cervical and uterine conditions. Helps detect cancer and other abnormalities.'},
+            ].map((service, index) => (
+              <ServiceCard key={index} service={service} />
             ))}
           </div>
           <p className="text-xs text-slate-500 mt-4">Conducted in regulated environments</p>
