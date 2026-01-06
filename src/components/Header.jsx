@@ -248,7 +248,7 @@ export default function SiteHeader() {
                   Family Planning
                 </a>
                 <a 
-                  href="/services#infertility" 
+                  href="/services"
                   className="block px-4 py-2 text-base text-gray-700 hover:bg-pink-50 rounded-lg"
                   onClick={() => setIsMenuOpen(false)}
                 >

@@ -267,7 +267,7 @@ const ServiceItem = ({ service: s, index }) => {
   );
 };
 
-const Section = ({ small, title, items, isCustomGrid = false, customLayout = false }) => {
+const Section = ({ small, title, items, isCustomGrid = false, customLayout = false, id }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -276,10 +276,11 @@ const Section = ({ small, title, items, isCustomGrid = false, customLayout = fal
   return (
     <motion.section 
       ref={ref}
+      id={id}
       initial={{ opacity: 0, y: 30 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6 }}
-      className="py-12 sm:py-16 bg-slate-50"
+      className="py-12 sm:py-16 bg-slate-50 scroll-mt-16"
     >
       <div className="w-[80%] mx-auto px-4 sm:px-6">
         <motion.div 
@@ -445,6 +446,7 @@ export default function Services() {
   };
 
   const sec2 = {
+    id: 'obstetrics',
     small: 'Obstetrics services',
     title: 'The Care of Women during Pregnancy and Childbirth',
     items: [
