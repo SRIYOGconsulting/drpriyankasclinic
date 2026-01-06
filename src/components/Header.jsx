@@ -226,34 +226,34 @@ export default function SiteHeader() {
             </button>
             <div className={`overflow-hidden transition-all duration-200 ${isServicesOpen ? 'max-h-60' : 'max-h-0'}`}>
               <div className="ml-4 space-y-1 py-1">
-                <a 
-                  href="/services#gynecology" 
-                  className="block px-4 py-2 text-base text-gray-700 hover:bg-pink-50 rounded-lg"
+                <NavLink 
+                  to="/services#gynecology" 
+                  className={({ isActive }) => `block px-4 py-2 text-base ${isActive ? 'text-pink-600' : 'text-gray-700'} hover:bg-pink-50 rounded-lg`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Gynecology Services
-                </a>
-                <a 
-                  href="/services#obstetrics" 
-                  className="block px-4 py-2 text-base text-gray-700 hover:bg-pink-50 rounded-lg"
+                </NavLink>
+                <NavLink 
+                  to="/services#obstetrics" 
+                  className={({ isActive }) => `block px-4 py-2 text-base ${isActive ? 'text-pink-600' : 'text-gray-700'} hover:bg-pink-50 rounded-lg`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Obstetrics Care
-                </a>
-                <a 
-                  href="/services#family-planning" 
-                  className="block px-4 py-2 text-base text-gray-700 hover:bg-pink-50 rounded-lg"
+                </NavLink>
+                <NavLink 
+                  to="/services#family-planning" 
+                  className={({ isActive }) => `block px-4 py-2 text-base ${isActive ? 'text-pink-600' : 'text-gray-700'} hover:bg-pink-50 rounded-lg`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Family Planning
-                </a>
-                <a 
-                  href="/services"
-                  className="block px-4 py-2 text-base text-gray-700 hover:bg-pink-50 rounded-lg"
+                </NavLink>
+                <NavLink 
+                  to="/services#infertility"
+                  className={({ isActive }) => `block px-4 py-2 text-base ${isActive ? 'text-pink-600' : 'text-gray-700'} hover:bg-pink-50 rounded-lg`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Infertility Treatment
-                </a>
+                </NavLink>
               </div>
             </div>
           </div>

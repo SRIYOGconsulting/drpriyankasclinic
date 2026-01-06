@@ -1,4 +1,5 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 import SiteHeader from './components/Header';
 import SiteFooter from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
@@ -20,6 +21,24 @@ import Emergency from './pages/Emergency';
 import Testimonials from './pages/Testimonials';
 import RoadBlock from './components/RoadBlock';
 
+// Component to handle scroll to hash on navigation
+const ScrollToHash = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // If there's a hash in the URL, scroll to it
+    if (location.hash) {
+      const element = document.getElementById(location.hash.replace('#', ''));
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location]);
+
+  return null;
+};
+
 function App() {
   return (
     <div className="min-h-screen flex flex-col">
@@ -27,7 +46,8 @@ function App() {
       {/* <RoadBlock /> */}
       <ScrollToTop />
       <SiteHeader />
-      <main className="flex-1 pt-16 md:pt-24">
+      <ScrollToHash />
+      <main className="flex-1 pt-16 md:pt-24" id="main-content">
         <Routes>
           <Route path="/" element={<><PageTitle title="Home" /><Home /></>} />
           <Route path="/about" element={<><PageTitle title="About Us" /><About /></>} />

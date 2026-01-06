@@ -430,6 +430,7 @@ export default function Services() {
   }, []);
 
   const sec1 = {
+    id: 'gynecology',
     small: 'Gynaecology',
     title: 'Cancer Prevention, Screening and Diagnosis',
     items: [
@@ -464,6 +465,7 @@ export default function Services() {
   };
 
   const sec3 = {
+    id: 'advanced-procedures',
     small: 'Advanced Procedures',
     title: 'Specialized Diagnostic and Therapeutic Services',
     items: [
@@ -473,6 +475,7 @@ export default function Services() {
   };
 
   const sec4 = {
+    id: 'premium-care',
     small: 'Premium Care',
     title: 'Personalized Healthcare Services',
     items: [
@@ -587,12 +590,11 @@ export default function Services() {
       </motion.section>
 
       {/* Service Sections with Animations */}
-      <Section {...sec1} />
-      <Section {...sec2} customLayout isCustomGrid />
-      <Section {...sec3} customLayout isCustomGrid />
-      <Section {...sec4} />
+      <Section {...sec1} id={sec1.id} />
+      <Section {...sec2} id={sec2.id} customLayout isCustomGrid />
+      <Section {...sec3} id={sec3.id} customLayout isCustomGrid />
+      <Section {...sec4} id={sec4.id} />
      
    </div>
   );
 }
-
