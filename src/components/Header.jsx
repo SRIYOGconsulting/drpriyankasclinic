@@ -8,25 +8,46 @@ export default function SiteHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
 
-  // Close mobile menu when clicking outside
+  // Close mobile menu when clicking outside or scrolling
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (isMenuOpen && !event.target.closest('.mobile-menu') && !event.target.closest('.menu-button')) {
+      const menu = document.querySelector('.mobile-menu');
+      const menuButton = document.querySelector('.menu-button');
+      
+      if (isMenuOpen && menu && menuButton && 
+          !menu.contains(event.target) && 
+          !menuButton.contains(event.target)) {
         setIsMenuOpen(false);
       }
+    };
+
+    // Close menu on route change
+    const handleRouteChange = () => {
+      setIsMenuOpen(false);
     };
 
     // Handle scroll
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
+      // Close menu on scroll for better mobile experience
+      if (isMenuOpen) {
+        setIsMenuOpen(false);
+      }
     };
 
+    // Use both mousedown and touchstart for better mobile support
     document.addEventListener('mousedown', handleClickOutside);
-    window.addEventListener('scroll', handleScroll);
+    document.addEventListener('touchstart', handleClickOutside);
+    document.addEventListener('scroll', handleScroll, { passive: true });
+    
+    // Listen for route changes
+    window.addEventListener('popstate', handleRouteChange);
     
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
-      window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('touchstart', handleClickOutside);
+      document.removeEventListener('scroll', handleScroll, { passive: true });
+      window.removeEventListener('popstate', handleRouteChange);
     };
   }, [isMenuOpen]);
 
@@ -139,13 +160,18 @@ export default function SiteHeader() {
       </div>
       </div>
 
-      {/* Mobile menu overlay */}
-      <div className={`lg:hidden fixed inset-0 z-40 transition-opacity duration-300 ${isMenuOpen ? 'visible opacity-100' : 'invisible opacity-0'}`}>
-        <div 
-          className="absolute inset-0 bg-black/40 backdrop-blur-[2px]" 
-          onClick={() => setIsMenuOpen(false)}
-          aria-hidden="true"
-        ></div>
+      {/* Mobile menu overlay with click handler */}
+      <div 
+        className={`lg:hidden fixed inset-0 z-40 transition-opacity duration-300 ${isMenuOpen ? 'visible opacity-100' : 'invisible opacity-0'}`}
+        onClick={(e) => {
+          // Only close if clicking directly on the overlay, not on the menu itself
+          if (e.target === e.currentTarget) {
+            setIsMenuOpen(false);
+          }
+        }}
+        style={{ pointerEvents: isMenuOpen ? 'auto' : 'none' }}
+      >
+        <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
       </div>
 
       {/* Mobile menu drawer */}
@@ -222,10 +248,9 @@ export default function SiteHeader() {
                   Family Planning
                 </a>
                 <a 
-                  href="https://d.sriyog.com/priyanka" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-full transition-colors shadow-sm"
+                  href="/services#infertility" 
+                  className="block px-4 py-2 text-base text-gray-700 hover:bg-pink-50 rounded-lg"
+                  onClick={() => setIsMenuOpen(false)}
                 >
                   Infertility Treatment
                 </a>
