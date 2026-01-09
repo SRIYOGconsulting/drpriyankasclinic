@@ -8,18 +8,8 @@ export default function Disclaimer() {
     window.scrollTo(0, 0);
   }, []);
 
-  const sections = [
-    { id: 'medical-advice', title: 'No Medical Advice' },
-    { id: 'doctor-patient', title: 'No Doctor-Patient Relationship' },
-    { id: 'emergency', title: 'Emergency Situations' },
-    { id: 'accuracy', title: 'Accuracy of Information' },
-    { id: 'endorsements', title: 'No Endorsements' },
-    { id: 'testimonials', title: 'Testimonials' },
-    { id: 'contact', title: 'Contact Us' }
-  ];
-
   return (
-<div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50">
       <PageBanner 
         title="Medical Disclaimer"
         description="Please read our medical disclaimer carefully before using our services"
@@ -32,43 +22,67 @@ export default function Disclaimer() {
       <div className="w-[80%] md:max-w-5xl mx-auto px-4 sm:px-6 py-12">
         <div className="max-w-5xl mx-auto">
           <div className="prose prose-pink max-w-none">
-            {/* Table of Contents */}
-            <div className="mb-8 p-4 bg-gray-50 rounded-lg">
-              <h2 className="text-xl font-semibold text-gray-800 mb-3">Table of Contents</h2>
-              <ul className="space-y-2">
-                {sections.map(section => (
-                  <li key={section.id}>
-                    <a 
-                      href={`#${section.id}`}
-                      className="text-pink-600 hover:text-pink-700 hover:underline"
-                    >
-                      {section.title}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
 
-            {/* No Medical Advice */}
-            <section id="medical-advice" className="mb-10">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">No Medical Advice</h2>
-              <p className="text-gray-700">
-                The information provided on this website, including text, graphics, images, and other material, is for informational 
-                purposes only and is not intended to be a substitute for professional medical advice, diagnosis, or treatment.
+            <section className="mb-10">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Important Medical Information</h2>
+              <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-r mb-6">
+                <div className="flex">
+                  <div className="flex-shrink-0">
+                    <svg className="h-5 w-5 text-blue-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h.01a1 1 0 100-2H10V9z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div className="ml-3">
+                    <p className="text-sm text-blue-700">
+                      The content on this website is for informational purposes only and is not a substitute for professional medical advice, diagnosis, or treatment.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <p className="text-gray-700 mb-4">
+                The information provided on this website, including text, graphics, images, and other material, is intended to support, not replace, 
+                the relationship that exists between a patient/site visitor and their healthcare provider.
               </p>
-              <p className="text-gray-700 mt-2">
-                Always seek the advice of your physician or other qualified health provider with any questions you may have regarding 
-                a medical condition or treatment and before undertaking a new health care regimen.
+              <p className="text-gray-700">
+                Always seek the advice of your physician or other qualified health provider with any questions you may have regarding a medical condition 
+                or treatment before making any changes to your healthcare regimen.
               </p>
             </section>
 
-            {/* No Doctor-Patient Relationship */}
-            <section id="doctor-patient" className="mb-10">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">No Doctor-Patient Relationship</h2>
-              <p className="text-gray-700">
-                Your use of this website does not create a doctor-patient relationship between you and Dr. Priyanka's Clinic. 
-                No information on this website should be considered as medical advice or a substitute for a consultation with a healthcare professional.
-              </p>
+            <section className="mb-10 bg-white p-6 rounded-lg shadow-sm">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">About Our Online Information</h2>
+              <div className="space-y-4">
+                <div className="flex items-start">
+                  <div className="flex-shrink-0 h-6 w-6 text-pink-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                  </div>
+                  <div className="ml-3">
+                    <h3 className="text-lg font-semibold text-gray-800">No Doctor-Patient Relationship</h3>
+                    <p className="mt-1 text-gray-600">
+                      Using this website or contacting us through it does not establish a doctor-patient relationship. 
+                      A proper relationship is only established through an in-person consultation at our clinic.
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start mt-4">
+                  <div className="flex-shrink-0 h-6 w-6 text-pink-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  </div>
+                  <div className="ml-3">
+                    <h3 className="text-lg font-semibold text-gray-800">Medical Information Only</h3>
+                    <p className="mt-1 text-gray-600">
+                      The content on this site is for general informational purposes only and is not intended to be medical advice. 
+                      Always consult with a qualified healthcare provider for diagnosis and treatment.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </section>
 
             {/* Emergency Situations */}
