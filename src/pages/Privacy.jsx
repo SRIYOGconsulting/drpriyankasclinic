@@ -8,17 +8,8 @@ export default function PrivacyPolicy() {
     window.scrollTo(0, 0);
   }, []);
 
-  const sections = [
-    { id: 'introduction', title: 'Introduction' },
-    { id: 'information', title: 'Information We Collect' },
-    { id: 'usage', title: 'How We Use Your Information' },
-    { id: 'security', title: 'Data Security' },
-    { id: 'rights', title: 'Your Rights' },
-    { id: 'contact', title: 'Contact Us' }
-  ];
-
   return (
-<div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50">
       <PageBanner 
         title="Privacy Policy"
         description="Learn how we collect, use, and protect your personal information"
@@ -28,44 +19,43 @@ export default function PrivacyPolicy() {
         ]}
       />
       
-        <div className="w-[80%] md:max-w-5xl mx-auto">
-          <div className="prose prose-pink max-w-none">
-            {/* Table of Contents */}
-            <div className="mb-8 p-4 bg-gray-50 rounded-lg">
-              <h2 className="text-xl font-semibold text-gray-800 mb-3">Table of Contents</h2>
-              <ul className="space-y-2">
-                {sections.map(section => (
-                  <li key={section.id}>
-                    <a 
-                      href={`#${section.id}`}
-                      className="text-pink-600 hover:text-pink-700 hover:underline"
-                    >
-                      {section.title}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
+      <div className="w-[80%] md:max-w-5xl mx-auto px-4 sm:px-6 py-12">
+        <div className="prose prose-pink max-w-none">
 
-            {/* Introduction */}
-            <section id="introduction" className="mb-10">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Introduction</h2>
+            <section className="mb-10">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Your Privacy Matters to Us</h2>
+              <p className="text-gray-700 mb-4">
+                At Dr. Priyanka's Clinic, we understand the importance of your personal and health information. This Privacy Policy outlines our commitment to protecting your privacy and the measures we take to secure your data.
+              </p>
               <p className="text-gray-700">
-                Welcome to Dr. Priyanka's Clinic. We respect your privacy and are committed to protecting your personal data. 
-                This Privacy Policy explains how we collect, use, and safeguard your information when you visit our website or use our services.
+                We are dedicated to maintaining the confidentiality of your personal and medical information in accordance with applicable privacy laws and healthcare regulations.
               </p>
             </section>
 
-            {/* Information We Collect */}
-            <section id="information" className="mb-10">
+            <section className="mb-10 bg-white p-6 rounded-lg shadow-sm">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Information We Collect</h2>
-              <p className="text-gray-700 mb-4">We collect several types of information, including:</p>
-              <ul className="list-disc pl-6 text-gray-700 space-y-2">
-                <li>Personal identification information (Name, email, phone number)</li>
-                <li>Health information relevant to your treatment</li>
-                <li>Appointment details and medical history</li>
-                <li>Browsing data and usage information</li>
-              </ul>
+              <p className="text-gray-700 mb-4">We collect various types of information to provide you with quality healthcare services:</p>
+              
+              <div className="space-y-4">
+                <div className="border-l-4 border-pink-200 pl-4">
+                  <h3 className="font-semibold text-gray-800">Personal Information</h3>
+                  <p className="text-gray-600 text-sm">Name, contact details, date of birth, and other identifying information.</p>
+                </div>
+                
+                <div className="border-l-4 border-pink-200 pl-4">
+                  <h3 className="font-semibold text-gray-800">Health Information</h3>
+                  <p className="text-gray-600 text-sm">Medical history, treatment records, test results, and other health-related data.</p>
+                </div>
+                
+                <div className="border-l-4 border-pink-200 pl-4">
+                  <h3 className="font-semibold text-gray-800">Usage Data</h3>
+                  <p className="text-gray-600 text-sm">Information about how you interact with our website and services.</p>
+                </div>
+              </div>
+              
+              <p className="mt-4 text-sm text-gray-500">
+                We collect only the information necessary to provide you with healthcare services and improve your experience.
+              </p>
             </section>
 
             {/* How We Use Information */}

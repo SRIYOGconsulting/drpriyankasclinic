@@ -8,20 +8,8 @@ export default function TermsOfService() {
     window.scrollTo(0, 0);
   }, []);
 
-  const sections = [
-    { id: 'introduction', title: 'Introduction' },
-    { id: 'services', title: 'Services Provided' },
-    { id: 'disclaimer', title: 'Medical Disclaimer' },
-    { id: 'appointments', title: 'Appointments' },
-    { id: 'privacy', title: 'Privacy' },
-    { id: 'intellectual-property', title: 'Intellectual Property' },
-    { id: 'limitation-liability', title: 'Limitation of Liability' },
-    { id: 'changes', title: 'Changes to Terms' },
-    { id: 'contact', title: 'Contact Us' }
-  ];
-
   return (
-<div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50">
       <PageBanner 
         title="Terms of Service"
         description="Please read our terms and conditions carefully before using our services"
@@ -34,44 +22,47 @@ export default function TermsOfService() {
       <div className="w-[80%] md:max-w-5xl mx-auto px-4 sm:px-6 py-12">
         <div className="max-w-5xl mx-auto">
           <div className="prose prose-pink max-w-none">
-            {/* Table of Contents */}
-            <div className="mb-8 p-4 bg-gray-50 rounded-lg">
-              <h2 className="text-xl font-semibold text-gray-800 mb-3">Table of Contents</h2>
-              <ul className="space-y-2">
-                {sections.map(section => (
-                  <li key={section.id}>
-                    <a 
-                      href={`#${section.id}`}
-                      className="text-pink-600 hover:text-pink-700 hover:underline"
-                    >
-                      {section.title}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
 
-            {/* Introduction */}
-            <section id="introduction" className="mb-10">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Introduction</h2>
+            <section className="mb-10">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Welcome to Our Practice</h2>
+              <p className="text-gray-700 mb-4">
+                Thank you for choosing Dr. Priyanka's Clinic for your healthcare needs. These Terms of Service outline the terms and conditions for using our services and website.
+              </p>
               <p className="text-gray-700">
-                Welcome to Dr. Priyanka's Clinic. These Terms of Service ("Terms") govern your access to and use of our website and services. 
-                By accessing or using our services, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use our services.
+                By accessing or using our services, you acknowledge that you have read, understood, and agree to be bound by these terms. If you do not agree with any part of these terms, please refrain from using our services.
               </p>
             </section>
 
-            {/* Services Provided */}
-            <section id="services" className="mb-10">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Services Provided</h2>
-              <p className="text-gray-700">
-                Dr. Priyanka's Clinic provides comprehensive healthcare services including but not limited to:
+            <section className="mb-10 bg-white p-6 rounded-lg shadow-sm">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Our Healthcare Services</h2>
+              <p className="text-gray-700 mb-4">
+                We are committed to providing high-quality healthcare services, including:
               </p>
-              <ul className="list-disc pl-6 text-gray-700 space-y-2 mt-2">
-                <li>Gynecological consultations and treatments</li>
-                <li>Obstetric care and pregnancy services</li>
-                <li>Family planning and contraceptive counseling</li>
-                <li>Preventive healthcare and screening</li>
-                <li>Other women's health services</li>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-gray-700">
+                <li className="flex items-start">
+                  <svg className="h-5 w-5 text-pink-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Comprehensive gynecological care</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="h-5 w-5 text-pink-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Prenatal and postnatal care</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="h-5 w-5 text-pink-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Family planning services</span>
+                </li>
+                <li className="flex items-start">
+                  <svg className="h-5 w-5 text-pink-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>Routine health screenings</span>
+                </li>
               </ul>
             </section>
 

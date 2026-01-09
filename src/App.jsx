@@ -19,6 +19,9 @@ import Disclaimer from './pages/Disclaimer';
 import NotFound from './pages/404';
 import Emergency from './pages/Emergency';
 import Testimonials from './pages/Testimonials';
+import ServiceDetail from './pages/ServiceDetail';
+import BlogDetail from './pages/BlogDetail';
+import BlogList from './pages/BlogList';
 import RoadBlock from './components/RoadBlock';
 
 // Component to handle scroll to hash on navigation
@@ -61,6 +64,9 @@ function App() {
           <Route path="/disclaimer" element={<><PageTitle title="Disclaimer" /><Disclaimer /></>} />
           <Route path="/emergency" element={<><PageTitle title="Emergency" /><Emergency /></>} />
           <Route path="/testimonials" element={<><PageTitle title="Testimonials" /><Testimonials /></>} />
+          <Route path="/services/:serviceId" element={<><PageTitle title="Service Details" /><ServiceDetail /></>} />
+          <Route path="/blog" element={<><PageTitle title="Blog" /><BlogList /></>} />
+          <Route path="/blog/:id" element={<><PageTitle title="Blog Article" /><BlogDetail /></>} />
           {/* Catch-all route for 404 */}
           <Route path="*" element={<><PageTitle title="Page Not Found" /><NotFound /></>} />
         </Routes>
