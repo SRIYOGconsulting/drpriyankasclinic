@@ -26,7 +26,7 @@ const RoadBlock = () => {
     };
     img.onerror = () => {
       // Image doesn't exist, use default
-      setCurrentImage("/images/roadblock/default.jpg");
+      setCurrentImage("/images/roadblock/default/default.jpg");
       setIsLoading(false);
     };
     img.src = imagePath;
@@ -146,7 +146,15 @@ const RoadBlock = () => {
               backgroundColor: 'rgba(255,255,255,0.9)',
               zIndex: 2
             }}>
-              <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500"></div>
+              <div style={{
+                width: '40px',
+                height: '40px',
+                border: '4px solid #f3f3f3',
+                borderTop: '4px solid #3498db',
+                borderRadius: '50%',
+                animation: 'spin 1s linear infinite',
+                margin: '0 auto'
+              }}></div>
             </div>
           )}
           

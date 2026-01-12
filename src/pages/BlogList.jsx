@@ -27,12 +27,12 @@ const BlogList = () => {
         </div>
         
         {/* Blog posts grid */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {/* Blog posts with consistent heights */}
           {blogPosts.map((post) => (
-            <article key={post.id} className="group bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300 flex flex-col h-full">
+            <article key={post.id} className="group bg-white rounded-xl border-2 border-gray-100 shadow-sm overflow-hidden hover:shadow-md transition-all duration-300 flex flex-col h-full">
               <Link to={`/blog/${post.id}`} className="flex flex-col h-full">
-                <div className="relative h-56 overflow-hidden flex-shrink-0">
+                <div className="relative h-60 overflow-hidden flex-shrink-0">
                   <OptimizedImage
                     src={post.image}
                     alt={post.title}
@@ -45,23 +45,25 @@ const BlogList = () => {
                     {post.category}
                   </span>
                 </div>
-                <div className="p-6 flex-1 flex flex-col">
-                  <div className="flex items-center text-xs text-slate-500 mb-3">
-                    <span>{post.date}</span>
-                    <span className="mx-2">•</span>
-                    <span>{post.readTime}</span>
-                  </div>
-                  <h2 className="text-xl font-bold text-slate-900 mb-3 line-clamp-2 h-16 flex items-center">
+                <div className="p-6 flex-1 flex flex-col border-t-2 border-gray-100">
+                  <div className="text-xs text-slate-500 mb-2">
+                  {post.date}
+                </div>
+                  <h2 className="text-xl font-bold text-slate-900 mb-3 line-clamp-2 min-h-[3.5rem] flex items-start">
                     {post.title}
                   </h2>
-                  <p className="text-slate-600 mb-4 line-clamp-3 min-h-[72px]">
-                    {post.content[0].length > 150 ? `${post.content[0].substring(0, 150)}...` : post.content[0]}
-                  </p>
-                  <div className="text-pink-600 hover:text-pink-700 font-medium inline-flex items-center group">
-                    Read More
-                    <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
-                    </svg>
+                  <div className="flex-1">
+                    <p className="text-slate-600 line-clamp-3 h-[4.5rem] overflow-hidden">
+                      {post.content[0].length > 150 ? `${post.content[0].substring(0, 150)}...` : post.content[0]}
+                    </p>
+                  </div>
+                  <div className="pt-4 mt-auto">
+                    <div className="text-pink-600 hover:text-pink-700 font-medium inline-flex items-center group">
+                      Read More
+                      <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
+                      </svg>
+                    </div>
                   </div>
                 </div>
               </Link>

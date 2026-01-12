@@ -91,6 +91,7 @@ export default function SiteFooter() {
             <li><AppLink to="/sitemap" className="hover:text-pink-600 transition-colors">Sitemap</AppLink></li>
             <li><AppLink to="/testimonials" className="hover:text-pink-600 transition-colors">Testimonials</AppLink></li>
             <li><AppLink to="/emergency" className="hover:text-pink-600 transition-colors">Emergency help</AppLink></li>
+            <li><AppLink to="/blog" className="hover:text-pink-600 transition-colors">Blogs</AppLink></li>
           </ul>
         </div>
 

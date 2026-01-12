@@ -45,8 +45,7 @@ const ScrollToHash = () => {
 function App() {
   return (
     <div className="min-h-screen flex flex-col">
-      {/* Temporarily disabled RoadBlock for debugging */}
-      {/* <RoadBlock /> */}
+      <RoadBlock />
       <ScrollToTop />
       <SiteHeader />
       <ScrollToHash />
