@@ -182,8 +182,8 @@ export default function SiteFooter() {
           <div className="flex flex-col space-y-3 w-full">
             <div className="flex flex-col md:flex-row justify-between items-center text-sm md:text-xs text-slate-700 space-y-2 md:space-y-0 w-full">
               <div className="text-center md:text-left mb-2 md:mb-0">
-                <div className="font-medium text-slate-800">&copy; {new Date().getFullYear()} Dr. Priyanka's Clinic.</div>
-                <div className="text-slate-600">Birtamode, Jhapa, Nepal</div>
+                <div className="font-medium text-slate-800">&copy; {new Date().getFullYear()} Dr. Priyanka's Clinic. Birtamode, Jhapa, Nepal</div>
+                
               </div>
               <div className="flex flex-wrap justify-center items-center gap-2">
                 <Link to="/tos" className="text-slate-700/80 hover:text-pink-600 transition-colors whitespace-nowrap text-sm">Terms of Service</Link>
