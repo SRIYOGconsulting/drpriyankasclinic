@@ -454,6 +454,16 @@ const ServiceDetail = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [serviceId]);
+  
+  // Set page title
+  useEffect(() => {
+    if (service) {
+      document.title = `${service.title} | Dr. Priyanka's Clinic`;
+    }
+    return () => {
+      document.title = "Dr. Priyanka's Clinic";
+    };
+  }, [service]);
 
   if (!service) {
     return (

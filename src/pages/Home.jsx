@@ -286,10 +286,8 @@ export default function Home() {
                   </span>
                 </div>
                 <div className="p-5">
-                  <div className="flex items-center text-xs text-slate-500 mb-2">
-                    <span>{post.date}</span>
-                    <span className="mx-2">•</span>
-                    <span>{post.readTime}</span>
+                  <div className="text-xs text-slate-500 mb-2">
+                    {post.readTime}
                   </div>
                   <h3 className="text-lg font-semibold text-slate-900 mb-2 line-clamp-2">
                     {post.title}

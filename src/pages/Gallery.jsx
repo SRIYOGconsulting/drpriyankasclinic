@@ -6,17 +6,33 @@ const galleryItems = [
   { id: 1, src: '1.jpg', aspect: 'aspect-[4/3]' },
   { id: 2, src: '2.jpg', aspect: 'aspect-square' },
   { id: 3, src: '3.jpg', aspect: 'aspect-[3/4]' },
-  { id: 4, src: '5.jpg', aspect: 'aspect-square' },
+ { id: 5, src: '5.jpg', aspect: 'aspect-[4/3]' },
   { id: 5, src: '6.jpg', aspect: 'aspect-[4/3]' },
   { id: 6, src: '7.jpg', aspect: 'aspect-[3/4]' },
   { id: 7, src: '8.jpg', aspect: 'aspect-square' },
-  { id: 8, src: '13.jpg', aspect: 'aspect-square' },
-  { id: 9, src: '14.jpg', aspect: 'aspect-[3/4]' },
-  { id: 10, src: '15.jpg', aspect: 'aspect-[4/3]' },
-  { id: 11, src: 'slider1.jpg', aspect: 'aspect-square' },
-  { id: 12, src: 'slider2.jpg', aspect: 'aspect-[3/4]' },
-  { id: 13, src: 'slider3.jpg', aspect: 'aspect-[4/3]' },
-  { id: 14, src: 'slider4.jpg', aspect: 'aspect-square' },
+  { id: 8, src: '9.jpg', aspect: 'aspect-[4/3]' },
+  { id: 9, src: '10.jpg', aspect: 'aspect-[3/4]' },
+  { id: 10, src: '11.jpg', aspect: 'aspect-square' },
+  { id: 11, src: '12.jpg', aspect: 'aspect-[4/3]' },
+  { id: 12, src: '13.jpg', aspect: 'aspect-square' },
+  { id: 13, src: '14.jpg', aspect: 'aspect-[3/4]' },
+  { id: 14, src: '15.jpg', aspect: 'aspect-[4/3]' },
+  { id: 15, src: '16.jpg', aspect: 'aspect-square' },
+  { id: 16, src: '17.jpg', aspect: 'aspect-[3/4]' },
+  { id: 17, src: '18.jpg', aspect: 'aspect-[4/3]' },
+  { id: 18, src: '20.jpg', aspect: 'aspect-square' },
+  
+
+  
+ 
+  
+
+  { id: 27, src: '28.jpg', aspect: 'aspect-square' },
+  { id: 28, src: '29.jpg', aspect: 'aspect-[3/4]' },
+  { id: 29, src: 'slider1.jpg', aspect: 'aspect-[4/3]' },
+  { id: 30, src: 'slider2.jpg', aspect: 'aspect-square' },
+  { id: 31, src: 'slider3.jpg', aspect: 'aspect-[3/4]' },
+  { id: 32, src: 'slider4.jpg', aspect: 'aspect-[4/3]' }
 ];
 
 export default function Gallery() {
@@ -47,26 +63,41 @@ export default function Gallery() {
         bgImage="/images/home/slider/1.jpg"
       />
       
-      <div className="w-[80%] max-w-7xl mx-auto px-4 sm:px-6 py-12">
-
-        {/* Masonry Gallery with Columns */}
-        <div className="px-4 sm:px-0">
-          <div className="space-y-6 columns-1 sm:columns-2 lg:columns-3 xl:columns-4">
+      <div className="w-[80%] max-w-7xl mx-auto px-4 sm:px-6 py-16">
+        {/* Gallery Grid */}
+        <div className="px-2 sm:px-0">
+          <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6">
             {galleryItems.map((item, index) => (
               <div 
                 key={item.id}
-                className={`relative group overflow-hidden rounded-lg shadow-md cursor-pointer mb-6 break-inside-avoid ${item.aspect}`}
+                className="relative group mb-6 break-inside-avoid hover:opacity-90 transition-all duration-300"
                 onClick={() => setOpenIndex(index)}
               >
-                <img
-                  src={`/images/gallery/${item.src}`}
-                  alt="Clinic photo"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
-                  <div className="text-white">
-                    <h3 className="font-medium text-sm sm:text-base">{item.title}</h3>
+                <div className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+                  <img
+                    src={`/images/gallery/${item.src}`}
+                    alt="Clinic photo"
+                    className="w-full h-auto transition-transform duration-700 group-hover:scale-105"
+                    style={{
+                      display: 'block',
+                      objectFit: 'cover',
+                      objectPosition: 'center',
+                      aspectRatio: 'auto',
+                      maxWidth: '100%',
+                      height: 'auto'
+                    }}
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+                    <div className="w-full">
+                      <div className="h-0.5 w-10 bg-white mb-3 transform -translate-x-1 group-hover:translate-x-0 transition-transform duration-300"></div>
+                      <h3 className="text-white font-medium text-lg mb-1 transform translate-y-3 group-hover:translate-y-0 transition-transform duration-300">
+                        {item.title || 'Clinic Photo'}
+                      </h3>
+                      <p className="text-white/80 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                        Click to view
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>

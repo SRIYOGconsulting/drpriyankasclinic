@@ -203,7 +203,7 @@ const FAQ = () => {
               </a>
               <a
                 href="tel:+1234567890"
-                className="inline-flex items-center justify-center px-6 py-3 border border-white text-base font-medium rounded-full text-white hover:bg-white hover:bg-opacity-10 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white transition-colors duration-200"
+                className="inline-flex items-center justify-center px-6 py-3 border-2 border-white text-base font-medium rounded-full bg-white text-pink-600 hover:bg-pink-50 hover:border-pink-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white transition-all duration-200 shadow-sm hover:shadow-md"
               >
                 <FaPhone className="mr-2" />
                 Call Now

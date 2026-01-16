@@ -63,7 +63,7 @@ function App() {
           <Route path="/disclaimer" element={<><PageTitle title="Disclaimer" /><Disclaimer /></>} />
           <Route path="/emergency" element={<><PageTitle title="Emergency" /><Emergency /></>} />
           <Route path="/testimonials" element={<><PageTitle title="Testimonials" /><Testimonials /></>} />
-          <Route path="/services/:serviceId" element={<><PageTitle title="Service Details" /><ServiceDetail /></>} />
+          <Route path="/services/:serviceId" element={<ServiceDetail />} />
           <Route path="/blog" element={<><PageTitle title="Blog" /><BlogList /></>} />
           <Route path="/blog/:id" element={<><PageTitle title="Blog Article" /><BlogDetail /></>} />
           {/* Catch-all route for 404 */}
