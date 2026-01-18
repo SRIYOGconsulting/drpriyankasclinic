@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import PageBanner from '../components/PageBanner';
+import { FiImageOff } from 'react-icons/fi';
 
 // Gallery images with aspect ratios
 const galleryItems = [
   { id: 1, src: '1.jpg', aspect: 'aspect-[4/3]' },
   { id: 2, src: '2.jpg', aspect: 'aspect-square' },
   { id: 3, src: '3.jpg', aspect: 'aspect-[3/4]' },
- { id: 5, src: '5.jpg', aspect: 'aspect-[4/3]' },
+  { id: 4, src: '5.jpg', aspect: 'aspect-[4/3]' },
   { id: 5, src: '6.jpg', aspect: 'aspect-[4/3]' },
   { id: 6, src: '7.jpg', aspect: 'aspect-[3/4]' },
   { id: 7, src: '8.jpg', aspect: 'aspect-square' },
@@ -20,24 +21,64 @@ const galleryItems = [
   { id: 15, src: '16.jpg', aspect: 'aspect-square' },
   { id: 16, src: '17.jpg', aspect: 'aspect-[3/4]' },
   { id: 17, src: '18.jpg', aspect: 'aspect-[4/3]' },
-  { id: 18, src: '20.jpg', aspect: 'aspect-square' },
-  
-
-  
- 
-  
-
-  { id: 27, src: '28.jpg', aspect: 'aspect-square' },
-  { id: 28, src: '29.jpg', aspect: 'aspect-[3/4]' },
-  { id: 29, src: 'slider1.jpg', aspect: 'aspect-[4/3]' },
-  { id: 30, src: 'slider2.jpg', aspect: 'aspect-square' },
-  { id: 31, src: 'slider3.jpg', aspect: 'aspect-[3/4]' },
-  { id: 32, src: 'slider4.jpg', aspect: 'aspect-[4/3]' }
+  { id: 18, src: '19.png', aspect: 'aspect-square' },
+  { id: 19, src: '20.jpg', aspect: 'aspect-square' },
+  { id: 20, src: '27.jpg', aspect: 'aspect-square' },
+    { id: 21, src: '28.jpg', aspect: 'aspect-square' },
+    { id: 22, src: '22.jpg', aspect: 'aspect-[3/4]' },
+  { id: 23, src: '29.jpg', aspect: 'aspect-[3/4]' },
+  { id: 24, src: 'slider1.jpg', aspect: 'aspect-[4/3]' },
+  { id: 25, src: 'slider2.jpg', aspect: 'aspect-square' },
+  { id: 26, src: 'slider3.jpg', aspect: 'aspect-[3/4]' },
+  { id: 27, src: 'slider4.jpg', aspect: 'aspect-[4/3]' },
+  { id: 28, src: '21.jpg', aspect: 'aspect-[3/4]' },
+  { id: 29, src: '23.png', aspect: 'aspect-[3/4]' },
+  { id: 30, src: '24.png', aspect: 'aspect-square' },
+  { id: 31, src: '25.png', aspect: 'aspect-[3/4]' },
+  { id: 32, src: '26.png', aspect: 'aspect-[3/4]' },
+{ id: 33, src: '30.png', aspect: 'aspect-[3/4]' },
 ];
+
+const ImageWithFallback = ({ src, alt, aspect, onError, ...props }) => {
+  const [imgError, setImgError] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleError = (e) => {
+    setImgError(true);
+    if (onError) onError(e);
+  };
+
+  return (
+    <div className={`relative ${aspect} w-full bg-gray-100 rounded-lg overflow-hidden flex items-center justify-center`}>
+      {imgError ? (
+        <div className="flex flex-col items-center justify-center text-gray-400 p-4">
+          <FiImageOff className="w-12 h-12 mb-2" />
+          <span className="text-sm">Image not found</span>
+        </div>
+      ) : (
+        <>
+          {isLoading && (
+            <div className="absolute inset-0 bg-gray-100 animate-pulse"></div>
+          )}
+          <img
+            src={`/images/gallery/${src}`}
+            alt={alt}
+            className={`w-full h-full object-cover transition-opacity duration-300 ${isLoading ? 'opacity-0' : 'opacity-100'}`}
+            onLoad={() => setIsLoading(false)}
+            onError={handleError}
+            loading="lazy"
+            {...props}
+          />
+        </>
+      )}
+    </div>
+  );
+};
 
 export default function Gallery() {
   const [openIndex, setOpenIndex] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [loadedImages, setLoadedImages] = useState({});
 
   useEffect(() => {
     const handleResize = () => {
@@ -48,6 +89,10 @@ export default function Gallery() {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  const handleImageLoaded = (id) => {
+    setLoadedImages(prev => ({ ...prev, [id]: true }));
+  };
 
   // No need for chunking with columns layout
 
@@ -64,35 +109,27 @@ export default function Gallery() {
       />
       
       <div className="w-[80%] max-w-7xl mx-auto px-4 sm:px-6 py-16">
-        {/* Gallery Grid */}
         <div className="px-2 sm:px-0">
-          <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {galleryItems.map((item, index) => (
               <div 
                 key={item.id}
-                className="relative group mb-6 break-inside-avoid hover:opacity-90 transition-all duration-300"
+                className="group cursor-pointer transition-all duration-300 hover:opacity-90"
                 onClick={() => setOpenIndex(index)}
               >
                 <div className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
-                  <img
-                    src={`/images/gallery/${item.src}`}
-                    alt="Clinic photo"
-                    className="w-full h-auto transition-transform duration-700 group-hover:scale-105"
-                    style={{
-                      display: 'block',
-                      objectFit: 'cover',
-                      objectPosition: 'center',
-                      aspectRatio: 'auto',
-                      maxWidth: '100%',
-                      height: 'auto'
-                    }}
-                    loading="lazy"
+                  <ImageWithFallback
+                    src={item.src}
+                    alt={`Clinic photo ${item.id}`}
+                    aspect={item.aspect}
+                    onError={(e) => console.error(`Error loading image: ${item.src}`, e)}
+                    onLoad={() => handleImageLoaded(item.id)}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                     <div className="w-full">
                       <div className="h-0.5 w-10 bg-white mb-3 transform -translate-x-1 group-hover:translate-x-0 transition-transform duration-300"></div>
                       <h3 className="text-white font-medium text-lg mb-1 transform translate-y-3 group-hover:translate-y-0 transition-transform duration-300">
-                        {item.title || 'Clinic Photo'}
+                        {item.title || `Photo ${item.id}`}
                       </h3>
                       <p className="text-white/80 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
                         Click to view
